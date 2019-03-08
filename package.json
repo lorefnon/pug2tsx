@@ -1,0 +1,113 @@
+{
+    "name": "type-safe-pug-reactifier",
+    "version": "0.1.0",
+    "description": "Compile pug templates to python",
+    "bugs": "https://github.com/lorefnon/type-safe-pug-reactifier/issues",
+    "main": "lib/index.js",
+    "source": "src/index.ts",
+    "repository": "https://github.com/lorefnon/type-safe-pug-reactifier",
+    "author": "lorefnon <lorefnon@gmail.com> (https://lorefnon.tech)",
+    "license": "MIT",
+    "private": false,
+    "files": [
+        "lib"
+    ],
+    "bin": {
+        "tspugr": "./lib/cli.js"
+    },
+    "keywords": [
+        "pug",
+        "graphql",
+        "react",
+        "ui",
+        "component",
+        "typescript"
+    ],
+    "scripts": {
+        "release": "release-it",
+        "prebuild": "yarn run clean",
+        "prepublishOnly": "cross-env NODE_ENV=production yarn run build",
+        "format": "prettier --write \"src/**/*.ts\"",
+        "build:ts": "babel src --out-dir lib --extensions .ts --source-maps",
+        "watch:ts": "babel src --out-dir lib --extensions .ts --source-maps --watch",
+        "check:ts": "yarn run build:ts && yarn run test",
+        "clean": "rimraf lib",
+        "build": "yarn run build:ts",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:prod": "yarn run lint && yarn run test -- --no-cache"
+    },
+    "jest": {
+        "transform": {
+            ".(ts|tsx)": "ts-jest"
+        },
+        "testEnvironment": "node",
+        "testRegex": "\\.spec\\.ts$",
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js"
+        ],
+        "coveragePathIgnorePatterns": [
+            "/node_modules/",
+            "/test/"
+        ],
+        "coverageThreshold": {
+            "global": {
+                "branches": 90,
+                "functions": 95,
+                "lines": 95,
+                "statements": 95
+            }
+        },
+        "collectCoverage": false,
+        "collectCoverageFrom": [
+            "src/*.ts"
+        ]
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.2.3",
+        "@babel/preset-env": "^7.3.4",
+        "@babel/preset-typescript": "^7.3.3",
+        "@types/chalk": "^2.2.0",
+        "@types/debug": "^4.1.2",
+        "@types/dedent": "^0.7.0",
+        "@types/fs-extra": "^5.0.5",
+        "@types/glob": "^7.1.1",
+        "@types/jest": "^24.0.11",
+        "@types/lodash": "^4.14.122",
+        "@types/minimist": "^1.2.0",
+        "@types/node": "^11.10.4",
+        "@types/prettier": "^1.16.1",
+        "cross-env": "^5.2.0",
+        "jest": "^24.1.0",
+        "react": "^16.8.3",
+        "react-dom": "^16.8.3",
+        "reflect-metadata": "^0.1.13",
+        "release-it": "^10.2.0",
+        "ts-jest": "^24.0.0",
+        "ts-node": "^8.0.2",
+        "typescript": "^3.2.4"
+    },
+    "dependencies": {
+        "@babel/core": "^7.3.4",
+        "@babel/generator": "^7.3.4",
+        "@babel/node": "^7.2.2",
+        "@babel/parser": "^7.3.4",
+        "@babel/types": "^7.3.4",
+        "@types/babel__generator": "^7.0.2",
+        "debug": "^4.1.1",
+        "dedent": "^0.7.0",
+        "fs-extra": "^7.0.1",
+        "glob": "^7.1.3",
+        "lodash": "^4.17.11",
+        "minimist": "^1.2.0",
+        "prettier": "^1.16.4",
+        "pug-lexer": "^4.0.0",
+        "pug-parser": "^5.0.0"
+    },
+    "peerDependencies": {
+        "react": "*",
+        "typescript": "^3.2.4"
+    }
+}

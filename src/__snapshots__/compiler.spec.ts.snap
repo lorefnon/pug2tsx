@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Interleaved unbuffered code 1`] = `
+"import * as React from \\"react\\";
+
+export default function SampleComponent(props) {
+  const foo = \\"bar\\";
+  const bar = \\"baz\\";
+  return <div className={\\"hello\\"}>{\`Hello \\\\\${foo} \\\\\${bar}\`}</div>;
+}
+"
+`;
+
+exports[`Interpolated Code 1`] = `
+"import * as React from \\"react\\";
+
+export default function SampleComponent(props) {
+  const foo = \\"bar\\";
+  return (
+    <>
+      <div id={\\"bar\\"} className={\\"foo\\"}>
+        <div
+          data-bar={\\"baz\\"}
+          className={[\\"foo__node\\", \\"foo__node--aspect\\"].join(\\" \\")}
+        >
+          {foo}
+        </div>
+      </div>
+      <div className={\\"hello\\"}>{\`Hello \\\\\${foo}\`}</div>
+    </>
+  );
+}
+"
+`;
+
+exports[`Props interface detection 1`] = `
+"import * as React from \\"react\\";
+
+interface ITestComponentProps {
+  foo: string;
+}
+
+export default function TestComponent(props: ITestComponentProps) {
+  return (
+    <div className={\\"hello\\"}>
+      <SomeTag name={props.foo} />
+    </div>
+  );
+}
+"
+`;
+
+exports[`Simple tag composition 1`] = `
+"import * as React from \\"react\\";
+
+export default function SampleComponent(props) {
+  return <></>;
+}
+"
+`;
+
+exports[`Top level scripts 1`] = `
+"import * as React from \\"react\\";
+
+import SomeTag from \\"./SomeTag\\";
+
+export default function(props) {
+  return (
+    <div className={\\"hello\\"}>
+      <SomeTag name={props.foo} />
+    </div>
+  );
+}
+"
+`;
