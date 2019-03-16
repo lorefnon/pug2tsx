@@ -1,3 +1,5 @@
+import { pick } from "lodash";
+
 export enum Type {
     Tag = "Tag",
     Block = "Block",
@@ -5,7 +7,12 @@ export enum Type {
     Each = "Each",
     Text = "Text",
     Conditional = "Conditional",
+    Case = "Case",
+    When = "When"
 }
+export const isType = <NodeT extends BaseNode<any>>(t: BaseNode<any>, type: NodeT["type"]): t is NodeT => 
+    t.type === type;
+
 export interface BaseNode<T extends Type> {
     type: T;
 }
@@ -17,13 +24,13 @@ export interface ColInfo {
 }
 export interface Attr {
     name: string;
-    val: string;
+    val: string | boolean;
     line: number;
     column: number;
     mustEscape: boolean;
 }
 export interface BlockNode extends BaseNode<Type.Block>, LineInfo {
-    nodes: BaseNode<Type>[];
+    nodes: Node[];
 }
 export interface TagNode extends BaseNode<Type.Tag>, LineInfo, ColInfo {
     name: string;
@@ -46,11 +53,21 @@ export interface EachNode extends BaseNode<Type.Each>, LineInfo, ColInfo {
 }
 export interface ConditionalNode extends BaseNode<Type.Conditional>, LineInfo, ColInfo {
     test: string;
-    consequent: BlockNode;
-    alternate: BlockNode | null;
+    consequent: Node;
+    alternate: Node | null;
 }
 export interface TextNode extends BaseNode<Type.Text>, LineInfo, ColInfo {
     val: string;
 }
-export type Node = BlockNode | TopLevelNode;
-export type TopLevelNode = TagNode | CodeNode | EachNode | ConditionalNode;
+export interface CaseNode extends BaseNode<Type.Case>, LineInfo, ColInfo {
+    expr: string;
+    block: BlockNode
+}
+export interface WhenNode extends BaseNode<Type.When>, LineInfo, ColInfo {
+    expr: string;
+    block: BlockNode
+}
+export type Node = BlockNode | TopLevelNode | CaseNode | TextNode | WhenNode ;
+export type TopLevelNode = TagNode | CodeNode | EachNode | ConditionalNode | WhenNode;
+
+export const extractPosInfo = (node: any): {line: number, column: number} => pick(node, ['line', 'column']);

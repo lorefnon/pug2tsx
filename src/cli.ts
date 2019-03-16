@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 import fs from "fs-extra";
 import _glob from "glob";
-import { isEmpty } from "lodash";
+import { isEmpty, some } from "lodash";
 import parseArgs from "minimist";
 import path from "path";
 import { promisify } from "util";
 
-import { someFatal, transpile } from "./compiler";
+import { transpile } from "./compiler";
 import { forEachDirEntry } from "./fs-utils";
 
 const glob = promisify(_glob);
@@ -43,8 +43,8 @@ const transpileFile = (options: { outputDir: string; inputDir: string }) => asyn
                 msg += ")";
             }
             msg += ` [CODE: ${error.code}]`;
-            if (error.message) {
-                msg += ` ${error.message}`;
+            if (error.reasons) {
+                msg += ` ${error.reasons.join('\n')}`;
             }
             console.error(msg);
             if (error.maybeBug) {
@@ -52,7 +52,7 @@ const transpileFile = (options: { outputDir: string; inputDir: string }) => asyn
             }
         }
     }
-    if (someFatal(transpileR.errors)) {
+    if (some(transpileR.errors, {isFatal: true})) {
         console.error(
             `Failed to generate output for file ${filePath} because of one or more of the errors listed above`,
         );

@@ -1,0 +1,659 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Interleaved unbuffered code 1`] = `
+Object {
+  "line": 0,
+  "nodes": Array [
+    Object {
+      "buffer": false,
+      "column": 1,
+      "isInline": false,
+      "line": 1,
+      "mustEscape": false,
+      "type": "Code",
+      "val": "const foo = \\"bar\\";",
+    },
+    Object {
+      "attributeBlocks": Array [],
+      "attrs": Array [
+        Object {
+          "column": 1,
+          "line": 2,
+          "mustEscape": false,
+          "name": "id",
+          "val": "'bar'",
+        },
+        Object {
+          "column": 5,
+          "line": 2,
+          "mustEscape": false,
+          "name": "class",
+          "val": "'foo'",
+        },
+      ],
+      "block": Object {
+        "line": 2,
+        "nodes": Array [
+          Object {
+            "attributeBlocks": Array [],
+            "attrs": Array [
+              Object {
+                "column": 5,
+                "line": 3,
+                "mustEscape": false,
+                "name": "class",
+                "val": "'foo__node'",
+              },
+              Object {
+                "column": 15,
+                "line": 3,
+                "mustEscape": false,
+                "name": "class",
+                "val": "'foo__node--aspect'",
+              },
+            ],
+            "block": Object {
+              "line": 3,
+              "nodes": Array [
+                Object {
+                  "column": 34,
+                  "line": 3,
+                  "type": "Text",
+                  "val": "Test",
+                },
+              ],
+              "type": "Block",
+            },
+            "column": 5,
+            "isInline": false,
+            "line": 3,
+            "name": "div",
+            "selfClosing": false,
+            "type": "Tag",
+          },
+        ],
+        "type": "Block",
+      },
+      "column": 1,
+      "isInline": false,
+      "line": 2,
+      "name": "div",
+      "selfClosing": false,
+      "type": "Tag",
+    },
+    Object {
+      "buffer": false,
+      "column": 1,
+      "isInline": false,
+      "line": 4,
+      "mustEscape": false,
+      "type": "Code",
+      "val": "const bar = \\"baz\\";",
+    },
+    Object {
+      "attributeBlocks": Array [],
+      "attrs": Array [
+        Object {
+          "column": 4,
+          "line": 5,
+          "mustEscape": false,
+          "name": "class",
+          "val": "'hello'",
+        },
+      ],
+      "block": Object {
+        "line": 5,
+        "nodes": Array [
+          Object {
+            "buffer": true,
+            "column": 5,
+            "isInline": false,
+            "line": 6,
+            "mustEscape": true,
+            "type": "Code",
+            "val": "\`Hello \\\\\${foo} \\\\\${bar}\`",
+          },
+        ],
+        "type": "Block",
+      },
+      "column": 1,
+      "isInline": false,
+      "line": 5,
+      "name": "div",
+      "selfClosing": false,
+      "type": "Tag",
+    },
+  ],
+  "type": "Block",
+}
+`;
+
+exports[`Interleaved unbuffered code 2`] = `
+Object {
+  "errors": Array [],
+  "result": "import * as React from \\"react\\";
+
+export default function SampleComponent(props: any) {
+  const foo = \\"bar\\";
+  return (
+    <>
+      <div id={\\"bar\\"} className={\\"foo\\"}>
+        <div className={[\\"foo__node\\", \\"foo__node--aspect\\"].join(\\" \\")}>Test</div>
+      </div>
+      {(() => {
+        const bar = \\"baz\\";
+        return <div className={\\"hello\\"}>{\`Hello \\\\\${foo} \\\\\${bar}\`}</div>;
+      })()}
+    </>
+  );
+}
+",
+}
+`;
+
+exports[`Interpolated Code 1`] = `
+Object {
+  "line": 0,
+  "nodes": Array [
+    Object {
+      "buffer": false,
+      "column": 1,
+      "isInline": false,
+      "line": 1,
+      "mustEscape": false,
+      "type": "Code",
+      "val": "const foo = \\"bar\\";",
+    },
+    Object {
+      "attributeBlocks": Array [],
+      "attrs": Array [
+        Object {
+          "column": 1,
+          "line": 2,
+          "mustEscape": false,
+          "name": "id",
+          "val": "'bar'",
+        },
+        Object {
+          "column": 5,
+          "line": 2,
+          "mustEscape": false,
+          "name": "class",
+          "val": "'foo'",
+        },
+      ],
+      "block": Object {
+        "line": 2,
+        "nodes": Array [
+          Object {
+            "attributeBlocks": Array [],
+            "attrs": Array [
+              Object {
+                "column": 5,
+                "line": 3,
+                "mustEscape": false,
+                "name": "class",
+                "val": "'foo__node'",
+              },
+              Object {
+                "column": 15,
+                "line": 3,
+                "mustEscape": false,
+                "name": "class",
+                "val": "'foo__node--aspect'",
+              },
+              Object {
+                "column": 34,
+                "line": 3,
+                "mustEscape": true,
+                "name": "data-bar",
+                "val": "\\"baz\\"",
+              },
+            ],
+            "block": Object {
+              "line": 3,
+              "nodes": Array [
+                Object {
+                  "buffer": true,
+                  "column": 49,
+                  "isInline": true,
+                  "line": 3,
+                  "mustEscape": true,
+                  "type": "Code",
+                  "val": "foo",
+                },
+              ],
+              "type": "Block",
+            },
+            "column": 5,
+            "isInline": false,
+            "line": 3,
+            "name": "div",
+            "selfClosing": false,
+            "type": "Tag",
+          },
+        ],
+        "type": "Block",
+      },
+      "column": 1,
+      "isInline": false,
+      "line": 2,
+      "name": "div",
+      "selfClosing": false,
+      "type": "Tag",
+    },
+    Object {
+      "attributeBlocks": Array [],
+      "attrs": Array [
+        Object {
+          "column": 4,
+          "line": 4,
+          "mustEscape": false,
+          "name": "class",
+          "val": "'hello'",
+        },
+      ],
+      "block": Object {
+        "line": 4,
+        "nodes": Array [
+          Object {
+            "buffer": true,
+            "column": 5,
+            "isInline": false,
+            "line": 5,
+            "mustEscape": true,
+            "type": "Code",
+            "val": "\`Hello \\\\\${foo}\`",
+          },
+        ],
+        "type": "Block",
+      },
+      "column": 1,
+      "isInline": false,
+      "line": 4,
+      "name": "div",
+      "selfClosing": false,
+      "type": "Tag",
+    },
+  ],
+  "type": "Block",
+}
+`;
+
+exports[`Interpolated Code 2`] = `
+Object {
+  "errors": Array [],
+  "result": "import * as React from \\"react\\";
+
+export default function SampleComponent(props: any) {
+  const foo = \\"bar\\";
+  return (
+    <>
+      <div id={\\"bar\\"} className={\\"foo\\"}>
+        <div
+          data-bar={\\"baz\\"}
+          className={[\\"foo__node\\", \\"foo__node--aspect\\"].join(\\" \\")}
+        >
+          {foo}
+        </div>
+      </div>
+      <div className={\\"hello\\"}>{\`Hello \\\\\${foo}\`}</div>
+    </>
+  );
+}
+",
+}
+`;
+
+exports[`Props interface detection 1`] = `
+Object {
+  "line": 0,
+  "nodes": Array [
+    Object {
+      "attributeBlocks": Array [],
+      "attrs": Array [],
+      "block": Object {
+        "line": 1,
+        "nodes": Array [
+          Object {
+            "column": 5,
+            "line": 2,
+            "type": "Text",
+            "val": "interface ITestComponentProps {",
+          },
+          Object {
+            "column": 1,
+            "line": 3,
+            "type": "Text",
+            "val": "
+",
+          },
+          Object {
+            "column": 5,
+            "line": 3,
+            "type": "Text",
+            "val": "    foo: string;",
+          },
+          Object {
+            "column": 1,
+            "line": 4,
+            "type": "Text",
+            "val": "
+",
+          },
+          Object {
+            "column": 5,
+            "line": 4,
+            "type": "Text",
+            "val": "}",
+          },
+          Object {
+            "column": 1,
+            "line": 5,
+            "type": "Text",
+            "val": "
+",
+          },
+          Object {
+            "column": 5,
+            "line": 5,
+            "type": "Text",
+            "val": "",
+          },
+        ],
+        "type": "Block",
+      },
+      "column": 1,
+      "isInline": false,
+      "line": 1,
+      "name": "script",
+      "selfClosing": false,
+      "textOnly": true,
+      "type": "Tag",
+    },
+    Object {
+      "attributeBlocks": Array [],
+      "attrs": Array [
+        Object {
+          "column": 4,
+          "line": 6,
+          "mustEscape": false,
+          "name": "class",
+          "val": "'hello'",
+        },
+      ],
+      "block": Object {
+        "line": 6,
+        "nodes": Array [
+          Object {
+            "attributeBlocks": Array [],
+            "attrs": Array [
+              Object {
+                "column": 13,
+                "line": 7,
+                "mustEscape": true,
+                "name": "name",
+                "val": "props.foo",
+              },
+            ],
+            "block": Object {
+              "line": 7,
+              "nodes": Array [],
+              "type": "Block",
+            },
+            "column": 5,
+            "isInline": false,
+            "line": 7,
+            "name": "SomeTag",
+            "selfClosing": false,
+            "type": "Tag",
+          },
+        ],
+        "type": "Block",
+      },
+      "column": 1,
+      "isInline": false,
+      "line": 6,
+      "name": "div",
+      "selfClosing": false,
+      "type": "Tag",
+    },
+  ],
+  "type": "Block",
+}
+`;
+
+exports[`Props interface detection 2`] = `
+Object {
+  "errors": Array [],
+  "result": "import * as React from \\"react\\";
+
+interface ITestComponentProps {
+  foo: string;
+}
+
+export default function TestComponent(props: ITestComponentProps) {
+  return (
+    <div className={\\"hello\\"}>
+      <SomeTag name={props.foo} />
+    </div>
+  );
+}
+",
+}
+`;
+
+exports[`Tag composition 1`] = `
+Object {
+  "line": 0,
+  "nodes": Array [
+    Object {
+      "attributeBlocks": Array [],
+      "attrs": Array [
+        Object {
+          "column": 1,
+          "line": 1,
+          "mustEscape": false,
+          "name": "id",
+          "val": "'bar'",
+        },
+        Object {
+          "column": 5,
+          "line": 1,
+          "mustEscape": false,
+          "name": "class",
+          "val": "'foo'",
+        },
+      ],
+      "block": Object {
+        "line": 1,
+        "nodes": Array [
+          Object {
+            "attributeBlocks": Array [],
+            "attrs": Array [
+              Object {
+                "column": 5,
+                "line": 2,
+                "mustEscape": false,
+                "name": "class",
+                "val": "'foo__node'",
+              },
+              Object {
+                "column": 15,
+                "line": 2,
+                "mustEscape": false,
+                "name": "class",
+                "val": "'foo__node--aspect'",
+              },
+              Object {
+                "column": 34,
+                "line": 2,
+                "mustEscape": true,
+                "name": "data-bar",
+                "val": "\\"baz\\"",
+              },
+            ],
+            "block": Object {
+              "line": 2,
+              "nodes": Array [
+                Object {
+                  "column": 11,
+                  "line": 3,
+                  "type": "Text",
+                  "val": "Hello world",
+                },
+              ],
+              "type": "Block",
+            },
+            "column": 5,
+            "isInline": false,
+            "line": 2,
+            "name": "div",
+            "selfClosing": false,
+            "type": "Tag",
+          },
+        ],
+        "type": "Block",
+      },
+      "column": 1,
+      "isInline": false,
+      "line": 1,
+      "name": "div",
+      "selfClosing": false,
+      "type": "Tag",
+    },
+  ],
+  "type": "Block",
+}
+`;
+
+exports[`Tag composition 2`] = `
+Object {
+  "errors": Array [],
+  "result": "import * as React from \\"react\\";
+
+export default function SampleComponent(props: any) {
+  return (
+    <div id={\\"bar\\"} className={\\"foo\\"}>
+      <div
+        data-bar={\\"baz\\"}
+        className={[\\"foo__node\\", \\"foo__node--aspect\\"].join(\\" \\")}
+      >
+        Hello world
+      </div>
+    </div>
+  );
+}
+",
+}
+`;
+
+exports[`Top level scripts 1`] = `
+Object {
+  "line": 0,
+  "nodes": Array [
+    Object {
+      "attributeBlocks": Array [],
+      "attrs": Array [],
+      "block": Object {
+        "line": 1,
+        "nodes": Array [
+          Object {
+            "column": 5,
+            "line": 2,
+            "type": "Text",
+            "val": "import SomeTag from \\"./SomeTag\\";",
+          },
+          Object {
+            "column": 1,
+            "line": 3,
+            "type": "Text",
+            "val": "
+",
+          },
+          Object {
+            "column": 5,
+            "line": 3,
+            "type": "Text",
+            "val": "",
+          },
+        ],
+        "type": "Block",
+      },
+      "column": 1,
+      "isInline": false,
+      "line": 1,
+      "name": "script",
+      "selfClosing": false,
+      "textOnly": true,
+      "type": "Tag",
+    },
+    Object {
+      "attributeBlocks": Array [],
+      "attrs": Array [
+        Object {
+          "column": 4,
+          "line": 4,
+          "mustEscape": false,
+          "name": "class",
+          "val": "'hello'",
+        },
+      ],
+      "block": Object {
+        "line": 4,
+        "nodes": Array [
+          Object {
+            "attributeBlocks": Array [],
+            "attrs": Array [
+              Object {
+                "column": 13,
+                "line": 5,
+                "mustEscape": true,
+                "name": "name",
+                "val": "props.foo",
+              },
+            ],
+            "block": Object {
+              "line": 5,
+              "nodes": Array [],
+              "type": "Block",
+            },
+            "column": 5,
+            "isInline": false,
+            "line": 5,
+            "name": "SomeTag",
+            "selfClosing": false,
+            "type": "Tag",
+          },
+        ],
+        "type": "Block",
+      },
+      "column": 1,
+      "isInline": false,
+      "line": 4,
+      "name": "div",
+      "selfClosing": false,
+      "type": "Tag",
+    },
+  ],
+  "type": "Block",
+}
+`;
+
+exports[`Top level scripts 2`] = `
+Object {
+  "errors": Array [],
+  "result": "import * as React from \\"react\\";
+
+import SomeTag from \\"./SomeTag\\";
+
+export default function(props: any) {
+  return (
+    <div className={\\"hello\\"}>
+      <SomeTag name={props.foo} />
+    </div>
+  );
+}
+",
+}
+`;
