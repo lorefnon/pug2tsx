@@ -17,7 +17,8 @@
     },
     "keywords": [
         "pug",
-        "graphql",
+        "jade",
+        "template",
         "react",
         "ui",
         "component",
