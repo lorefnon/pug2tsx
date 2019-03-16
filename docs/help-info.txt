@@ -1,0 +1,7 @@
+molosser
+
+Converts pug (jade) templates to typescript based react components
+
+--help Show help info
+-i Input directory
+-o Output directory
