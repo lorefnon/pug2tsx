@@ -5,5 +5,5 @@ Experimental source-to-source compiler which converts (a subset of) pug (jade) t
 ## Usage
 
 ```
-tspugr -i <input-directory> -o <output-directory>
+molosser -i <input-directory> -o <output-directory>
 ```

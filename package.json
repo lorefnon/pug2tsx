@@ -1,11 +1,11 @@
 {
-    "name": "type-safe-pug-reactifier",
+    "name": "molosser",
     "version": "0.1.0",
     "description": "Compile pug templates to python",
-    "bugs": "https://github.com/lorefnon/type-safe-pug-reactifier/issues",
+    "bugs": "https://github.com/lorefnon/molosser/issues",
     "main": "lib/index.js",
     "source": "src/index.ts",
-    "repository": "https://github.com/lorefnon/type-safe-pug-reactifier",
+    "repository": "https://github.com/lorefnon/molosser",
     "author": "lorefnon <lorefnon@gmail.com> (https://lorefnon.tech)",
     "license": "MIT",
     "private": false,
@@ -13,7 +13,7 @@
         "lib"
     ],
     "bin": {
-        "tspugr": "./lib/cli.js"
+        "molosser": "./lib/cli.js"
     },
     "keywords": [
         "pug",
