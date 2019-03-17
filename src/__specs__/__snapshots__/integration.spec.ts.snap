@@ -1,5 +1,123 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Assigning react elements 1`] = `
+Object {
+  "line": 0,
+  "nodes": Array [
+    Object {
+      "block": Object {
+        "line": 2,
+        "nodes": Array [
+          Object {
+            "attributeBlocks": Array [],
+            "attrs": Array [
+              Object {
+                "column": 6,
+                "line": 2,
+                "mustEscape": false,
+                "name": "class",
+                "val": "'hello'",
+              },
+            ],
+            "block": Object {
+              "line": 2,
+              "nodes": Array [
+                Object {
+                  "column": 7,
+                  "line": 3,
+                  "type": "Text",
+                  "val": "World",
+                },
+              ],
+              "type": "Block",
+            },
+            "column": 3,
+            "isInline": false,
+            "line": 2,
+            "name": "div",
+            "selfClosing": false,
+            "type": "Tag",
+          },
+        ],
+        "type": "Block",
+      },
+      "buffer": false,
+      "column": 1,
+      "isInline": false,
+      "line": 1,
+      "mustEscape": false,
+      "type": "Code",
+      "val": "const foo =",
+    },
+    Object {
+      "attributeBlocks": Array [],
+      "attrs": Array [
+        Object {
+          "column": 4,
+          "line": 5,
+          "mustEscape": false,
+          "name": "class",
+          "val": "'hello'",
+        },
+      ],
+      "block": Object {
+        "line": 5,
+        "nodes": Array [
+          Object {
+            "attributeBlocks": Array [],
+            "attrs": Array [
+              Object {
+                "column": 13,
+                "line": 6,
+                "mustEscape": true,
+                "name": "name",
+                "val": "foo",
+              },
+            ],
+            "block": Object {
+              "line": 6,
+              "nodes": Array [],
+              "type": "Block",
+            },
+            "column": 5,
+            "isInline": false,
+            "line": 6,
+            "name": "SomeTag",
+            "selfClosing": false,
+            "type": "Tag",
+          },
+        ],
+        "type": "Block",
+      },
+      "column": 1,
+      "isInline": false,
+      "line": 5,
+      "name": "div",
+      "selfClosing": false,
+      "type": "Tag",
+    },
+  ],
+  "type": "Block",
+}
+`;
+
+exports[`Assigning react elements 2`] = `
+Object {
+  "errors": Array [],
+  "result": "import * as React from \\"react\\";
+
+export default function TestComponent(props: any) {
+  const foo = <div className={\\"hello\\"}>World</div>;
+  return (
+    <div className={\\"hello\\"}>
+      <SomeTag name={foo} />
+    </div>
+  );
+}
+",
+}
+`;
+
 exports[`Interleaved unbuffered code 1`] = `
 Object {
   "line": 0,
@@ -145,6 +263,125 @@ export default function SampleComponent(props: any) {
         return <div className={\\"hello\\"}>{\`Hello \\\\\${foo} \\\\\${bar}\`}</div>;
       })()}
     </>
+  );
+}
+",
+}
+`;
+
+exports[`Internal functions returning JSX 1`] = `
+Object {
+  "line": 0,
+  "nodes": Array [
+    Object {
+      "block": Object {
+        "line": 2,
+        "nodes": Array [
+          Object {
+            "attributeBlocks": Array [],
+            "attrs": Array [
+              Object {
+                "column": 6,
+                "line": 2,
+                "mustEscape": false,
+                "name": "class",
+                "val": "'hello'",
+              },
+            ],
+            "block": Object {
+              "line": 2,
+              "nodes": Array [
+                Object {
+                  "column": 7,
+                  "line": 3,
+                  "type": "Text",
+                  "val": "World",
+                },
+              ],
+              "type": "Block",
+            },
+            "column": 3,
+            "isInline": false,
+            "line": 2,
+            "name": "div",
+            "selfClosing": false,
+            "type": "Tag",
+          },
+        ],
+        "type": "Block",
+      },
+      "buffer": false,
+      "column": 1,
+      "isInline": false,
+      "line": 1,
+      "mustEscape": false,
+      "type": "Code",
+      "val": "const SomeTag = () =>",
+    },
+    Object {
+      "attributeBlocks": Array [],
+      "attrs": Array [
+        Object {
+          "column": 4,
+          "line": 5,
+          "mustEscape": false,
+          "name": "class",
+          "val": "'hello'",
+        },
+      ],
+      "block": Object {
+        "line": 5,
+        "nodes": Array [
+          Object {
+            "attributeBlocks": Array [],
+            "attrs": Array [
+              Object {
+                "column": 13,
+                "line": 6,
+                "mustEscape": true,
+                "name": "name",
+                "val": "foo",
+              },
+            ],
+            "block": Object {
+              "line": 6,
+              "nodes": Array [],
+              "type": "Block",
+            },
+            "column": 5,
+            "isInline": false,
+            "line": 6,
+            "name": "SomeTag",
+            "selfClosing": false,
+            "type": "Tag",
+          },
+        ],
+        "type": "Block",
+      },
+      "column": 1,
+      "isInline": false,
+      "line": 5,
+      "name": "div",
+      "selfClosing": false,
+      "type": "Tag",
+    },
+  ],
+  "type": "Block",
+}
+`;
+
+exports[`Internal functions returning JSX 2`] = `
+Object {
+  "errors": Array [],
+  "result": "import * as React from \\"react\\";
+
+export default function TestComponent(props: any) {
+  const SomeTag = () => <div className={\\"hello\\"}>World</div>;
+
+  return (
+    <div className={\\"hello\\"}>
+      <SomeTag name={foo} />
+    </div>
   );
 }
 ",
@@ -299,6 +536,164 @@ export default function SampleComponent(props: any) {
       </div>
       <div className={\\"hello\\"}>{\`Hello \\\\\${foo}\`}</div>
     </>
+  );
+}
+",
+}
+`;
+
+exports[`Lifted function components 1`] = `
+Object {
+  "line": 0,
+  "nodes": Array [
+    Object {
+      "attributeBlocks": Array [],
+      "attrs": Array [
+        Object {
+          "column": 8,
+          "line": 1,
+          "mustEscape": true,
+          "name": "type",
+          "val": "\\"text/molosser\\"",
+        },
+      ],
+      "block": Object {
+        "line": 1,
+        "nodes": Array [
+          Object {
+            "block": Object {
+              "line": 3,
+              "nodes": Array [
+                Object {
+                  "buffer": false,
+                  "column": 9,
+                  "isInline": false,
+                  "line": 3,
+                  "mustEscape": false,
+                  "type": "Code",
+                  "val": "const [currentCount, setCount] = useState(0)",
+                },
+                Object {
+                  "attributeBlocks": Array [],
+                  "attrs": Array [
+                    Object {
+                      "column": 12,
+                      "line": 4,
+                      "mustEscape": false,
+                      "name": "class",
+                      "val": "'hello'",
+                    },
+                  ],
+                  "block": Object {
+                    "line": 4,
+                    "nodes": Array [
+                      Object {
+                        "buffer": true,
+                        "column": 13,
+                        "isInline": false,
+                        "line": 5,
+                        "mustEscape": true,
+                        "type": "Code",
+                        "val": "currentCount",
+                      },
+                    ],
+                    "type": "Block",
+                  },
+                  "column": 9,
+                  "isInline": false,
+                  "line": 4,
+                  "name": "div",
+                  "selfClosing": false,
+                  "type": "Tag",
+                },
+              ],
+              "type": "Block",
+            },
+            "buffer": false,
+            "column": 5,
+            "isInline": false,
+            "line": 2,
+            "mustEscape": false,
+            "type": "Code",
+            "val": "const SomeTag = () =>",
+          },
+        ],
+        "type": "Block",
+      },
+      "column": 1,
+      "isInline": false,
+      "line": 1,
+      "name": "script",
+      "selfClosing": false,
+      "type": "Tag",
+    },
+    Object {
+      "attributeBlocks": Array [],
+      "attrs": Array [
+        Object {
+          "column": 4,
+          "line": 7,
+          "mustEscape": false,
+          "name": "class",
+          "val": "'hello'",
+        },
+      ],
+      "block": Object {
+        "line": 7,
+        "nodes": Array [
+          Object {
+            "attributeBlocks": Array [],
+            "attrs": Array [
+              Object {
+                "column": 13,
+                "line": 8,
+                "mustEscape": true,
+                "name": "name",
+                "val": "foo",
+              },
+            ],
+            "block": Object {
+              "line": 8,
+              "nodes": Array [],
+              "type": "Block",
+            },
+            "column": 5,
+            "isInline": false,
+            "line": 8,
+            "name": "SomeTag",
+            "selfClosing": false,
+            "type": "Tag",
+          },
+        ],
+        "type": "Block",
+      },
+      "column": 1,
+      "isInline": false,
+      "line": 7,
+      "name": "div",
+      "selfClosing": false,
+      "type": "Tag",
+    },
+  ],
+  "type": "Block",
+}
+`;
+
+exports[`Lifted function components 2`] = `
+Object {
+  "errors": Array [],
+  "result": "import * as React from \\"react\\";
+
+const SomeTag = () => {
+  const [currentCount, setCount] = useState(0);
+  return <div className={\\"hello\\"}>{currentCount}</div>;
+};
+
+export default function TestComponent(props: any) {
+  return (
+    <div className={\\"hello\\"}>
+      <SomeTag name={foo} />
+    </div>
   );
 }
 ",

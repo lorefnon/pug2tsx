@@ -5,7 +5,7 @@ import { parse, parseExpression } from "@babel/parser";
 import { ErrorCode } from "../CompilationError";
 import { isEmpty } from "lodash";
 
-export class CodeTransformer extends Transformer<Pug.CodeNode | Pug.TagNode, t.Node[]> {
+export class ScriptNodeTransformer extends Transformer<Pug.TagNode, t.Node[]> {
     public isExpression = false;
     transform(): void {
         let parsed: t.Node[];

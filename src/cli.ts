@@ -57,6 +57,7 @@ const transpileFile = (options: { outputDir: string; inputDir: string }) => asyn
             `Failed to generate output for file ${filePath} because of one or more of the errors listed above`,
         );
     } else {
+        await fs.ensureDir(path.dirname(destFilePath));
         await fs.writeFile(destFilePath, transpileR.result);
     }
 };

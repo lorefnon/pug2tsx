@@ -66,7 +66,9 @@ export class FileTransfomer extends Transformer<string, string> {
             return;
         }
         try {
-            result = prettier.format(result);
+            result = prettier.format(result, {
+                parser: 'babel'
+            });
         } catch (e) {
             this.pushError({
                 code: ErrorCode.GenerationError,

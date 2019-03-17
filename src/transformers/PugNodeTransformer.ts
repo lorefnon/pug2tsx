@@ -1,13 +1,14 @@
 import { Transformer } from "./Transformer";
 import * as Pug from "../pug";
 import * as t from "@babel/types";
-import { includes, some, castArray, compact, flatten } from "lodash";
-import { CodeTransformer } from "./CodeTransformer";
+import { includes, some, castArray, compact, flatten, find } from "lodash";
+import { ScriptNodeTransformer } from "./ScriptNodeTransformer";
 import { TagNodeTransformer } from "./TagNodeTransformer";
 import { ErrorCode } from "../CompilationError";
 import { CaseNodeTransformer } from "./CaseNodeTransformer";
 import { ConditionalNodeTransformer } from "./ConditionalNodeTransformer";
 import { EachNodeTransformer } from "./EachNodeTransformer";
+import { CodeNodeTransformer } from "./CodeNodeTransformer";
 
 export class PugNodeTransformer extends Transformer<Pug.Node, t.Node[]> {
     public isTopLevel = false;
@@ -42,6 +43,10 @@ export class PugNodeTransformer extends Transformer<Pug.Node, t.Node[]> {
             this.transformTagNode(node);
             return;
         }
+        if (Pug.isType<Pug.BlockNode>(node, Pug.Type.Block)) {
+            this.output = flatten(compact(node.nodes.map(n => this.delegateTo(PugNodeTransformer, n))));
+            return;
+        }
         if (Pug.isType<Pug.CodeNode>(node, Pug.Type.Code)) {
             this.transformCodeNode(node);
             return;
@@ -58,12 +63,12 @@ export class PugNodeTransformer extends Transformer<Pug.Node, t.Node[]> {
         if (Pug.isType<Pug.ConditionalNode>(node, Pug.Type.Conditional)) {
             const transformed = this.delegateTo(ConditionalNodeTransformer, node);
             if (transformed) this.output = [transformed];
-            return;      
+            return;
         }
         if (Pug.isType<Pug.EachNode>(node, Pug.Type.Each)) {
             const transformed = this.delegateTo(EachNodeTransformer, node);
             if (transformed) this.output = [transformed];
-            return;      
+            return;
         }
         this.pushError({
             code: ErrorCode.UnsupportedSyntaxError,
@@ -91,7 +96,9 @@ export class PugNodeTransformer extends Transformer<Pug.Node, t.Node[]> {
             });
             return;
         }
-        if (some(node.attrs, a => a.name === "type" && a.val !== "text/typescript")) {
+        const typeAttr = find(node.attrs, a => a.name === "type");
+        let scriptType = typeAttr ? (`${typeAttr.val}`).replace(/(^('|"))|(('|")$)/g, '') : 'text/typescript';
+        if (typeAttr && scriptType !== "text/typescript" && scriptType !== "text/molosser") {
             this.pushError({
                 code: ErrorCode.UnsupportedSyntaxError,
                 reasons: [`Script tags can only contain typescript`],
@@ -111,7 +118,7 @@ export class PugNodeTransformer extends Transformer<Pug.Node, t.Node[]> {
             });
             return;
         }
-        if (node.block && some(node.block.nodes, n => n.type !== "Text")) {
+        if (scriptType === 'text/typescript' && node.block && some(node.block.nodes, n => n.type !== "Text")) {
             this.pushError({
                 code: ErrorCode.UnsupportedSyntaxError,
                 reasons: [`script or style tags can have only text nodes`],
@@ -120,12 +127,16 @@ export class PugNodeTransformer extends Transformer<Pug.Node, t.Node[]> {
                 ...Pug.extractPosInfo(node),
             });
         }
-        this.context.topLevelStatements.push(...(compact(this.delegateTo(CodeTransformer, node)) as any));
+        if (scriptType === "text/typescript") {
+            this.context.topLevelStatements.push(...(compact(this.delegateTo(ScriptNodeTransformer, node)) as any));
+        } else if (scriptType === "text/molosser" && node.block) {
+            this.context.topLevelStatements.push(...(compact(this.delegateTo(PugNodeTransformer, node.block)) as any));
+        }
         this.output = [];
     }
 
     transformCodeNode(n: Pug.CodeNode) {
-        const codeTransformer = new CodeTransformer(n, this.context);
+        const codeTransformer = new CodeNodeTransformer(n, this.context);
         codeTransformer.isExpression = n.buffer;
         codeTransformer.transform();
         this.output = codeTransformer.output;

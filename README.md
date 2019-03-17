@@ -7,3 +7,6 @@ Experimental source-to-source compiler which converts (a subset of) pug (jade) t
 ```
 molosser -i <input-directory> -o <output-directory>
 ```
+
+## Examples
+

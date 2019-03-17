@@ -80,3 +80,55 @@ test("Props interface detection", () => {
     expect(transpiledR).toMatchSnapshot();
 });
 
+test("Assigning react elements", () => {
+    const template = dedent`
+    - const foo =
+      div.hello
+        | World
+        
+    div.hello
+        SomeTag(name=foo)`;
+    expect(parsePug(template)).toMatchSnapshot();
+    const transpiledR: any = transpile(template, {
+        defaultExportName: "TestComponent",
+    });
+    console.log(transpiledR.errors);
+    expect(isEmpty(transpiledR.errors)).toBe(true);
+    expect(transpiledR).toMatchSnapshot();
+});
+
+test("Internal functions returning JSX", () => {
+    const template = dedent`
+    - const SomeTag = () =>
+      div.hello
+        | World
+
+    div.hello
+        SomeTag(name=foo)`;
+    expect(parsePug(template)).toMatchSnapshot();
+    const transpiledR: any = transpile(template, {
+        defaultExportName: "TestComponent",
+    });
+    console.log(transpiledR.errors);
+    expect(isEmpty(transpiledR.errors)).toBe(true);
+    expect(transpiledR).toMatchSnapshot();
+});
+
+test("Lifted function components", () => {
+    const template = dedent`
+    script(type="text/molosser")
+        - const SomeTag = () =>
+            - const [currentCount, setCount] = useState(0)
+            div.hello
+                = currentCount
+
+    div.hello
+        SomeTag(name=foo)`;
+    expect(parsePug(template)).toMatchSnapshot();
+    const transpiledR: any = transpile(template, {
+        defaultExportName: "TestComponent",
+    });
+    console.log(transpiledR.errors);
+    expect(isEmpty(transpiledR.errors)).toBe(true);
+    expect(transpiledR).toMatchSnapshot();
+});

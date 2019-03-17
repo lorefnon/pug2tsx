@@ -33,6 +33,7 @@ export class NodeChildrenTransformer extends Transformer<
                         ),
                     ),
                 );
+                break;
             }
         }
     }

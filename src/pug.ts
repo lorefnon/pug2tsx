@@ -44,6 +44,7 @@ export interface CodeNode extends BaseNode<Type.Code>, LineInfo, ColInfo {
     isInline: boolean;
     mustEscape: boolean;
     buffer: false;
+    block: BlockNode;
 }
 export interface EachNode extends BaseNode<Type.Each>, LineInfo, ColInfo {
     obj: string;

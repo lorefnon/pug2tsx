@@ -1,6 +1,6 @@
 {
     "name": "molosser",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Compile pug templates to python",
     "bugs": "https://github.com/lorefnon/molosser/issues",
     "main": "lib/index.js",
@@ -10,7 +10,8 @@
     "license": "MIT",
     "private": false,
     "files": [
-        "lib"
+        "lib",
+        "docs"
     ],
     "bin": {
         "molosser": "./lib/cli.js"
@@ -71,6 +72,7 @@
         "@babel/plugin-proposal-class-properties": "^7.3.4",
         "@babel/preset-env": "^7.3.4",
         "@babel/preset-typescript": "^7.3.3",
+        "@types/babel__template": "^7.0.2",
         "@types/chalk": "^2.2.0",
         "@types/debug": "^4.1.2",
         "@types/dedent": "^0.7.0",
@@ -96,6 +98,7 @@
         "@babel/generator": "^7.3.4",
         "@babel/node": "^7.2.2",
         "@babel/parser": "^7.3.4",
+        "@babel/template": "^7.2.2",
         "@babel/types": "^7.3.4",
         "@types/babel__generator": "^7.0.2",
         "debug": "^4.1.1",
