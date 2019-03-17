@@ -1,6 +1,4 @@
-molosser
-
-Converts pug (jade) templates to typescript based react components
+Molosser is a concise indentation-based templating language that compiles to typescript based react components.
 
 --help Show help info
 -i Input directory

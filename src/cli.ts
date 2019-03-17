@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import fs from "fs-extra";
 import _glob from "glob";
-import { isEmpty, some } from "lodash";
+import { isEmpty, some, includes } from "lodash";
 import parseArgs from "minimist";
 import path from "path";
 import { promisify } from "util";
@@ -26,6 +26,8 @@ const showHelp = async () =>
     console.log(await fs.readFile(path.join(__dirname, "../docs/help-info.txt"), { encoding: "utf-8" }));
 
 const transpileFile = (options: { outputDir: string; inputDir: string }) => async (filePath: string) => {
+    const ext = path.extname(filePath);
+    if (!includes(['.mol', '.pug', '.jade'], ext)) return;
     const destFilePath = path.join(
         options.outputDir,
         path.relative(options.inputDir, filePath.replace(path.extname(filePath), ".tsx")),
@@ -48,7 +50,7 @@ const transpileFile = (options: { outputDir: string; inputDir: string }) => asyn
             }
             console.error(msg);
             if (error.maybeBug) {
-                console.error(`This may be a bug in tspugr. We encourage you to create an issue for this.`);
+                console.error(`This may be a bug in molosser. We encourage you to create an issue for this.`);
             }
         }
     }
