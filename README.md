@@ -1,6 +1,7 @@
+![Introduction](https://raw.githubusercontent.com/lorefnon/molosser/master/assets/PrimaryIntroImage.png)
 # About
 
-Experimental source-to-source compiler which converts (a subset of) pug (jade) templates to typescript based react components.
+A concise indentation based templating language that compiles to idiomatic typescript based React function components
 
 ## Usage
 
@@ -10,3 +11,8 @@ molosser -i <input-directory> -o <output-directory>
 
 ## Examples
 
+TBD
+
+## Differences from Pug
+
+TBD
