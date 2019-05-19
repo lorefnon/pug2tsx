@@ -8,9 +8,9 @@ export enum Type {
     Text = "Text",
     Conditional = "Conditional",
     Case = "Case",
-    When = "When"
+    When = "When",
 }
-export const isType = <NodeT extends BaseNode<any>>(t: BaseNode<any>, type: NodeT["type"]): t is NodeT => 
+export const isType = <NodeT extends BaseNode<any>>(t: BaseNode<any>, type: NodeT["type"]): t is NodeT =>
     t.type === type;
 
 export interface BaseNode<T extends Type> {
@@ -62,13 +62,13 @@ export interface TextNode extends BaseNode<Type.Text>, LineInfo, ColInfo {
 }
 export interface CaseNode extends BaseNode<Type.Case>, LineInfo, ColInfo {
     expr: string;
-    block: BlockNode
+    block: BlockNode;
 }
 export interface WhenNode extends BaseNode<Type.When>, LineInfo, ColInfo {
     expr: string;
-    block: BlockNode
+    block: BlockNode;
 }
-export type Node = BlockNode | TopLevelNode | CaseNode | TextNode | WhenNode ;
+export type Node = BlockNode | TopLevelNode | CaseNode | TextNode | WhenNode;
 export type TopLevelNode = TagNode | CodeNode | EachNode | ConditionalNode | WhenNode;
 
-export const extractPosInfo = (node: any): {line: number, column: number} => pick(node, ['line', 'column']);
+export const extractPosInfo = (node: any): { line: number; column: number } => pick(node, ["line", "column"]);

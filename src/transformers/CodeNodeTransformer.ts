@@ -1,14 +1,12 @@
-import { parse, parseExpression } from "@babel/parser";
-import * as t from "@babel/types";
-import { isEmpty, uniqueId, castArray } from "lodash";
 import template from "@babel/template";
+import * as t from "@babel/types";
+import { castArray, isEmpty, uniqueId } from "lodash";
 
 import { ErrorCode } from "../CompilationError";
 import * as Pug from "../pug";
-import { NodeChildTransformer } from "./NodeChildTransformer";
-import { Transformer } from "./Transformer";
-import { PugNodeTransformer } from './PugNodeTransformer';
 import { FunctionBodyTransformer } from "./FunctionBodyTransformer";
+import { PugNodeTransformer } from "./PugNodeTransformer";
+import { Transformer } from "./Transformer";
 
 export class CodeNodeTransformer extends Transformer<Pug.CodeNode, t.Node[]> {
     public isExpression = false;
@@ -22,14 +20,19 @@ export class CodeNodeTransformer extends Transformer<Pug.CodeNode, t.Node[]> {
         let content = this.input.val || "";
         if (this.input.block) {
             const blockList = this.delegateTo(PugNodeTransformer, this.input.block);
-            const placeholder = uniqueId('MOLOSSER__BLOCK__');
+            const placeholder = uniqueId("MOLOSSER__BLOCK__");
             if (blockList) {
                 if (blockList.length > 1) {
-                    content += ` ${placeholder};`;
-                    replacements[placeholder] = t.blockStatement(this.delegateTo(FunctionBodyTransformer, blockList) || []);
+                    content += ` ${placeholder}`;
+                    replacements[placeholder] = t.blockStatement(
+                        this.delegateTo(FunctionBodyTransformer, blockList) || [],
+                    );
                 } else if (blockList.length === 1) {
-                    content += ` ${placeholder};`;
+                    content += ` ${placeholder}`;
                     replacements[placeholder] = blockList[0];
+                }
+                if (!this.input.buffer) {
+                    content += ";";
                 }
             }
         }

@@ -114,7 +114,7 @@ Object {
           "line": 6,
           "mustEscape": true,
           "name": "class",
-          "val": "authenticated ? 'authed' : 'anon'",
+          "val": "(authenticated ? 'authed' : 'anon')",
         },
       ],
       "block": Object {

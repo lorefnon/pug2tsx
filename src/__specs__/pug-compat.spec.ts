@@ -11,7 +11,7 @@ describe("Attributes", () => {
         |
         a(class='button', href='google.com') Google
         - var authenticated = true
-        div(class=authenticated ? 'authed' : 'anon')
+        div(class=(authenticated ? 'authed' : 'anon'))
         `;
         expect(parsePug(template)).toMatchSnapshot();
         const transpiledR = transpile(template, {
@@ -20,7 +20,7 @@ describe("Attributes", () => {
         expect(transpiledR).toMatchSnapshot();
         expect(isEmpty(transpiledR.errors)).toBe(true);
     });
-    
+
     test("Multiline attributes", () => {
         const template = dedent`
         input(
@@ -36,7 +36,7 @@ describe("Attributes", () => {
         expect(transpiledR).toMatchSnapshot();
         expect(isEmpty(transpiledR.errors)).toBe(true);
     });
-    
+
     test("Quoted attributes", () => {
         const template = dedent`
         div(class='div-class', (click)='play()')
@@ -48,7 +48,7 @@ describe("Attributes", () => {
         expect(transpiledR).toMatchSnapshot();
         expect(isEmpty(transpiledR.errors)).toBe(true);
     });
-    
+
     // TODO: Unescaped attributes
     // TODO: Boolean attributes
 
@@ -66,10 +66,9 @@ describe("Attributes", () => {
 
     // TODO various cases of merging classes
     // TOOD Attribute blocks
-
 });
 
-describe('Case', () => {
+describe("Case", () => {
     test("Default usage", () => {
         const template = dedent`
         - var friends = 10
@@ -89,8 +88,7 @@ describe('Case', () => {
     });
 });
 
-
-describe('Conditional', () => {
+describe("Conditional", () => {
     test("Default usage", () => {
         const template = dedent`
         - var user = { description: 'foo bar baz' }
@@ -116,7 +114,7 @@ describe('Conditional', () => {
     });
 });
 
-describe('Each', () => {
+describe("Each", () => {
     test("Iteration with member", () => {
         const template = dedent`
         ul
@@ -153,4 +151,4 @@ describe('Each', () => {
         expect(transpiledR).toMatchSnapshot();
         expect(isEmpty(transpiledR.errors)).toBe(true);
     });
-})
+});

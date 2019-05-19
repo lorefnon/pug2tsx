@@ -838,6 +838,154 @@ export default function TestComponent(props: ITestComponentProps) {
 }
 `;
 
+exports[`Render props 1`] = `
+Object {
+  "line": 0,
+  "nodes": Array [
+    Object {
+      "attributeBlocks": Array [],
+      "attrs": Array [
+        Object {
+          "column": 11,
+          "line": 1,
+          "mustEscape": false,
+          "name": "class",
+          "val": "'Consumer'",
+        },
+      ],
+      "block": Object {
+        "line": 1,
+        "nodes": Array [
+          Object {
+            "block": Object {
+              "line": 3,
+              "nodes": Array [
+                Object {
+                  "alternate": Object {
+                    "line": 6,
+                    "nodes": Array [
+                      Object {
+                        "attributeBlocks": Array [],
+                        "attrs": Array [
+                          Object {
+                            "column": 13,
+                            "line": 6,
+                            "mustEscape": false,
+                            "name": "id",
+                            "val": "'workspace'",
+                          },
+                        ],
+                        "block": Object {
+                          "line": 6,
+                          "nodes": Array [
+                            Object {
+                              "column": 24,
+                              "line": 6,
+                              "type": "Text",
+                              "val": "Failure",
+                            },
+                          ],
+                          "type": "Block",
+                        },
+                        "column": 13,
+                        "isInline": false,
+                        "line": 6,
+                        "name": "div",
+                        "selfClosing": false,
+                        "type": "Tag",
+                      },
+                    ],
+                    "type": "Block",
+                  },
+                  "column": 9,
+                  "consequent": Object {
+                    "line": 4,
+                    "nodes": Array [
+                      Object {
+                        "attributeBlocks": Array [],
+                        "attrs": Array [
+                          Object {
+                            "column": 13,
+                            "line": 4,
+                            "mustEscape": false,
+                            "name": "id",
+                            "val": "'workspace'",
+                          },
+                        ],
+                        "block": Object {
+                          "line": 4,
+                          "nodes": Array [
+                            Object {
+                              "column": 24,
+                              "line": 4,
+                              "type": "Text",
+                              "val": "Success",
+                            },
+                          ],
+                          "type": "Block",
+                        },
+                        "column": 13,
+                        "isInline": false,
+                        "line": 4,
+                        "name": "div",
+                        "selfClosing": false,
+                        "type": "Tag",
+                      },
+                    ],
+                    "type": "Block",
+                  },
+                  "line": 3,
+                  "test": "app.repositoryRoot",
+                  "type": "Conditional",
+                },
+              ],
+              "type": "Block",
+            },
+            "buffer": true,
+            "column": 5,
+            "isInline": false,
+            "line": 2,
+            "mustEscape": true,
+            "type": "Code",
+            "val": "(app) =>",
+          },
+        ],
+        "type": "Block",
+      },
+      "column": 1,
+      "isInline": false,
+      "line": 1,
+      "name": "AppContext",
+      "selfClosing": false,
+      "type": "Tag",
+    },
+  ],
+  "type": "Block",
+}
+`;
+
+exports[`Render props 2`] = `
+Object {
+  "errors": Array [],
+  "result": "import * as React from \\"react\\";
+
+export default function(props: any) {
+  return (
+    <AppContext className={\\"Consumer\\"}>
+      {app =>
+        app.repositoryRoot ? (
+          <div id={\\"workspace\\"}>Success</div>
+        ) : (
+          <div id={\\"workspace\\"}>Failure</div>
+        )
+      }
+    </AppContext>
+  );
+}
+",
+}
+`;
+
 exports[`Tag composition 1`] = `
 Object {
   "line": 0,

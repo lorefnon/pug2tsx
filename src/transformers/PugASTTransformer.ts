@@ -37,7 +37,7 @@ export class PugASTTransformer extends Transformer<Pug.BlockNode, t.Statement[]>
                     this.context.defaultExportName ? t.identifier(this.context.defaultExportName) : null,
                     [
                         /* t.identifier("props", null, false, interfaceName ? t.tsTypeAnnotation(t.tsTypeReference(t.identifier(interfaceName))) : undefined) */
-                        t.identifier(`props: ${interfaceName || 'any'}`),
+                        t.identifier(`props: ${interfaceName || "any"}`),
                     ],
                     t.blockStatement(stmts || []),
                 ),

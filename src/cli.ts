@@ -27,7 +27,7 @@ const showHelp = async () =>
 
 const transpileFile = (options: { outputDir: string; inputDir: string }) => async (filePath: string) => {
     const ext = path.extname(filePath);
-    if (!includes(['.mol', '.pug', '.jade'], ext)) return;
+    if (!includes([".mol", ".pug", ".jade"], ext)) return;
     const destFilePath = path.join(
         options.outputDir,
         path.relative(options.inputDir, filePath.replace(path.extname(filePath), ".tsx")),
@@ -46,7 +46,7 @@ const transpileFile = (options: { outputDir: string; inputDir: string }) => asyn
             }
             msg += ` [CODE: ${error.code}]`;
             if (error.reasons) {
-                msg += ` ${error.reasons.join('\n')}`;
+                msg += ` ${error.reasons.join("\n")}`;
             }
             console.error(msg);
             if (error.maybeBug) {
@@ -54,7 +54,7 @@ const transpileFile = (options: { outputDir: string; inputDir: string }) => asyn
             }
         }
     }
-    if (some(transpileR.errors, {isFatal: true})) {
+    if (some(transpileR.errors, { isFatal: true })) {
         console.error(
             `Failed to generate output for file ${filePath} because of one or more of the errors listed above`,
         );

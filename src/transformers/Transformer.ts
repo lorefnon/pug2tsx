@@ -19,7 +19,6 @@ export abstract class Transformer<InputT, OutputT, ErrT = CompilationError> {
     }
 
     pushError(error: ErrT) {
-        debugger
         this.context.errors.push(error);
     }
 }

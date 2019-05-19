@@ -1,20 +1,18 @@
-import generateJS from '@babel/generator';
+import generateJS from "@babel/generator";
 import * as t from "@babel/types";
-import prettier from 'prettier';
-// @ts-ignore
-import pugLexer from 'pug-lexer';
-// @ts-ignore
-import pugParser from 'pug-parser';
+import prettier from "prettier";
+import { parse } from "../parser";
+import { lex } from "../lexer";
 
-import * as Pug from '../pug';
-import { PugASTTransformer } from './PugASTTransformer';
-import { Transformer } from './Transformer';
-import { ErrorCode } from '../CompilationError';
+import * as Pug from "../pug";
+import { PugASTTransformer } from "./PugASTTransformer";
+import { Transformer } from "./Transformer";
+import { ErrorCode } from "../CompilationError";
 
-export const parsePug = (input: string, context: {filePath?: string} = {}) => {
-    const tokens = pugLexer(input, { filename: context.filePath });
-    return pugParser(tokens, { filename: context.filePath, src: input });
-}
+export const parsePug = (input: string, context: { filePath?: string } = {}) => {
+    const tokens = lex(input, { filename: context.filePath });
+    return parse(tokens, { filename: context.filePath, src: input });
+};
 
 export class FileTransfomer extends Transformer<string, string> {
     transform() {
@@ -67,7 +65,7 @@ export class FileTransfomer extends Transformer<string, string> {
         }
         try {
             result = prettier.format(result, {
-                parser: 'babel'
+                parser: "babel",
             });
         } catch (e) {
             this.pushError({

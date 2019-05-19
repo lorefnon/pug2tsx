@@ -13,7 +13,7 @@ export class ScriptNodeTransformer extends Transformer<Pug.TagNode, t.Node[]> {
             sourceType: "module" as "module",
             plugins: ["typescript" as "typescript"],
         };
-        let content = '';
+        let content = "";
         if (Pug.isType<Pug.CodeNode>(this.input, Pug.Type.Code)) {
             content = this.input.val;
         } else if (Pug.isType<Pug.TagNode>(this.input, Pug.Type.Tag)) {
@@ -24,11 +24,11 @@ export class ScriptNodeTransformer extends Transformer<Pug.TagNode, t.Node[]> {
                             code: ErrorCode.IncorrectSyntaxError,
                             reasons: [`Expected text node but found node of type: ${member.type}`],
                             isFatal: true,
-                            maybeBug: false
+                            maybeBug: false,
                         });
                         return;
                     }
-                    content += member.val + '\n';
+                    content += member.val + "\n";
                 }
             }
         }

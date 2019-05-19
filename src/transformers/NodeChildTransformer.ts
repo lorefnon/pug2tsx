@@ -4,13 +4,10 @@ import { Transformer } from "./Transformer";
 import { TagBlockNodeTransformer } from "./TagBlockNodeTransformer";
 import { NodeChildrenTransformer } from "./NodeChildrenTransformer";
 
-export type JSXChild = (t.JSXText | t.JSXExpressionContainer | t.JSXSpreadChild | t.JSXElement | t.JSXFragment);
-export type JSXNode = (t.JSXElement | t.JSXFragment);
+export type JSXChild = t.JSXText | t.JSXExpressionContainer | t.JSXSpreadChild | t.JSXElement | t.JSXFragment;
+export type JSXNode = t.JSXElement | t.JSXFragment;
 
-export class NodeChildTransformer extends Transformer<
-    Pug.Node,
-    JSXNode
-> {
+export class NodeChildTransformer extends Transformer<Pug.Node, JSXNode> {
     transform(): void {
         let nodes: JSXChild[] = [];
         if (Pug.isType<Pug.BlockNode>(this.input, Pug.Type.Block)) {

@@ -97,7 +97,7 @@ export class PugNodeTransformer extends Transformer<Pug.Node, t.Node[]> {
             return;
         }
         const typeAttr = find(node.attrs, a => a.name === "type");
-        let scriptType = typeAttr ? (`${typeAttr.val}`).replace(/(^('|"))|(('|")$)/g, '') : 'text/typescript';
+        let scriptType = typeAttr ? `${typeAttr.val}`.replace(/(^('|"))|(('|")$)/g, "") : "text/typescript";
         if (typeAttr && scriptType !== "text/typescript" && scriptType !== "text/molosser") {
             this.pushError({
                 code: ErrorCode.UnsupportedSyntaxError,
@@ -118,7 +118,7 @@ export class PugNodeTransformer extends Transformer<Pug.Node, t.Node[]> {
             });
             return;
         }
-        if (scriptType === 'text/typescript' && node.block && some(node.block.nodes, n => n.type !== "Text")) {
+        if (scriptType === "text/typescript" && node.block && some(node.block.nodes, n => n.type !== "Text")) {
             this.pushError({
                 code: ErrorCode.UnsupportedSyntaxError,
                 reasons: [`script or style tags can have only text nodes`],

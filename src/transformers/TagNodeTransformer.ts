@@ -23,14 +23,11 @@ export class TagNodeTransformer extends Transformer<Pug.TagNode, t.Node> {
                     val = parseExpression(a.val);
                 }
                 if (a.name.match(/^[a-z0-9_-]+$/i)) {
-                    return t.jsxAttribute(
-                        t.jsxIdentifier(a.name),
-                        t.jsxExpressionContainer(val),
-                    );
+                    return t.jsxAttribute(t.jsxIdentifier(a.name), t.jsxExpressionContainer(val));
                 } else {
-                    return t.jsxSpreadAttribute(t.objectExpression([
-                        t.objectProperty(t.stringLiteral(a.name), val, undefined, false)
-                    ]));
+                    return t.jsxSpreadAttribute(
+                        t.objectExpression([t.objectProperty(t.stringLiteral(a.name), val, undefined, false)]),
+                    );
                 }
             });
             if (classNameAttrs.length === 1) {

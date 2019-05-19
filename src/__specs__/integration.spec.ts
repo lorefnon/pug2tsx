@@ -1,4 +1,4 @@
-import { transpile} from "../compiler";
+import { transpile } from "../compiler";
 import dedent from "dedent";
 import { isEmpty } from "lodash";
 import { parsePug } from "../transformers/FileTransformer";
@@ -15,7 +15,6 @@ test("Tag composition", () => {
     expect(transpiledR).toMatchSnapshot();
     expect(isEmpty(transpiledR.errors)).toBe(true);
 });
-
 
 test("Interpolated Code", () => {
     const template = dedent`
@@ -57,7 +56,6 @@ test("Top level scripts", () => {
         SomeTag(name=props.foo)`;
     expect(parsePug(template)).toMatchSnapshot();
     const transpiledR = transpile(template);
-    console.log(transpiledR.errors);
     expect(isEmpty(transpiledR.errors)).toBe(true);
     expect(transpiledR).toMatchSnapshot();
 });
@@ -75,7 +73,6 @@ test("Props interface detection", () => {
     const transpiledR: any = transpile(template, {
         defaultExportName: "TestComponent",
     });
-    console.log(transpiledR.errors);
     expect(isEmpty(transpiledR.errors)).toBe(true);
     expect(transpiledR).toMatchSnapshot();
 });
@@ -92,7 +89,6 @@ test("Assigning react elements", () => {
     const transpiledR: any = transpile(template, {
         defaultExportName: "TestComponent",
     });
-    console.log(transpiledR.errors);
     expect(isEmpty(transpiledR.errors)).toBe(true);
     expect(transpiledR).toMatchSnapshot();
 });
@@ -109,7 +105,6 @@ test("Internal functions returning JSX", () => {
     const transpiledR: any = transpile(template, {
         defaultExportName: "TestComponent",
     });
-    console.log(transpiledR.errors);
     expect(isEmpty(transpiledR.errors)).toBe(true);
     expect(transpiledR).toMatchSnapshot();
 });
@@ -128,7 +123,20 @@ test("Lifted function components", () => {
     const transpiledR: any = transpile(template, {
         defaultExportName: "TestComponent",
     });
-    console.log(transpiledR.errors);
+    expect(isEmpty(transpiledR.errors)).toBe(true);
+    expect(transpiledR).toMatchSnapshot();
+});
+
+test("Render props", () => {
+    const template = dedent`
+    AppContext.Consumer
+        = (app) =>
+            if app.repositoryRoot 
+                #workspace Success
+            else
+                #workspace Failure`;
+    expect(parsePug(template)).toMatchSnapshot();
+    const transpiledR: any = transpile(template);
     expect(isEmpty(transpiledR.errors)).toBe(true);
     expect(transpiledR).toMatchSnapshot();
 });
