@@ -4,6 +4,7 @@
         "target": "es2015",
         "module": "commonjs",
         "lib": ["es2015", "es2016", "es2017", "dom", "esnext.asynciterable"],
+        "types": ["node", "jest"],
         "strict": true,
         "sourceMap": true,
         "declaration": true,
@@ -15,7 +16,7 @@
         "esModuleInterop": true,
         "noEmit": true,
         "typeRoots": [
-            "node_modules/@types"
+            "./src/types"
         ]
     },
     "include": [
