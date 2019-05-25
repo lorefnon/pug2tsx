@@ -51,7 +51,7 @@ test("Top level scripts", () => {
     const template = dedent`
     script.
         import SomeTag from "./SomeTag";
-        
+
     div.hello
         SomeTag(name=props.foo)`;
     expect(parsePug(template)).toMatchSnapshot();
@@ -66,7 +66,7 @@ test("Props interface detection", () => {
         interface ITestComponentProps {
             foo: string;
         }
-        
+
     div.hello
         SomeTag(name=props.foo)`;
     expect(parsePug(template)).toMatchSnapshot();
@@ -82,7 +82,7 @@ test("Assigning react elements", () => {
     - const foo =
       div.hello
         | World
-        
+
     div.hello
         SomeTag(name=foo)`;
     expect(parsePug(template)).toMatchSnapshot();
@@ -131,12 +131,44 @@ test("Render props", () => {
     const template = dedent`
     AppContext.Consumer
         = (app) =>
-            if app.repositoryRoot 
+            if app.repositoryRoot
                 #workspace Success
             else
                 #workspace Failure`;
     expect(parsePug(template)).toMatchSnapshot();
     const transpiledR: any = transpile(template);
+    expect(isEmpty(transpiledR.errors)).toBe(true);
+    expect(transpiledR).toMatchSnapshot();
+});
+
+test("Without default export", () => {
+    const template = dedent`
+    script(type="text/molosser")
+        - const Foo = () =>
+            #foo.bar
+                | Foo Bar
+        - export default Foo
+    `;
+    expect(parsePug(template)).toMatchSnapshot();
+    const transpiledR: any = transpile(template);
+    console.log(transpiledR.errors);
+    expect(isEmpty(transpiledR.errors)).toBe(true);
+    expect(transpiledR).toMatchSnapshot();
+});
+
+test("Multiple children in nested block", () => {
+    const template = dedent`
+    script(type="text/molosser")
+        - const Foo = () =>
+            #foo.bar
+                | Foo Bar
+            #bar.baz
+                | Bar baz
+        - export default Foo
+    `;
+    expect(parsePug(template)).toMatchSnapshot();
+    const transpiledR: any = transpile(template);
+    console.log(transpiledR.errors);
     expect(isEmpty(transpiledR.errors)).toBe(true);
     expect(transpiledR).toMatchSnapshot();
 });

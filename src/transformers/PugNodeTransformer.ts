@@ -101,7 +101,7 @@ export class PugNodeTransformer extends Transformer<Pug.Node, t.Node[]> {
         if (typeAttr && scriptType !== "text/typescript" && scriptType !== "text/molosser") {
             this.pushError({
                 code: ErrorCode.UnsupportedSyntaxError,
-                reasons: [`Script tags can only contain typescript`],
+                reasons: [`Currently only scripts of type text/typescript and text/molosser are supported`],
                 maybeBug: false,
                 isFatal: true,
                 ...Pug.extractPosInfo(node),

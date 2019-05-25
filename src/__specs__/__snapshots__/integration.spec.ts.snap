@@ -700,6 +700,160 @@ export default function TestComponent(props: any) {
 }
 `;
 
+exports[`Multiple children in nested block 1`] = `
+Object {
+  "line": 0,
+  "nodes": Array [
+    Object {
+      "attributeBlocks": Array [],
+      "attrs": Array [
+        Object {
+          "column": 8,
+          "line": 1,
+          "mustEscape": true,
+          "name": "type",
+          "val": "\\"text/molosser\\"",
+        },
+      ],
+      "block": Object {
+        "line": 1,
+        "nodes": Array [
+          Object {
+            "block": Object {
+              "line": 3,
+              "nodes": Array [
+                Object {
+                  "attributeBlocks": Array [],
+                  "attrs": Array [
+                    Object {
+                      "column": 9,
+                      "line": 3,
+                      "mustEscape": false,
+                      "name": "id",
+                      "val": "'foo'",
+                    },
+                    Object {
+                      "column": 13,
+                      "line": 3,
+                      "mustEscape": false,
+                      "name": "class",
+                      "val": "'bar'",
+                    },
+                  ],
+                  "block": Object {
+                    "line": 3,
+                    "nodes": Array [
+                      Object {
+                        "column": 15,
+                        "line": 4,
+                        "type": "Text",
+                        "val": "Foo Bar",
+                      },
+                    ],
+                    "type": "Block",
+                  },
+                  "column": 9,
+                  "isInline": false,
+                  "line": 3,
+                  "name": "div",
+                  "selfClosing": false,
+                  "type": "Tag",
+                },
+                Object {
+                  "attributeBlocks": Array [],
+                  "attrs": Array [
+                    Object {
+                      "column": 9,
+                      "line": 5,
+                      "mustEscape": false,
+                      "name": "id",
+                      "val": "'bar'",
+                    },
+                    Object {
+                      "column": 13,
+                      "line": 5,
+                      "mustEscape": false,
+                      "name": "class",
+                      "val": "'baz'",
+                    },
+                  ],
+                  "block": Object {
+                    "line": 5,
+                    "nodes": Array [
+                      Object {
+                        "column": 15,
+                        "line": 6,
+                        "type": "Text",
+                        "val": "Bar baz",
+                      },
+                    ],
+                    "type": "Block",
+                  },
+                  "column": 9,
+                  "isInline": false,
+                  "line": 5,
+                  "name": "div",
+                  "selfClosing": false,
+                  "type": "Tag",
+                },
+              ],
+              "type": "Block",
+            },
+            "buffer": false,
+            "column": 5,
+            "isInline": false,
+            "line": 2,
+            "mustEscape": false,
+            "type": "Code",
+            "val": "const Foo = () =>",
+          },
+          Object {
+            "buffer": false,
+            "column": 5,
+            "isInline": false,
+            "line": 7,
+            "mustEscape": false,
+            "type": "Code",
+            "val": "export default Foo",
+          },
+        ],
+        "type": "Block",
+      },
+      "column": 1,
+      "isInline": false,
+      "line": 1,
+      "name": "script",
+      "selfClosing": false,
+      "type": "Tag",
+    },
+  ],
+  "type": "Block",
+}
+`;
+
+exports[`Multiple children in nested block 2`] = `
+Object {
+  "errors": Array [],
+  "result": "import * as React from \\"react\\";
+
+const Foo = () => {
+  return (
+    <>
+      <div id={\\"foo\\"} className={\\"bar\\"}>
+        Foo Bar
+      </div>
+      <div id={\\"bar\\"} className={\\"baz\\"}>
+        Bar baz
+      </div>
+    </>
+  );
+};
+
+export default Foo;
+",
+}
+`;
+
 exports[`Props interface detection 1`] = `
 Object {
   "line": 0,
@@ -750,7 +904,7 @@ Object {
 ",
           },
           Object {
-            "column": 5,
+            "column": 1,
             "line": 5,
             "type": "Text",
             "val": "",
@@ -1115,7 +1269,7 @@ Object {
 ",
           },
           Object {
-            "column": 5,
+            "column": 1,
             "line": 3,
             "type": "Text",
             "val": "",
@@ -1197,6 +1351,116 @@ export default function(props: any) {
     </div>
   );
 }
+",
+}
+`;
+
+exports[`Without default export 1`] = `
+Object {
+  "line": 0,
+  "nodes": Array [
+    Object {
+      "attributeBlocks": Array [],
+      "attrs": Array [
+        Object {
+          "column": 8,
+          "line": 1,
+          "mustEscape": true,
+          "name": "type",
+          "val": "\\"text/molosser\\"",
+        },
+      ],
+      "block": Object {
+        "line": 1,
+        "nodes": Array [
+          Object {
+            "block": Object {
+              "line": 3,
+              "nodes": Array [
+                Object {
+                  "attributeBlocks": Array [],
+                  "attrs": Array [
+                    Object {
+                      "column": 9,
+                      "line": 3,
+                      "mustEscape": false,
+                      "name": "id",
+                      "val": "'foo'",
+                    },
+                    Object {
+                      "column": 13,
+                      "line": 3,
+                      "mustEscape": false,
+                      "name": "class",
+                      "val": "'bar'",
+                    },
+                  ],
+                  "block": Object {
+                    "line": 3,
+                    "nodes": Array [
+                      Object {
+                        "column": 15,
+                        "line": 4,
+                        "type": "Text",
+                        "val": "Foo Bar",
+                      },
+                    ],
+                    "type": "Block",
+                  },
+                  "column": 9,
+                  "isInline": false,
+                  "line": 3,
+                  "name": "div",
+                  "selfClosing": false,
+                  "type": "Tag",
+                },
+              ],
+              "type": "Block",
+            },
+            "buffer": false,
+            "column": 5,
+            "isInline": false,
+            "line": 2,
+            "mustEscape": false,
+            "type": "Code",
+            "val": "const Foo = () =>",
+          },
+          Object {
+            "buffer": false,
+            "column": 5,
+            "isInline": false,
+            "line": 5,
+            "mustEscape": false,
+            "type": "Code",
+            "val": "export default Foo",
+          },
+        ],
+        "type": "Block",
+      },
+      "column": 1,
+      "isInline": false,
+      "line": 1,
+      "name": "script",
+      "selfClosing": false,
+      "type": "Tag",
+    },
+  ],
+  "type": "Block",
+}
+`;
+
+exports[`Without default export 2`] = `
+Object {
+  "errors": Array [],
+  "result": "import * as React from \\"react\\";
+
+const Foo = () => (
+  <div id={\\"foo\\"} className={\\"bar\\"}>
+    Foo Bar
+  </div>
+);
+
+export default Foo;
 ",
 }
 `;
