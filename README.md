@@ -9,6 +9,72 @@ A concise indentation based templating language that compiles to idiomatic types
 molosser -i <input-directory> -o <output-directory>
 ```
 
+This will generate typescript files in the `output-directory` which will have to be separately compiled
+through `tsc` for wrappers over it. Refer [typescript documentation](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html) for other details.
+
+## Syntax
+
+Tags can be composed through indentation:
+
+```
+// hello.mol
+div
+    | Hello world
+```
+
+The above is automatically converted to a function component exported as default:
+
+```
+// hello.tsx
+
+import * as React from "react";
+
+export default function Hello() {
+    return (
+        <div>
+            Hello
+        </div>
+    );
+}
+```
+
+Typescript can be embedded through script blocks (which are outside the function exported by default) and inline code blocks (which are inside):
+
+```
+// hello.mol
+script.
+    import * as cowsay from "cowsay";
+
+pre
+  = cowsay.say({text: 'Moo...'})
+```
+
+Render Props:
+
+```
+- const Consumer = AppContext.Consumer
+Consumer
+  = (app) =>
+    if app.repositoryRoot
+        #workspace Success
+```
+
+Note usage of `-` for code block which is not an embedded expression.
+
+Also, note that `AppContext.Consumer` had to be aliased because of conflict with a tag like `AppContext.Consumer` will compile to element of type `AppContext` with className as `Consumer`.
+
+Multiple components in the same file:
+
+```
+script(type="text/molosser")
+    - export const SomeComponent = () =>
+        div.hello
+            | World
+    - export const SomeOtherComponent = () =>
+        div.lorem
+            | Ipsum
+```
+
 ## Motivation
 
 - React is awesome, but JSX is verbose and unweildy.
@@ -36,3 +102,16 @@ Molosser is inspired by Pug and borrows the syntax and parts of the compiler cod
    1. Includes/Extends/Blocks - Just use ES6 imports and Composition of components
    2. Mixins - Use composition of components
    3. Filters - May be implemented someday
+
+## TODO
+
+- [ ] Language server plugin
+- [ ] Webpack loader
+
+## Contributing
+
+Contributions are welcome in form of bug reports and pull requests through [github](https://github.com/lorefnon/molosser).
+
+## License
+
+MIT

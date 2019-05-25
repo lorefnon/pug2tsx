@@ -47,6 +47,34 @@ test("Interleaved unbuffered code", () => {
     expect(transpiledR).toMatchSnapshot();
 });
 
+test("Unbuffered multiline code", () => {
+    const template = dedent`
+    -
+        const obj = {
+            a: 10,
+            b: 20
+        }
+    #bar.foo = obj.a`;
+    expect(parsePug(template)).toMatchSnapshot();
+    const transpiledR = transpile(template, {
+        defaultExportName: "SampleComponent",
+    });
+    expect(isEmpty(transpiledR.errors)).toBe(true);
+    expect(transpiledR).toMatchSnapshot();
+});
+
+test("Sanitization of buffered code", () => {
+    const template = dedent`
+    #bar.foo
+        = '<div>Hello</div>'`;
+    expect(parsePug(template)).toMatchSnapshot();
+    const transpiledR = transpile(template, {
+        defaultExportName: "SampleComponent",
+    });
+    expect(isEmpty(transpiledR.errors)).toBe(true);
+    expect(transpiledR).toMatchSnapshot();
+});
+
 test("Top level scripts", () => {
     const template = dedent`
     script.
@@ -151,7 +179,6 @@ test("Without default export", () => {
     `;
     expect(parsePug(template)).toMatchSnapshot();
     const transpiledR: any = transpile(template);
-    console.log(transpiledR.errors);
     expect(isEmpty(transpiledR.errors)).toBe(true);
     expect(transpiledR).toMatchSnapshot();
 });
@@ -168,7 +195,6 @@ test("Multiple children in nested block", () => {
     `;
     expect(parsePug(template)).toMatchSnapshot();
     const transpiledR: any = transpile(template);
-    console.log(transpiledR.errors);
     expect(isEmpty(transpiledR.errors)).toBe(true);
     expect(transpiledR).toMatchSnapshot();
 });

@@ -1140,6 +1140,71 @@ export default function(props: any) {
 }
 `;
 
+exports[`Sanitization of buffered code 1`] = `
+Object {
+  "line": 0,
+  "nodes": Array [
+    Object {
+      "attributeBlocks": Array [],
+      "attrs": Array [
+        Object {
+          "column": 1,
+          "line": 1,
+          "mustEscape": false,
+          "name": "id",
+          "val": "'bar'",
+        },
+        Object {
+          "column": 5,
+          "line": 1,
+          "mustEscape": false,
+          "name": "class",
+          "val": "'foo'",
+        },
+      ],
+      "block": Object {
+        "line": 1,
+        "nodes": Array [
+          Object {
+            "buffer": true,
+            "column": 5,
+            "isInline": false,
+            "line": 2,
+            "mustEscape": true,
+            "type": "Code",
+            "val": "'<div>Hello</div>'",
+          },
+        ],
+        "type": "Block",
+      },
+      "column": 1,
+      "isInline": false,
+      "line": 1,
+      "name": "div",
+      "selfClosing": false,
+      "type": "Tag",
+    },
+  ],
+  "type": "Block",
+}
+`;
+
+exports[`Sanitization of buffered code 2`] = `
+Object {
+  "errors": Array [],
+  "result": "import * as React from \\"react\\";
+
+export default function SampleComponent(props: any) {
+  return (
+    <div id={\\"bar\\"} className={\\"foo\\"}>
+      {\\"<div>Hello</div>\\"}
+    </div>
+  );
+}
+",
+}
+`;
+
 exports[`Tag composition 1`] = `
 Object {
   "line": 0,
@@ -1348,6 +1413,84 @@ export default function(props: any) {
   return (
     <div className={\\"hello\\"}>
       <SomeTag name={props.foo} />
+    </div>
+  );
+}
+",
+}
+`;
+
+exports[`Unbuffered multiline code 1`] = `
+Object {
+  "line": 0,
+  "nodes": Array [
+    Object {
+      "buffer": false,
+      "column": 1,
+      "isInline": false,
+      "line": 1,
+      "mustEscape": false,
+      "type": "Code",
+      "val": "const obj = {
+    a: 10,
+    b: 20
+}",
+    },
+    Object {
+      "attributeBlocks": Array [],
+      "attrs": Array [
+        Object {
+          "column": 1,
+          "line": 6,
+          "mustEscape": false,
+          "name": "id",
+          "val": "'bar'",
+        },
+        Object {
+          "column": 5,
+          "line": 6,
+          "mustEscape": false,
+          "name": "class",
+          "val": "'foo'",
+        },
+      ],
+      "block": Object {
+        "line": 6,
+        "nodes": Array [
+          Object {
+            "column": 10,
+            "line": 6,
+            "type": "Text",
+            "val": "= obj.a",
+          },
+        ],
+        "type": "Block",
+      },
+      "column": 1,
+      "isInline": false,
+      "line": 6,
+      "name": "div",
+      "selfClosing": false,
+      "type": "Tag",
+    },
+  ],
+  "type": "Block",
+}
+`;
+
+exports[`Unbuffered multiline code 2`] = `
+Object {
+  "errors": Array [],
+  "result": "import * as React from \\"react\\";
+
+export default function SampleComponent(props: any) {
+  const obj = {
+    a: 10,
+    b: 20
+  };
+  return (
+    <div id={\\"bar\\"} className={\\"foo\\"}>
+      = obj.a
     </div>
   );
 }
