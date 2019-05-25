@@ -1,6 +1,6 @@
 {
     "name": "molosser",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "Compile pug templates to python",
     "bugs": "https://github.com/lorefnon/molosser/issues",
     "main": "lib/index.js",
