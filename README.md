@@ -1,3 +1,7 @@
+:warning: This project has been discontinued in favor of [fluent-react.macro](https://github.com/ts-delight/fluent-react.macro).
+
+---
+
 ![Introduction](https://raw.githubusercontent.com/lorefnon/molosser/master/assets/PrimaryIntroImage.png)
 # About
 
