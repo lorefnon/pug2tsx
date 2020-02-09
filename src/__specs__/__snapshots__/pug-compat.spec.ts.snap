@@ -150,7 +150,7 @@ export default function SampleComponent(props: any) {
       </a>
       {(() => {
         var authenticated = true;
-        return <div className={authenticated ? \\"authed\\" : \\"anon\\"} />;
+        return <div className={authenticated ? \\"authed\\" : \\"anon\\"}></div>;
       })()}
     </>
   );
@@ -211,7 +211,7 @@ Object {
   "result": "import * as React from \\"react\\";
 
 export default function SampleComponent(props: any) {
-  return <input type={\\"checkbox\\"} name={\\"agreement\\"} checked={true} />;
+  return <input type={\\"checkbox\\"} name={\\"agreement\\"} checked={true}></input>;
 }
 ",
 }
@@ -299,13 +299,13 @@ export default function SampleComponent(props: any) {
           \\"(click)\\": \\"play()\\"
         }}
         className={\\"div-class\\"}
-      />
+      ></div>
       <div
         {...{
           \\"(click)\\": \\"play()\\"
         }}
         className={\\"div-class\\"}
-      />
+      ></div>
     </>
   );
 }
@@ -357,7 +357,7 @@ export default function SampleComponent(props: any) {
         color: \\"red\\",
         background: \\"green\\"
       }}
-    />
+    ></a>
   );
 }
 ",

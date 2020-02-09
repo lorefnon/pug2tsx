@@ -110,7 +110,7 @@ export default function TestComponent(props: any) {
   const foo = <div className={\\"hello\\"}>World</div>;
   return (
     <div className={\\"hello\\"}>
-      <SomeTag name={foo} />
+      <SomeTag name={foo}></SomeTag>
     </div>
   );
 }
@@ -380,7 +380,7 @@ export default function TestComponent(props: any) {
 
   return (
     <div className={\\"hello\\"}>
-      <SomeTag name={foo} />
+      <SomeTag name={foo}></SomeTag>
     </div>
   );
 }
@@ -692,7 +692,7 @@ const SomeTag = () => {
 export default function TestComponent(props: any) {
   return (
     <div className={\\"hello\\"}>
-      <SomeTag name={foo} />
+      <SomeTag name={foo}></SomeTag>
     </div>
   );
 }
@@ -984,7 +984,7 @@ interface ITestComponentProps {
 export default function TestComponent(props: ITestComponentProps) {
   return (
     <div className={\\"hello\\"}>
-      <SomeTag name={props.foo} />
+      <SomeTag name={props.foo}></SomeTag>
     </div>
   );
 }
@@ -1412,7 +1412,7 @@ import SomeTag from \\"./SomeTag\\";
 export default function(props: any) {
   return (
     <div className={\\"hello\\"}>
-      <SomeTag name={props.foo} />
+      <SomeTag name={props.foo}></SomeTag>
     </div>
   );
 }
