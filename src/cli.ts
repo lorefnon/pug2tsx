@@ -27,7 +27,7 @@ const showHelp = async () =>
 
 const transpileFile = (options: { outputDir: string; inputDir: string }) => async (filePath: string) => {
     const ext = path.extname(filePath);
-    if (!includes([".mol", ".pug", ".jade"], ext)) return;
+    if (!includes([".pug", ".jade"], ext)) return;
     const destFilePath = path.join(
         options.outputDir,
         path.relative(options.inputDir, filePath.replace(path.extname(filePath), ".tsx")),
@@ -50,7 +50,7 @@ const transpileFile = (options: { outputDir: string; inputDir: string }) => asyn
             }
             console.error(msg);
             if (error.maybeBug) {
-                console.error(`This may be a bug in molosser. We encourage you to create an issue for this.`);
+                console.error(`This may be a bug in pug2tsx. We encourage you to create an issue for this.`);
             }
         }
     }

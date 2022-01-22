@@ -41,7 +41,7 @@ export class Parser extends PugParser {
 
 export function parse(tokens: any[], options: any) {
     // @ts-ignore
-    var parser = new Parser(tokens, options);
+    var parser: any = new Parser(tokens, options);
     var ast = parser.parse();
     return JSON.parse(JSON.stringify(ast));
 }

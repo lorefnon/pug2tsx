@@ -14,5 +14,5 @@ export interface CompilationError<CodeT extends ErrorCode = ErrorCode> {
     column?: number;
     maybeBug?: boolean;
     isFatal: boolean;
-    originalError?: Error;
+    originalError?: unknown;
 }

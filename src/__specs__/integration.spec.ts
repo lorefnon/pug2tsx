@@ -3,11 +3,26 @@ import dedent from "dedent";
 import { isEmpty } from "lodash";
 import { parsePug } from "../transformers/FileTransformer";
 
-test("Tag composition", () => {
+test("Pug inside arrow functions", () => {
     const template = dedent`
-    #bar.foo
-        .foo__node.foo__node--aspect(data-bar="baz")
-            | Hello world`;
+    const HelloWorld = () =>
+        #bar.foo
+            .foo__node.foo__node--aspect(data-bar="baz")
+                | Hello world`;
+    expect(parsePug(template)).toMatchSnapshot();
+    const transpiledR = transpile(template, {
+        defaultExportName: "SampleComponent",
+    });
+    expect(transpiledR).toMatchSnapshot();
+    expect(isEmpty(transpiledR.errors)).toBe(true);
+});
+
+test("Pug inside old-school functions", () => {
+    const template = dedent`
+    function HelloWorld(props: SomeProps)
+        #bar.foo
+            .foo__node.foo__node--aspect(data-bar="baz")
+                | Hello world`;
     expect(parsePug(template)).toMatchSnapshot();
     const transpiledR = transpile(template, {
         defaultExportName: "SampleComponent",
@@ -18,11 +33,12 @@ test("Tag composition", () => {
 
 test("Interpolated Code", () => {
     const template = dedent`
-    - const foo = "bar";
-    #bar.foo
-        .foo__node.foo__node--aspect(data-bar="baz")= foo
-    div.hello
-        = \`Hello \${foo}\``;
+    const Hello = () =>
+        - const foo = "bar";
+        #bar.foo
+            .foo__node.foo__node--aspect(data-bar="baz")= foo
+        div.hello
+            = \`Hello \${foo}\``;
     expect(parsePug(template)).toMatchSnapshot();
     const transpiledR = transpile(template, {
         defaultExportName: "SampleComponent",
@@ -33,12 +49,13 @@ test("Interpolated Code", () => {
 
 test("Interleaved unbuffered code", () => {
     const template = dedent`
-    - const foo = "bar";
-    #bar.foo
-        .foo__node.foo__node--aspect Test
-    - const bar = "baz";
-    div.hello
-        = \`Hello \${foo} \${bar}\``;
+    const Hello = () =>
+        - const foo = "bar";
+        #bar.foo
+            .foo__node.foo__node--aspect Test
+        - const bar = "baz";
+        div.hello
+            = \`Hello \${foo} \${bar}\``;
     expect(parsePug(template)).toMatchSnapshot();
     const transpiledR = transpile(template, {
         defaultExportName: "SampleComponent",
@@ -54,7 +71,9 @@ test("Unbuffered multiline code", () => {
             a: 10,
             b: 20
         }
-    #bar.foo = obj.a`;
+
+    const Hello = () =>
+        #bar.foo = obj.a`;
     expect(parsePug(template)).toMatchSnapshot();
     const transpiledR = transpile(template, {
         defaultExportName: "SampleComponent",
@@ -65,8 +84,9 @@ test("Unbuffered multiline code", () => {
 
 test("Sanitization of buffered code", () => {
     const template = dedent`
-    #bar.foo
-        = '<div>Hello</div>'`;
+    const Hello = () =>
+        #bar.foo
+            = '<div>Hello</div>'`;
     expect(parsePug(template)).toMatchSnapshot();
     const transpiledR = transpile(template, {
         defaultExportName: "SampleComponent",
@@ -75,28 +95,15 @@ test("Sanitization of buffered code", () => {
     expect(transpiledR).toMatchSnapshot();
 });
 
-test("Top level scripts", () => {
+test("Assigning elements", () => {
     const template = dedent`
-    script.
-        import SomeTag from "./SomeTag";
+    const Hello = () =>
+        - const foo =
+          div.hello
+            | World
 
-    div.hello
-        SomeTag(name=props.foo)`;
-    expect(parsePug(template)).toMatchSnapshot();
-    const transpiledR = transpile(template);
-    expect(isEmpty(transpiledR.errors)).toBe(true);
-    expect(transpiledR).toMatchSnapshot();
-});
-
-test("Props interface detection", () => {
-    const template = dedent`
-    script.
-        interface ITestComponentProps {
-            foo: string;
-        }
-
-    div.hello
-        SomeTag(name=props.foo)`;
+        div.hello
+            SomeTag(name=foo)`;
     expect(parsePug(template)).toMatchSnapshot();
     const transpiledR: any = transpile(template, {
         defaultExportName: "TestComponent",
@@ -105,78 +112,16 @@ test("Props interface detection", () => {
     expect(transpiledR).toMatchSnapshot();
 });
 
-test("Assigning react elements", () => {
-    const template = dedent`
-    - const foo =
-      div.hello
-        | World
-
-    div.hello
-        SomeTag(name=foo)`;
-    expect(parsePug(template)).toMatchSnapshot();
-    const transpiledR: any = transpile(template, {
-        defaultExportName: "TestComponent",
-    });
-    expect(isEmpty(transpiledR.errors)).toBe(true);
-    expect(transpiledR).toMatchSnapshot();
-});
-
-test("Internal functions returning JSX", () => {
-    const template = dedent`
-    - const SomeTag = () =>
-      div.hello
-        | World
-
-    div.hello
-        SomeTag(name=foo)`;
-    expect(parsePug(template)).toMatchSnapshot();
-    const transpiledR: any = transpile(template, {
-        defaultExportName: "TestComponent",
-    });
-    expect(isEmpty(transpiledR.errors)).toBe(true);
-    expect(transpiledR).toMatchSnapshot();
-});
-
-test("Lifted function components", () => {
-    const template = dedent`
-    script(type="text/molosser")
-        - const SomeTag = () =>
-            - const [currentCount, setCount] = useState(0)
-            div.hello
-                = currentCount
-
-    div.hello
-        SomeTag(name=foo)`;
-    expect(parsePug(template)).toMatchSnapshot();
-    const transpiledR: any = transpile(template, {
-        defaultExportName: "TestComponent",
-    });
-    expect(isEmpty(transpiledR.errors)).toBe(true);
-    expect(transpiledR).toMatchSnapshot();
-});
 
 test("Render props", () => {
     const template = dedent`
-    AppContext.Consumer
-        = (app) =>
-            if app.repositoryRoot
-                #workspace Success
-            else
-                #workspace Failure`;
-    expect(parsePug(template)).toMatchSnapshot();
-    const transpiledR: any = transpile(template);
-    expect(isEmpty(transpiledR.errors)).toBe(true);
-    expect(transpiledR).toMatchSnapshot();
-});
-
-test("Without default export", () => {
-    const template = dedent`
-    script(type="text/molosser")
-        - const Foo = () =>
-            #foo.bar
-                | Foo Bar
-        - export default Foo
-    `;
+    const Hello = () =>
+        AppContext.Consumer
+            = (app) =>
+                if app.repositoryRoot
+                    #workspace Success
+                else
+                    #workspace Failure`;
     expect(parsePug(template)).toMatchSnapshot();
     const transpiledR: any = transpile(template);
     expect(isEmpty(transpiledR.errors)).toBe(true);
@@ -185,9 +130,13 @@ test("Without default export", () => {
 
 test("Multiple children in nested block", () => {
     const template = dedent`
-    script(type="text/molosser")
         - const Foo = () =>
             #foo.bar
+                | Foo Bar
+            #bar.baz
+                | Bar baz
+        - const Bar = () =>
+            #foo.bar.baz
                 | Foo Bar
             #bar.baz
                 | Bar baz

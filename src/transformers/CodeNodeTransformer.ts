@@ -20,7 +20,7 @@ export class CodeNodeTransformer extends Transformer<Pug.CodeNode, t.Node[]> {
         let content = this.input.val || "";
         if (this.input.block) {
             const blockList = this.delegateTo(PugNodeTransformer, this.input.block);
-            const placeholder = uniqueId("MOLOSSER__BLOCK__");
+            const placeholder = uniqueId("PUG2TSX__BLOCK__");
             if (blockList) {
                 if (blockList.length > 1) {
                     content += ` ${placeholder}`;

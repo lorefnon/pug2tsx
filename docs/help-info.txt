@@ -1,4 +1,4 @@
-Molosser is a concise indentation-based templating language that compiles to typescript based react components.
+pug2tsx compiles pug templates to tsx/jsx, which can be used by any supporting libraries that understand jsx like Solid.js, React etc.
 
 --help Show help info
 -i Input directory

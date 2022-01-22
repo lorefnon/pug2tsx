@@ -49,10 +49,10 @@ export class FileTransfomer extends Transformer<string, string> {
         }
         return ast;
     }
-    serialize(statements: t.Statement[]) {
+    serialize(nodes: t.Node[]) {
         let result: string;
         try {
-            result = statements.map(n => generateJS(n).code).join("\n\n");
+            result = nodes.map(n => generateJS(n).code).join("\n\n");
         } catch (e) {
             this.pushError({
                 code: ErrorCode.GenerationError,
@@ -68,6 +68,8 @@ export class FileTransfomer extends Transformer<string, string> {
                 parser: "babel",
             });
         } catch (e) {
+            console.log('Generated js code: ')
+            console.log(result);
             this.pushError({
                 code: ErrorCode.GenerationError,
                 reasons: ["Failed to prettify generated javascript"],

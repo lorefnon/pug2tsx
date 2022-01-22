@@ -5,129 +5,144 @@ Object {
   "line": 0,
   "nodes": Array [
     Object {
-      "attributeBlocks": Array [],
-      "attrs": Array [
-        Object {
-          "column": 3,
-          "line": 1,
-          "mustEscape": true,
-          "name": "class",
-          "val": "'button'",
-        },
-        Object {
-          "column": 18,
-          "line": 1,
-          "mustEscape": true,
-          "name": "href",
-          "val": "'google.com'",
-        },
-      ],
       "block": Object {
-        "line": 1,
+        "line": 2,
         "nodes": Array [
           Object {
-            "column": 37,
-            "line": 1,
-            "type": "Text",
-            "val": "Google",
+            "attributeBlocks": Array [],
+            "attrs": Array [
+              Object {
+                "column": 7,
+                "line": 2,
+                "mustEscape": true,
+                "name": "class",
+                "val": "'button'",
+              },
+              Object {
+                "column": 22,
+                "line": 2,
+                "mustEscape": true,
+                "name": "href",
+                "val": "'google.com'",
+              },
+            ],
+            "block": Object {
+              "line": 2,
+              "nodes": Array [
+                Object {
+                  "column": 41,
+                  "line": 2,
+                  "type": "Text",
+                  "val": "Google",
+                },
+              ],
+              "type": "Block",
+            },
+            "column": 5,
+            "isInline": true,
+            "line": 2,
+            "name": "a",
+            "selfClosing": false,
+            "type": "Tag",
           },
-        ],
-        "type": "Block",
-      },
-      "column": 1,
-      "isInline": true,
-      "line": 1,
-      "name": "a",
-      "selfClosing": false,
-      "type": "Tag",
-    },
-    Object {
-      "column": 2,
-      "line": 2,
-      "type": "Text",
-      "val": "",
-    },
-    Object {
-      "column": 1,
-      "line": 3,
-      "type": "Text",
-      "val": "
-",
-    },
-    Object {
-      "column": 2,
-      "line": 3,
-      "type": "Text",
-      "val": "",
-    },
-    Object {
-      "attributeBlocks": Array [],
-      "attrs": Array [
-        Object {
-          "column": 3,
-          "line": 4,
-          "mustEscape": true,
-          "name": "class",
-          "val": "'button'",
-        },
-        Object {
-          "column": 19,
-          "line": 4,
-          "mustEscape": true,
-          "name": "href",
-          "val": "'google.com'",
-        },
-      ],
-      "block": Object {
-        "line": 4,
-        "nodes": Array [
           Object {
-            "column": 38,
+            "column": 6,
+            "line": 3,
+            "type": "Text",
+            "val": "",
+          },
+          Object {
+            "column": 1,
             "line": 4,
             "type": "Text",
-            "val": "Google",
+            "val": "
+",
+          },
+          Object {
+            "column": 6,
+            "line": 4,
+            "type": "Text",
+            "val": "",
+          },
+          Object {
+            "attributeBlocks": Array [],
+            "attrs": Array [
+              Object {
+                "column": 7,
+                "line": 5,
+                "mustEscape": true,
+                "name": "class",
+                "val": "'button'",
+              },
+              Object {
+                "column": 23,
+                "line": 5,
+                "mustEscape": true,
+                "name": "href",
+                "val": "'google.com'",
+              },
+            ],
+            "block": Object {
+              "line": 5,
+              "nodes": Array [
+                Object {
+                  "column": 42,
+                  "line": 5,
+                  "type": "Text",
+                  "val": "Google",
+                },
+              ],
+              "type": "Block",
+            },
+            "column": 5,
+            "isInline": true,
+            "line": 5,
+            "name": "a",
+            "selfClosing": false,
+            "type": "Tag",
+          },
+          Object {
+            "buffer": false,
+            "column": 5,
+            "isInline": false,
+            "line": 6,
+            "mustEscape": false,
+            "type": "Code",
+            "val": "var authenticated = true",
+          },
+          Object {
+            "attributeBlocks": Array [],
+            "attrs": Array [
+              Object {
+                "column": 9,
+                "line": 7,
+                "mustEscape": true,
+                "name": "class",
+                "val": "(authenticated ? 'authed' : 'anon')",
+              },
+            ],
+            "block": Object {
+              "line": 7,
+              "nodes": Array [],
+              "type": "Block",
+            },
+            "column": 5,
+            "isInline": false,
+            "line": 7,
+            "name": "div",
+            "selfClosing": false,
+            "type": "Tag",
           },
         ],
         "type": "Block",
       },
-      "column": 1,
-      "isInline": true,
-      "line": 4,
-      "name": "a",
-      "selfClosing": false,
-      "type": "Tag",
-    },
-    Object {
       "buffer": false,
       "column": 1,
       "isInline": false,
-      "line": 5,
+      "line": 1,
       "mustEscape": false,
       "type": "Code",
-      "val": "var authenticated = true",
-    },
-    Object {
-      "attributeBlocks": Array [],
-      "attrs": Array [
-        Object {
-          "column": 5,
-          "line": 6,
-          "mustEscape": true,
-          "name": "class",
-          "val": "(authenticated ? 'authed' : 'anon')",
-        },
-      ],
-      "block": Object {
-        "line": 6,
-        "nodes": Array [],
-        "type": "Block",
-      },
-      "column": 1,
-      "isInline": false,
-      "line": 6,
-      "name": "div",
-      "selfClosing": false,
-      "type": "Tag",
+      "val": "const Foo = () =>",
     },
   ],
   "type": "Block",
@@ -137,9 +152,7 @@ Object {
 exports[`Attributes Attribute expressions 2`] = `
 Object {
   "errors": Array [],
-  "result": "import * as React from \\"react\\";
-
-export default function SampleComponent(props: any) {
+  "result": "const Foo = () => {
   return (
     <>
       <a href={\\"google.com\\"} className={\\"button\\"}>
@@ -154,7 +167,7 @@ export default function SampleComponent(props: any) {
       })()}
     </>
   );
-}
+};
 ",
 }
 `;
@@ -164,41 +177,56 @@ Object {
   "line": 0,
   "nodes": Array [
     Object {
-      "attributeBlocks": Array [],
-      "attrs": Array [
-        Object {
-          "column": 5,
-          "line": 2,
-          "mustEscape": true,
-          "name": "type",
-          "val": "'checkbox'",
-        },
-        Object {
-          "column": 5,
-          "line": 3,
-          "mustEscape": true,
-          "name": "name",
-          "val": "'agreement'",
-        },
-        Object {
-          "column": 5,
-          "line": 4,
-          "mustEscape": true,
-          "name": "checked",
-          "val": true,
-        },
-      ],
       "block": Object {
-        "line": 1,
-        "nodes": Array [],
+        "line": 2,
+        "nodes": Array [
+          Object {
+            "attributeBlocks": Array [],
+            "attrs": Array [
+              Object {
+                "column": 9,
+                "line": 3,
+                "mustEscape": true,
+                "name": "type",
+                "val": "'checkbox'",
+              },
+              Object {
+                "column": 9,
+                "line": 4,
+                "mustEscape": true,
+                "name": "name",
+                "val": "'agreement'",
+              },
+              Object {
+                "column": 9,
+                "line": 5,
+                "mustEscape": true,
+                "name": "checked",
+                "val": true,
+              },
+            ],
+            "block": Object {
+              "line": 2,
+              "nodes": Array [],
+              "type": "Block",
+            },
+            "column": 5,
+            "isInline": false,
+            "line": 2,
+            "name": "input",
+            "selfClosing": false,
+            "type": "Tag",
+          },
+        ],
         "type": "Block",
       },
+      "buffer": false,
       "column": 1,
       "isInline": false,
       "line": 1,
-      "name": "input",
-      "selfClosing": false,
-      "type": "Tag",
+      "mustEscape": false,
+      "type": "Code",
+      "val": "const Foo = () =>",
     },
   ],
   "type": "Block",
@@ -208,11 +236,9 @@ Object {
 exports[`Attributes Multiline attributes 2`] = `
 Object {
   "errors": Array [],
-  "result": "import * as React from \\"react\\";
-
-export default function SampleComponent(props: any) {
-  return <input type={\\"checkbox\\"} name={\\"agreement\\"} checked={true}></input>;
-}
+  "result": "const Foo = () => (
+  <input type={\\"checkbox\\"} name={\\"agreement\\"} checked={true}></input>
+);
 ",
 }
 `;
@@ -222,64 +248,79 @@ Object {
   "line": 0,
   "nodes": Array [
     Object {
-      "attributeBlocks": Array [],
-      "attrs": Array [
-        Object {
-          "column": 5,
-          "line": 1,
-          "mustEscape": true,
-          "name": "class",
-          "val": "'div-class'",
-        },
-        Object {
-          "column": 24,
-          "line": 1,
-          "mustEscape": true,
-          "name": "(click)",
-          "val": "'play()'",
-        },
-      ],
       "block": Object {
-        "line": 1,
-        "nodes": Array [],
+        "line": 2,
+        "nodes": Array [
+          Object {
+            "attributeBlocks": Array [],
+            "attrs": Array [
+              Object {
+                "column": 9,
+                "line": 2,
+                "mustEscape": true,
+                "name": "class",
+                "val": "'div-class'",
+              },
+              Object {
+                "column": 28,
+                "line": 2,
+                "mustEscape": true,
+                "name": "(click)",
+                "val": "'play()'",
+              },
+            ],
+            "block": Object {
+              "line": 2,
+              "nodes": Array [],
+              "type": "Block",
+            },
+            "column": 5,
+            "isInline": false,
+            "line": 2,
+            "name": "div",
+            "selfClosing": false,
+            "type": "Tag",
+          },
+          Object {
+            "attributeBlocks": Array [],
+            "attrs": Array [
+              Object {
+                "column": 9,
+                "line": 3,
+                "mustEscape": true,
+                "name": "class",
+                "val": "'div-class'",
+              },
+              Object {
+                "column": 27,
+                "line": 3,
+                "mustEscape": true,
+                "name": "(click)",
+                "val": "'play()'",
+              },
+            ],
+            "block": Object {
+              "line": 3,
+              "nodes": Array [],
+              "type": "Block",
+            },
+            "column": 5,
+            "isInline": false,
+            "line": 3,
+            "name": "div",
+            "selfClosing": false,
+            "type": "Tag",
+          },
+        ],
         "type": "Block",
       },
+      "buffer": false,
       "column": 1,
       "isInline": false,
       "line": 1,
-      "name": "div",
-      "selfClosing": false,
-      "type": "Tag",
-    },
-    Object {
-      "attributeBlocks": Array [],
-      "attrs": Array [
-        Object {
-          "column": 5,
-          "line": 2,
-          "mustEscape": true,
-          "name": "class",
-          "val": "'div-class'",
-        },
-        Object {
-          "column": 23,
-          "line": 2,
-          "mustEscape": true,
-          "name": "(click)",
-          "val": "'play()'",
-        },
-      ],
-      "block": Object {
-        "line": 2,
-        "nodes": Array [],
-        "type": "Block",
-      },
-      "column": 1,
-      "isInline": false,
-      "line": 2,
-      "name": "div",
-      "selfClosing": false,
-      "type": "Tag",
+      "mustEscape": false,
+      "type": "Code",
+      "val": "const Foo = () =>",
     },
   ],
   "type": "Block",
@@ -289,26 +330,24 @@ Object {
 exports[`Attributes Quoted attributes 2`] = `
 Object {
   "errors": Array [],
-  "result": "import * as React from \\"react\\";
-
-export default function SampleComponent(props: any) {
+  "result": "const Foo = () => {
   return (
     <>
       <div
         {...{
-          \\"(click)\\": \\"play()\\"
+          \\"(click)\\": \\"play()\\",
         }}
         className={\\"div-class\\"}
       ></div>
       <div
         {...{
-          \\"(click)\\": \\"play()\\"
+          \\"(click)\\": \\"play()\\",
         }}
         className={\\"div-class\\"}
       ></div>
     </>
   );
-}
+};
 ",
 }
 `;
@@ -318,27 +357,42 @@ Object {
   "line": 0,
   "nodes": Array [
     Object {
-      "attributeBlocks": Array [],
-      "attrs": Array [
-        Object {
-          "column": 3,
-          "line": 1,
-          "mustEscape": true,
-          "name": "style",
-          "val": "{color: 'red', background: 'green'}",
-        },
-      ],
       "block": Object {
-        "line": 1,
-        "nodes": Array [],
+        "line": 2,
+        "nodes": Array [
+          Object {
+            "attributeBlocks": Array [],
+            "attrs": Array [
+              Object {
+                "column": 7,
+                "line": 2,
+                "mustEscape": true,
+                "name": "style",
+                "val": "{color: 'red', background: 'green'}",
+              },
+            ],
+            "block": Object {
+              "line": 2,
+              "nodes": Array [],
+              "type": "Block",
+            },
+            "column": 5,
+            "isInline": true,
+            "line": 2,
+            "name": "a",
+            "selfClosing": false,
+            "type": "Tag",
+          },
+        ],
         "type": "Block",
       },
+      "buffer": false,
       "column": 1,
-      "isInline": true,
+      "isInline": false,
       "line": 1,
-      "name": "a",
-      "selfClosing": false,
-      "type": "Tag",
+      "mustEscape": false,
+      "type": "Code",
+      "val": "const Foo = () =>",
     },
   ],
   "type": "Block",
@@ -348,18 +402,14 @@ Object {
 exports[`Attributes Style attributes 2`] = `
 Object {
   "errors": Array [],
-  "result": "import * as React from \\"react\\";
-
-export default function SampleComponent(props: any) {
-  return (
-    <a
-      style={{
-        color: \\"red\\",
-        background: \\"green\\"
-      }}
-    ></a>
-  );
-}
+  "result": "const Foo = () => (
+  <a
+    style={{
+      color: \\"red\\",
+      background: \\"green\\",
+    }}
+  ></a>
+);
 ",
 }
 `;
@@ -369,145 +419,160 @@ Object {
   "line": 0,
   "nodes": Array [
     Object {
+      "block": Object {
+        "line": 2,
+        "nodes": Array [
+          Object {
+            "buffer": false,
+            "column": 5,
+            "isInline": false,
+            "line": 2,
+            "mustEscape": false,
+            "type": "Code",
+            "val": "var friends = 10",
+          },
+          Object {
+            "block": Object {
+              "line": 4,
+              "nodes": Array [
+                Object {
+                  "block": Object {
+                    "line": 5,
+                    "nodes": Array [
+                      Object {
+                        "attributeBlocks": Array [],
+                        "attrs": Array [],
+                        "block": Object {
+                          "line": 5,
+                          "nodes": Array [
+                            Object {
+                              "column": 15,
+                              "line": 5,
+                              "type": "Text",
+                              "val": "you have no friends",
+                            },
+                          ],
+                          "type": "Block",
+                        },
+                        "column": 13,
+                        "isInline": false,
+                        "line": 5,
+                        "name": "p",
+                        "selfClosing": false,
+                        "type": "Tag",
+                      },
+                    ],
+                    "type": "Block",
+                  },
+                  "column": 9,
+                  "debug": false,
+                  "expr": "0",
+                  "line": 4,
+                  "type": "When",
+                },
+                Object {
+                  "block": Object {
+                    "line": 7,
+                    "nodes": Array [
+                      Object {
+                        "attributeBlocks": Array [],
+                        "attrs": Array [],
+                        "block": Object {
+                          "line": 7,
+                          "nodes": Array [
+                            Object {
+                              "column": 15,
+                              "line": 7,
+                              "type": "Text",
+                              "val": "you have a friend",
+                            },
+                          ],
+                          "type": "Block",
+                        },
+                        "column": 13,
+                        "isInline": false,
+                        "line": 7,
+                        "name": "p",
+                        "selfClosing": false,
+                        "type": "Tag",
+                      },
+                    ],
+                    "type": "Block",
+                  },
+                  "column": 9,
+                  "debug": false,
+                  "expr": "1",
+                  "line": 6,
+                  "type": "When",
+                },
+                Object {
+                  "block": Object {
+                    "line": 9,
+                    "nodes": Array [
+                      Object {
+                        "attributeBlocks": Array [],
+                        "attrs": Array [],
+                        "block": Object {
+                          "line": 9,
+                          "nodes": Array [
+                            Object {
+                              "column": 15,
+                              "line": 9,
+                              "type": "Text",
+                              "val": "you have ",
+                            },
+                            Object {
+                              "buffer": true,
+                              "column": 24,
+                              "isInline": true,
+                              "line": 9,
+                              "mustEscape": true,
+                              "type": "Code",
+                              "val": "friends",
+                            },
+                            Object {
+                              "column": 34,
+                              "line": 9,
+                              "type": "Text",
+                              "val": " friends",
+                            },
+                          ],
+                          "type": "Block",
+                        },
+                        "column": 13,
+                        "isInline": false,
+                        "line": 9,
+                        "name": "p",
+                        "selfClosing": false,
+                        "type": "Tag",
+                      },
+                    ],
+                    "type": "Block",
+                  },
+                  "column": 9,
+                  "debug": false,
+                  "expr": "default",
+                  "line": 8,
+                  "type": "When",
+                },
+              ],
+              "type": "Block",
+            },
+            "column": 5,
+            "expr": "friends",
+            "line": 3,
+            "type": "Case",
+          },
+        ],
+        "type": "Block",
+      },
       "buffer": false,
       "column": 1,
       "isInline": false,
       "line": 1,
       "mustEscape": false,
       "type": "Code",
-      "val": "var friends = 10",
-    },
-    Object {
-      "block": Object {
-        "line": 3,
-        "nodes": Array [
-          Object {
-            "block": Object {
-              "line": 4,
-              "nodes": Array [
-                Object {
-                  "attributeBlocks": Array [],
-                  "attrs": Array [],
-                  "block": Object {
-                    "line": 4,
-                    "nodes": Array [
-                      Object {
-                        "column": 11,
-                        "line": 4,
-                        "type": "Text",
-                        "val": "you have no friends",
-                      },
-                    ],
-                    "type": "Block",
-                  },
-                  "column": 9,
-                  "isInline": false,
-                  "line": 4,
-                  "name": "p",
-                  "selfClosing": false,
-                  "type": "Tag",
-                },
-              ],
-              "type": "Block",
-            },
-            "column": 5,
-            "debug": false,
-            "expr": "0",
-            "line": 3,
-            "type": "When",
-          },
-          Object {
-            "block": Object {
-              "line": 6,
-              "nodes": Array [
-                Object {
-                  "attributeBlocks": Array [],
-                  "attrs": Array [],
-                  "block": Object {
-                    "line": 6,
-                    "nodes": Array [
-                      Object {
-                        "column": 11,
-                        "line": 6,
-                        "type": "Text",
-                        "val": "you have a friend",
-                      },
-                    ],
-                    "type": "Block",
-                  },
-                  "column": 9,
-                  "isInline": false,
-                  "line": 6,
-                  "name": "p",
-                  "selfClosing": false,
-                  "type": "Tag",
-                },
-              ],
-              "type": "Block",
-            },
-            "column": 5,
-            "debug": false,
-            "expr": "1",
-            "line": 5,
-            "type": "When",
-          },
-          Object {
-            "block": Object {
-              "line": 8,
-              "nodes": Array [
-                Object {
-                  "attributeBlocks": Array [],
-                  "attrs": Array [],
-                  "block": Object {
-                    "line": 8,
-                    "nodes": Array [
-                      Object {
-                        "column": 11,
-                        "line": 8,
-                        "type": "Text",
-                        "val": "you have ",
-                      },
-                      Object {
-                        "buffer": true,
-                        "column": 20,
-                        "isInline": true,
-                        "line": 8,
-                        "mustEscape": true,
-                        "type": "Code",
-                        "val": "friends",
-                      },
-                      Object {
-                        "column": 30,
-                        "line": 8,
-                        "type": "Text",
-                        "val": " friends",
-                      },
-                    ],
-                    "type": "Block",
-                  },
-                  "column": 9,
-                  "isInline": false,
-                  "line": 8,
-                  "name": "p",
-                  "selfClosing": false,
-                  "type": "Tag",
-                },
-              ],
-              "type": "Block",
-            },
-            "column": 5,
-            "debug": false,
-            "expr": "default",
-            "line": 7,
-            "type": "When",
-          },
-        ],
-        "type": "Block",
-      },
-      "column": 1,
-      "expr": "friends",
-      "line": 2,
-      "type": "Case",
+      "val": "const Foo = () => ",
     },
   ],
   "type": "Block",
@@ -517,9 +582,7 @@ Object {
 exports[`Case Default usage 2`] = `
 Object {
   "errors": Array [],
-  "result": "import * as React from \\"react\\";
-
-export default function SampleComponent(props: any) {
+  "result": "const Foo = () => {
   var friends = 10;
   return (
     <>
@@ -537,7 +600,7 @@ export default function SampleComponent(props: any) {
       })()}
     </>
   );
-}
+};
 ",
 }
 `;
@@ -547,273 +610,288 @@ Object {
   "line": 0,
   "nodes": Array [
     Object {
+      "block": Object {
+        "line": 2,
+        "nodes": Array [
+          Object {
+            "buffer": false,
+            "column": 5,
+            "isInline": false,
+            "line": 2,
+            "mustEscape": false,
+            "type": "Code",
+            "val": "var user = { description: 'foo bar baz' }",
+          },
+          Object {
+            "buffer": false,
+            "column": 5,
+            "isInline": false,
+            "line": 3,
+            "mustEscape": false,
+            "type": "Code",
+            "val": "var authorised = false",
+          },
+          Object {
+            "attributeBlocks": Array [],
+            "attrs": Array [
+              Object {
+                "column": 5,
+                "line": 4,
+                "mustEscape": false,
+                "name": "id",
+                "val": "'user'",
+              },
+            ],
+            "block": Object {
+              "line": 4,
+              "nodes": Array [
+                Object {
+                  "alternate": Object {
+                    "alternate": Object {
+                      "line": 14,
+                      "nodes": Array [
+                        Object {
+                          "attributeBlocks": Array [],
+                          "attrs": Array [
+                            Object {
+                              "column": 15,
+                              "line": 14,
+                              "mustEscape": false,
+                              "name": "class",
+                              "val": "'red'",
+                            },
+                          ],
+                          "block": Object {
+                            "line": 14,
+                            "nodes": Array [
+                              Object {
+                                "column": 20,
+                                "line": 14,
+                                "type": "Text",
+                                "val": "Description",
+                              },
+                            ],
+                            "type": "Block",
+                          },
+                          "column": 13,
+                          "isInline": false,
+                          "line": 14,
+                          "name": "h2",
+                          "selfClosing": false,
+                          "type": "Tag",
+                        },
+                        Object {
+                          "attributeBlocks": Array [],
+                          "attrs": Array [
+                            Object {
+                              "column": 14,
+                              "line": 15,
+                              "mustEscape": false,
+                              "name": "class",
+                              "val": "'description'",
+                            },
+                          ],
+                          "block": Object {
+                            "line": 15,
+                            "nodes": Array [
+                              Object {
+                                "column": 27,
+                                "line": 15,
+                                "type": "Text",
+                                "val": "User has no description",
+                              },
+                            ],
+                            "type": "Block",
+                          },
+                          "column": 13,
+                          "isInline": false,
+                          "line": 15,
+                          "name": "p",
+                          "selfClosing": false,
+                          "type": "Tag",
+                        },
+                      ],
+                      "type": "Block",
+                    },
+                    "column": 9,
+                    "consequent": Object {
+                      "line": 9,
+                      "nodes": Array [
+                        Object {
+                          "attributeBlocks": Array [],
+                          "attrs": Array [
+                            Object {
+                              "column": 15,
+                              "line": 9,
+                              "mustEscape": false,
+                              "name": "class",
+                              "val": "'blue'",
+                            },
+                          ],
+                          "block": Object {
+                            "line": 9,
+                            "nodes": Array [
+                              Object {
+                                "column": 21,
+                                "line": 9,
+                                "type": "Text",
+                                "val": "Description",
+                              },
+                            ],
+                            "type": "Block",
+                          },
+                          "column": 13,
+                          "isInline": false,
+                          "line": 9,
+                          "name": "h2",
+                          "selfClosing": false,
+                          "type": "Tag",
+                        },
+                        Object {
+                          "attributeBlocks": Array [],
+                          "attrs": Array [
+                            Object {
+                              "column": 14,
+                              "line": 10,
+                              "mustEscape": false,
+                              "name": "class",
+                              "val": "'description'",
+                            },
+                          ],
+                          "block": Object {
+                            "line": 10,
+                            "nodes": Array [
+                              Object {
+                                "column": 17,
+                                "line": 11,
+                                "type": "Text",
+                                "val": "User has no description,",
+                              },
+                              Object {
+                                "column": 1,
+                                "line": 12,
+                                "type": "Text",
+                                "val": "
+",
+                              },
+                              Object {
+                                "column": 17,
+                                "line": 12,
+                                "type": "Text",
+                                "val": "why not add one...",
+                              },
+                            ],
+                            "type": "Block",
+                          },
+                          "column": 13,
+                          "isInline": false,
+                          "line": 10,
+                          "name": "p",
+                          "selfClosing": false,
+                          "textOnly": true,
+                          "type": "Tag",
+                        },
+                      ],
+                      "type": "Block",
+                    },
+                    "line": 8,
+                    "test": "authorised",
+                    "type": "Conditional",
+                  },
+                  "column": 9,
+                  "consequent": Object {
+                    "line": 6,
+                    "nodes": Array [
+                      Object {
+                        "attributeBlocks": Array [],
+                        "attrs": Array [
+                          Object {
+                            "column": 15,
+                            "line": 6,
+                            "mustEscape": false,
+                            "name": "class",
+                            "val": "'green'",
+                          },
+                        ],
+                        "block": Object {
+                          "line": 6,
+                          "nodes": Array [
+                            Object {
+                              "column": 22,
+                              "line": 6,
+                              "type": "Text",
+                              "val": "Description",
+                            },
+                          ],
+                          "type": "Block",
+                        },
+                        "column": 13,
+                        "isInline": false,
+                        "line": 6,
+                        "name": "h2",
+                        "selfClosing": false,
+                        "type": "Tag",
+                      },
+                      Object {
+                        "attributeBlocks": Array [],
+                        "attrs": Array [
+                          Object {
+                            "column": 14,
+                            "line": 7,
+                            "mustEscape": false,
+                            "name": "class",
+                            "val": "'description'",
+                          },
+                        ],
+                        "block": Object {
+                          "line": 7,
+                          "nodes": Array [
+                            Object {
+                              "buffer": true,
+                              "column": 26,
+                              "isInline": true,
+                              "line": 7,
+                              "mustEscape": true,
+                              "type": "Code",
+                              "val": "user.description",
+                            },
+                          ],
+                          "type": "Block",
+                        },
+                        "column": 13,
+                        "isInline": false,
+                        "line": 7,
+                        "name": "p",
+                        "selfClosing": false,
+                        "type": "Tag",
+                      },
+                    ],
+                    "type": "Block",
+                  },
+                  "line": 5,
+                  "test": "user.description",
+                  "type": "Conditional",
+                },
+              ],
+              "type": "Block",
+            },
+            "column": 5,
+            "isInline": false,
+            "line": 4,
+            "name": "div",
+            "selfClosing": false,
+            "type": "Tag",
+          },
+        ],
+        "type": "Block",
+      },
       "buffer": false,
       "column": 1,
       "isInline": false,
       "line": 1,
       "mustEscape": false,
       "type": "Code",
-      "val": "var user = { description: 'foo bar baz' }",
-    },
-    Object {
-      "buffer": false,
-      "column": 1,
-      "isInline": false,
-      "line": 2,
-      "mustEscape": false,
-      "type": "Code",
-      "val": "var authorised = false",
-    },
-    Object {
-      "attributeBlocks": Array [],
-      "attrs": Array [
-        Object {
-          "column": 1,
-          "line": 3,
-          "mustEscape": false,
-          "name": "id",
-          "val": "'user'",
-        },
-      ],
-      "block": Object {
-        "line": 3,
-        "nodes": Array [
-          Object {
-            "alternate": Object {
-              "alternate": Object {
-                "line": 13,
-                "nodes": Array [
-                  Object {
-                    "attributeBlocks": Array [],
-                    "attrs": Array [
-                      Object {
-                        "column": 11,
-                        "line": 13,
-                        "mustEscape": false,
-                        "name": "class",
-                        "val": "'red'",
-                      },
-                    ],
-                    "block": Object {
-                      "line": 13,
-                      "nodes": Array [
-                        Object {
-                          "column": 16,
-                          "line": 13,
-                          "type": "Text",
-                          "val": "Description",
-                        },
-                      ],
-                      "type": "Block",
-                    },
-                    "column": 9,
-                    "isInline": false,
-                    "line": 13,
-                    "name": "h2",
-                    "selfClosing": false,
-                    "type": "Tag",
-                  },
-                  Object {
-                    "attributeBlocks": Array [],
-                    "attrs": Array [
-                      Object {
-                        "column": 10,
-                        "line": 14,
-                        "mustEscape": false,
-                        "name": "class",
-                        "val": "'description'",
-                      },
-                    ],
-                    "block": Object {
-                      "line": 14,
-                      "nodes": Array [
-                        Object {
-                          "column": 23,
-                          "line": 14,
-                          "type": "Text",
-                          "val": "User has no description",
-                        },
-                      ],
-                      "type": "Block",
-                    },
-                    "column": 9,
-                    "isInline": false,
-                    "line": 14,
-                    "name": "p",
-                    "selfClosing": false,
-                    "type": "Tag",
-                  },
-                ],
-                "type": "Block",
-              },
-              "column": 5,
-              "consequent": Object {
-                "line": 8,
-                "nodes": Array [
-                  Object {
-                    "attributeBlocks": Array [],
-                    "attrs": Array [
-                      Object {
-                        "column": 11,
-                        "line": 8,
-                        "mustEscape": false,
-                        "name": "class",
-                        "val": "'blue'",
-                      },
-                    ],
-                    "block": Object {
-                      "line": 8,
-                      "nodes": Array [
-                        Object {
-                          "column": 17,
-                          "line": 8,
-                          "type": "Text",
-                          "val": "Description",
-                        },
-                      ],
-                      "type": "Block",
-                    },
-                    "column": 9,
-                    "isInline": false,
-                    "line": 8,
-                    "name": "h2",
-                    "selfClosing": false,
-                    "type": "Tag",
-                  },
-                  Object {
-                    "attributeBlocks": Array [],
-                    "attrs": Array [
-                      Object {
-                        "column": 10,
-                        "line": 9,
-                        "mustEscape": false,
-                        "name": "class",
-                        "val": "'description'",
-                      },
-                    ],
-                    "block": Object {
-                      "line": 9,
-                      "nodes": Array [
-                        Object {
-                          "column": 13,
-                          "line": 10,
-                          "type": "Text",
-                          "val": "User has no description,",
-                        },
-                        Object {
-                          "column": 1,
-                          "line": 11,
-                          "type": "Text",
-                          "val": "
-",
-                        },
-                        Object {
-                          "column": 13,
-                          "line": 11,
-                          "type": "Text",
-                          "val": "why not add one...",
-                        },
-                      ],
-                      "type": "Block",
-                    },
-                    "column": 9,
-                    "isInline": false,
-                    "line": 9,
-                    "name": "p",
-                    "selfClosing": false,
-                    "textOnly": true,
-                    "type": "Tag",
-                  },
-                ],
-                "type": "Block",
-              },
-              "line": 7,
-              "test": "authorised",
-              "type": "Conditional",
-            },
-            "column": 5,
-            "consequent": Object {
-              "line": 5,
-              "nodes": Array [
-                Object {
-                  "attributeBlocks": Array [],
-                  "attrs": Array [
-                    Object {
-                      "column": 11,
-                      "line": 5,
-                      "mustEscape": false,
-                      "name": "class",
-                      "val": "'green'",
-                    },
-                  ],
-                  "block": Object {
-                    "line": 5,
-                    "nodes": Array [
-                      Object {
-                        "column": 18,
-                        "line": 5,
-                        "type": "Text",
-                        "val": "Description",
-                      },
-                    ],
-                    "type": "Block",
-                  },
-                  "column": 9,
-                  "isInline": false,
-                  "line": 5,
-                  "name": "h2",
-                  "selfClosing": false,
-                  "type": "Tag",
-                },
-                Object {
-                  "attributeBlocks": Array [],
-                  "attrs": Array [
-                    Object {
-                      "column": 10,
-                      "line": 6,
-                      "mustEscape": false,
-                      "name": "class",
-                      "val": "'description'",
-                    },
-                  ],
-                  "block": Object {
-                    "line": 6,
-                    "nodes": Array [
-                      Object {
-                        "buffer": true,
-                        "column": 22,
-                        "isInline": true,
-                        "line": 6,
-                        "mustEscape": true,
-                        "type": "Code",
-                        "val": "user.description",
-                      },
-                    ],
-                    "type": "Block",
-                  },
-                  "column": 9,
-                  "isInline": false,
-                  "line": 6,
-                  "name": "p",
-                  "selfClosing": false,
-                  "type": "Tag",
-                },
-              ],
-              "type": "Block",
-            },
-            "line": 4,
-            "test": "user.description",
-            "type": "Conditional",
-          },
-        ],
-        "type": "Block",
-      },
-      "column": 1,
-      "isInline": false,
-      "line": 3,
-      "name": "div",
-      "selfClosing": false,
-      "type": "Tag",
+      "val": "const Foo = () =>",
     },
   ],
   "type": "Block",
@@ -823,11 +901,9 @@ Object {
 exports[`Conditional Default usage 2`] = `
 Object {
   "errors": Array [],
-  "result": "import * as React from \\"react\\";
-
-export default function SampleComponent(props: any) {
+  "result": "const Foo = () => {
   var user = {
-    description: \\"foo bar baz\\"
+    description: \\"foo bar baz\\",
   };
   var authorised = false;
   return (
@@ -856,7 +932,7 @@ export default function SampleComponent(props: any) {
       )}
     </div>
   );
-}
+};
 ",
 }
 `;
@@ -866,59 +942,74 @@ Object {
   "line": 0,
   "nodes": Array [
     Object {
-      "attributeBlocks": Array [],
-      "attrs": Array [],
       "block": Object {
-        "line": 1,
+        "line": 2,
         "nodes": Array [
           Object {
+            "attributeBlocks": Array [],
+            "attrs": Array [],
             "block": Object {
-              "line": 3,
+              "line": 2,
               "nodes": Array [
                 Object {
-                  "attributeBlocks": Array [],
-                  "attrs": Array [],
                   "block": Object {
-                    "line": 3,
+                    "line": 4,
                     "nodes": Array [
                       Object {
-                        "buffer": true,
-                        "column": 11,
-                        "isInline": true,
-                        "line": 3,
-                        "mustEscape": true,
-                        "type": "Code",
-                        "val": "index + ': ' + val",
+                        "attributeBlocks": Array [],
+                        "attrs": Array [],
+                        "block": Object {
+                          "line": 4,
+                          "nodes": Array [
+                            Object {
+                              "buffer": true,
+                              "column": 15,
+                              "isInline": true,
+                              "line": 4,
+                              "mustEscape": true,
+                              "type": "Code",
+                              "val": "index + ': ' + val",
+                            },
+                          ],
+                          "type": "Block",
+                        },
+                        "column": 13,
+                        "isInline": false,
+                        "line": 4,
+                        "name": "li",
+                        "selfClosing": false,
+                        "type": "Tag",
                       },
                     ],
                     "type": "Block",
                   },
                   "column": 9,
-                  "isInline": false,
+                  "key": "index",
                   "line": 3,
-                  "name": "li",
-                  "selfClosing": false,
-                  "type": "Tag",
+                  "obj": "{1:'one',2:'two',3:'three'}",
+                  "type": "Each",
+                  "val": "val",
                 },
               ],
               "type": "Block",
             },
             "column": 5,
-            "key": "index",
+            "isInline": false,
             "line": 2,
-            "obj": "{1:'one',2:'two',3:'three'}",
-            "type": "Each",
-            "val": "val",
+            "name": "ul",
+            "selfClosing": false,
+            "type": "Tag",
           },
         ],
         "type": "Block",
       },
+      "buffer": false,
       "column": 1,
       "isInline": false,
       "line": 1,
-      "name": "ul",
-      "selfClosing": false,
-      "type": "Tag",
+      "mustEscape": false,
+      "type": "Code",
+      "val": "const Foo = () =>",
     },
   ],
   "type": "Block",
@@ -928,26 +1019,20 @@ Object {
 exports[`Each Iteration over object 2`] = `
 Object {
   "errors": Array [],
-  "result": "import * as React from \\"react\\";
-
-import { default as map } from \\"lodash/map\\";
-
-export default function SampleComponent(props: any) {
-  return (
-    <ul>
-      {map(
-        {
-          1: \\"one\\",
-          2: \\"two\\",
-          3: \\"three\\"
-        },
-        (val, index) => (
-          <li>{index + \\": \\" + val}</li>
-        )
-      )}
-    </ul>
-  );
-}
+  "result": "const Foo = () => (
+  <ul>
+    {map(
+      {
+        1: \\"one\\",
+        2: \\"two\\",
+        3: \\"three\\",
+      },
+      (val, index) => (
+        <li>{index + \\": \\" + val}</li>
+      )
+    )}
+  </ul>
+);
 ",
 }
 `;
@@ -957,59 +1042,74 @@ Object {
   "line": 0,
   "nodes": Array [
     Object {
-      "attributeBlocks": Array [],
-      "attrs": Array [],
       "block": Object {
-        "line": 1,
+        "line": 2,
         "nodes": Array [
           Object {
+            "attributeBlocks": Array [],
+            "attrs": Array [],
             "block": Object {
-              "line": 3,
+              "line": 2,
               "nodes": Array [
                 Object {
-                  "attributeBlocks": Array [],
-                  "attrs": Array [],
                   "block": Object {
-                    "line": 3,
+                    "line": 4,
                     "nodes": Array [
                       Object {
-                        "buffer": true,
-                        "column": 11,
-                        "isInline": true,
-                        "line": 3,
-                        "mustEscape": true,
-                        "type": "Code",
-                        "val": "val",
+                        "attributeBlocks": Array [],
+                        "attrs": Array [],
+                        "block": Object {
+                          "line": 4,
+                          "nodes": Array [
+                            Object {
+                              "buffer": true,
+                              "column": 15,
+                              "isInline": true,
+                              "line": 4,
+                              "mustEscape": true,
+                              "type": "Code",
+                              "val": "val",
+                            },
+                          ],
+                          "type": "Block",
+                        },
+                        "column": 13,
+                        "isInline": false,
+                        "line": 4,
+                        "name": "li",
+                        "selfClosing": false,
+                        "type": "Tag",
                       },
                     ],
                     "type": "Block",
                   },
                   "column": 9,
-                  "isInline": false,
+                  "key": null,
                   "line": 3,
-                  "name": "li",
-                  "selfClosing": false,
-                  "type": "Tag",
+                  "obj": "[1, 2, 3, 4, 5]",
+                  "type": "Each",
+                  "val": "val",
                 },
               ],
               "type": "Block",
             },
             "column": 5,
-            "key": null,
+            "isInline": false,
             "line": 2,
-            "obj": "[1, 2, 3, 4, 5]",
-            "type": "Each",
-            "val": "val",
+            "name": "ul",
+            "selfClosing": false,
+            "type": "Tag",
           },
         ],
         "type": "Block",
       },
+      "buffer": false,
       "column": 1,
       "isInline": false,
       "line": 1,
-      "name": "ul",
-      "selfClosing": false,
-      "type": "Tag",
+      "mustEscape": false,
+      "type": "Code",
+      "val": "const Foo = () =>",
     },
   ],
   "type": "Block",
@@ -1019,19 +1119,13 @@ Object {
 exports[`Each Iteration with member 2`] = `
 Object {
   "errors": Array [],
-  "result": "import * as React from \\"react\\";
-
-import { default as map } from \\"lodash/map\\";
-
-export default function SampleComponent(props: any) {
-  return (
-    <ul>
-      {map([1, 2, 3, 4, 5], val => (
-        <li>{val}</li>
-      ))}
-    </ul>
-  );
-}
+  "result": "const Foo = () => (
+  <ul>
+    {map([1, 2, 3, 4, 5], (val) => (
+      <li>{val}</li>
+    ))}
+  </ul>
+);
 ",
 }
 `;
@@ -1041,59 +1135,74 @@ Object {
   "line": 0,
   "nodes": Array [
     Object {
-      "attributeBlocks": Array [],
-      "attrs": Array [],
       "block": Object {
-        "line": 1,
+        "line": 2,
         "nodes": Array [
           Object {
+            "attributeBlocks": Array [],
+            "attrs": Array [],
             "block": Object {
-              "line": 3,
+              "line": 2,
               "nodes": Array [
                 Object {
-                  "attributeBlocks": Array [],
-                  "attrs": Array [],
                   "block": Object {
-                    "line": 3,
+                    "line": 4,
                     "nodes": Array [
                       Object {
-                        "buffer": true,
-                        "column": 11,
-                        "isInline": true,
-                        "line": 3,
-                        "mustEscape": true,
-                        "type": "Code",
-                        "val": "index + ': ' + val",
+                        "attributeBlocks": Array [],
+                        "attrs": Array [],
+                        "block": Object {
+                          "line": 4,
+                          "nodes": Array [
+                            Object {
+                              "buffer": true,
+                              "column": 15,
+                              "isInline": true,
+                              "line": 4,
+                              "mustEscape": true,
+                              "type": "Code",
+                              "val": "index + ': ' + val",
+                            },
+                          ],
+                          "type": "Block",
+                        },
+                        "column": 13,
+                        "isInline": false,
+                        "line": 4,
+                        "name": "li",
+                        "selfClosing": false,
+                        "type": "Tag",
                       },
                     ],
                     "type": "Block",
                   },
                   "column": 9,
-                  "isInline": false,
+                  "key": "index",
                   "line": 3,
-                  "name": "li",
-                  "selfClosing": false,
-                  "type": "Tag",
+                  "obj": "['zero', 'one', 'two']",
+                  "type": "Each",
+                  "val": "val",
                 },
               ],
               "type": "Block",
             },
             "column": 5,
-            "key": "index",
+            "isInline": false,
             "line": 2,
-            "obj": "['zero', 'one', 'two']",
-            "type": "Each",
-            "val": "val",
+            "name": "ul",
+            "selfClosing": false,
+            "type": "Tag",
           },
         ],
         "type": "Block",
       },
+      "buffer": false,
       "column": 1,
       "isInline": false,
       "line": 1,
-      "name": "ul",
-      "selfClosing": false,
-      "type": "Tag",
+      "mustEscape": false,
+      "type": "Code",
+      "val": "const Foo = () =>",
     },
   ],
   "type": "Block",
@@ -1103,19 +1212,13 @@ Object {
 exports[`Each Iteration with member and index 2`] = `
 Object {
   "errors": Array [],
-  "result": "import * as React from \\"react\\";
-
-import { default as map } from \\"lodash/map\\";
-
-export default function SampleComponent(props: any) {
-  return (
-    <ul>
-      {map([\\"zero\\", \\"one\\", \\"two\\"], (val, index) => (
-        <li>{index + \\": \\" + val}</li>
-      ))}
-    </ul>
-  );
-}
+  "result": "const Foo = () => (
+  <ul>
+    {map([\\"zero\\", \\"one\\", \\"two\\"], (val, index) => (
+      <li>{index + \\": \\" + val}</li>
+    ))}
+  </ul>
+);
 ",
 }
 `;
