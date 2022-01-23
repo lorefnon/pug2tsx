@@ -1,6 +1,6 @@
 {
     "name": "pug2tsx",
-    "version": "0.1.5",
+    "version": "1.0.0",
     "description": "Compile pug templates to tsx",
     "bugs": "https://github.com/lorefnon/pug2tsx/issues",
     "main": "lib/index.js",
