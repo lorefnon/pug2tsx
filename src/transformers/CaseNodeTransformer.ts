@@ -40,6 +40,7 @@ export class CaseNodeTransformer extends Transformer<Pug.CaseNode, t.Node> {
                 ),
                 [],
             );
+            this.commentLineNumber(this.output, this.input)
         } catch (e) {
             this.pushError({
                 code: ErrorCode.UnsupportedSyntaxError,

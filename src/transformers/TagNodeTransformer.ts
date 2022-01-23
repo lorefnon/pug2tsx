@@ -66,6 +66,7 @@ export class TagNodeTransformer extends Transformer<Pug.TagNode, t.Node> {
                 children,
                 false,
             );
+            this.commentLineNumber(this.output, this.input)
         } catch (e) {
             // TODO Improve this
             this.pushError({

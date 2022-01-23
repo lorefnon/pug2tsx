@@ -1,5 +1,22 @@
 pug2tsx compiles pug templates to tsx/jsx, which can be used by any supporting libraries that understand jsx like Solid.js, React etc.
 
 --help Show help info
--i Input directory
--o Output directory
+-i, --input-dir Input directory
+-o, --output-dir Output directory
+--watch Watch files input directory and compile on file change
+--skip-line-annotations Skip the comments indicating line numbers in source file
+
+Sample usage:
+
+1. Compile pug files in src/templates to src/components
+
+    pug2tsx -i ./src/templates -o ./src/components
+
+2. Compile pug files in src/components and save generated files in same directory
+
+    pug2tsx -i ./src/templates
+
+3. Transpile specific files
+
+    pug2tsx ./src/components/foo.pug ./src/components/bar.pug
+

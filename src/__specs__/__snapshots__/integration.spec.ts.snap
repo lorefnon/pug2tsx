@@ -126,12 +126,19 @@ Object {
 exports[`Assigning elements 2`] = `
 Object {
   "errors": Array [],
-  "result": "<const>
+  "result": "/*@pug:L1*/
+<const>
   Hello = () =>
   {(() => {
-    const foo = <div className={\\"hello\\"}>World</div>;
+    /*@pug:L2*/
+    const foo = (
+      /*@pug:L3*/
+      <div className={\\"hello\\"}>World</div>
+    );
     return (
+      /*@pug:L6*/
       <div className={\\"hello\\"}>
+        /*@pug:L7*/
         <SomeTag name={foo}></SomeTag>
       </div>
     );
@@ -294,20 +301,31 @@ Object {
 exports[`Interleaved unbuffered code 2`] = `
 Object {
   "errors": Array [],
-  "result": "<const>
+  "result": "/*@pug:L1*/
+<const>
   Hello = () =>
   {(() => {
+    /*@pug:L2*/
     const foo = \\"bar\\";
     return (
       <>
+        /*@pug:L3*/
         <div id={\\"bar\\"} className={\\"foo\\"}>
+          /*@pug:L4*/
           <div className={[\\"foo__node\\", \\"foo__node--aspect\\"].join(\\" \\")}>
             Test
           </div>
         </div>
         {(() => {
+          /*@pug:L5*/
           const bar = \\"baz\\";
-          return <div className={\\"hello\\"}>{\`Hello \\\\\${foo} \\\\\${bar}\`}</div>;
+          return (
+            /*@pug:L6*/
+            <div className={\\"hello\\"}>{
+              /*@pug:L7*/
+              \`Hello \\\\\${foo} \\\\\${bar}\`
+            }</div>
+          );
         })()}
       </>
     );
@@ -471,21 +489,32 @@ Object {
 exports[`Interpolated Code 2`] = `
 Object {
   "errors": Array [],
-  "result": "<const>
+  "result": "/*@pug:L1*/
+<const>
   Hello = () =>
   {(() => {
+    /*@pug:L2*/
     const foo = \\"bar\\";
     return (
       <>
+        /*@pug:L3*/
         <div id={\\"bar\\"} className={\\"foo\\"}>
+          /*@pug:L4*/
           <div
             data-bar={\\"baz\\"}
             className={[\\"foo__node\\", \\"foo__node--aspect\\"].join(\\" \\")}
           >
-            {foo}
+            {
+              /*@pug:L4*/
+              foo
+            }
           </div>
         </div>
-        <div className={\\"hello\\"}>{\`Hello \\\\\${foo}\`}</div>
+        /*@pug:L5*/
+        <div className={\\"hello\\"}>{
+          /*@pug:L6*/
+          \`Hello \\\\\${foo}\`
+        }</div>
       </>
     );
   })()}
@@ -700,12 +729,15 @@ Object {
 exports[`Multiple children in nested block 2`] = `
 Object {
   "errors": Array [],
-  "result": "const Foo = () => {
+  "result": "/*@pug:L1*/
+const Foo = () => {
   return (
     <>
+      /*@pug:L2*/
       <div id={\\"foo\\"} className={\\"bar\\"}>
         Foo Bar
       </div>
+      /*@pug:L4*/
       <div id={\\"bar\\"} className={\\"baz\\"}>
         Bar baz
       </div>
@@ -713,12 +745,15 @@ Object {
   );
 };
 
+/*@pug:L6*/
 const Bar = () => {
   return (
     <>
+      /*@pug:L7*/
       <div id={\\"foo\\"} className={[\\"bar\\", \\"baz\\"].join(\\" \\")}>
         Foo Bar
       </div>
+      /*@pug:L9*/
       <div id={\\"bar\\"} className={\\"baz\\"}>
         Bar baz
       </div>
@@ -726,6 +761,7 @@ const Bar = () => {
   );
 };
 
+/*@pug:L11*/
 export default Foo;
 ",
 }
@@ -840,9 +876,11 @@ Object {
 exports[`Pug inside arrow functions 2`] = `
 Object {
   "errors": Array [],
-  "result": "<const>
-  HelloWorld = () =>
+  "result": "/*@pug:L1*/
+<const>
+  HelloWorld = () => /*@pug:L2*/
   <div id={\\"bar\\"} className={\\"foo\\"}>
+    /*@pug:L3*/
     <div
       data-bar={\\"baz\\"}
       className={[\\"foo__node\\", \\"foo__node--aspect\\"].join(\\" \\")}
@@ -964,9 +1002,11 @@ Object {
 exports[`Pug inside old-school functions 2`] = `
 Object {
   "errors": Array [],
-  "result": "<function>
-  HelloWorld(props: SomeProps)
+  "result": "/*@pug:L1*/
+<function>
+  HelloWorld(props: SomeProps) /*@pug:L2*/
   <div id={\\"bar\\"} className={\\"foo\\"}>
+    /*@pug:L3*/
     <div
       data-bar={\\"baz\\"}
       className={[\\"foo__node\\", \\"foo__node--aspect\\"].join(\\" \\")}
@@ -1130,15 +1170,21 @@ Object {
 exports[`Render props 2`] = `
 Object {
   "errors": Array [],
-  "result": "<const>
-  Hello = () =>
+  "result": "/*@pug:L1*/
+<const>
+  Hello = () => /*@pug:L2*/
   <AppContext className={\\"Consumer\\"}>
-    {(app) =>
-      app.repositoryRoot ? (
-        <div id={\\"workspace\\"}>Success</div>
-      ) : (
-        <div id={\\"workspace\\"}>Failure</div>
-      )
+    {
+      /*@pug:L3*/
+      (app) =>
+        /*@pug:L4*/
+        app.repositoryRoot ? (
+          /*@pug:L5*/
+          <div id={\\"workspace\\"}>Success</div>
+        ) : (
+          /*@pug:L7*/
+          <div id={\\"workspace\\"}>Failure</div>
+        )
     }
   </AppContext>
 </const>;
@@ -1220,10 +1266,14 @@ Object {
 exports[`Sanitization of buffered code 2`] = `
 Object {
   "errors": Array [],
-  "result": "<const>
-  Hello = () =>
+  "result": "/*@pug:L1*/
+<const>
+  Hello = () => /*@pug:L2*/
   <div id={\\"bar\\"} className={\\"foo\\"}>
-    {\\"<div>Hello</div>\\"}
+    {
+      /*@pug:L3*/
+      \\"<div>Hello</div>\\"
+    }
   </div>
 </const>;
 ",
@@ -1314,13 +1364,15 @@ Object {
 exports[`Unbuffered multiline code 2`] = `
 Object {
   "errors": Array [],
-  "result": "const obj = {
+  "result": "/*@pug:L1*/
+const obj = {
   a: 10,
   b: 20,
 };
 
+/*@pug:L7*/
 <const>
-  Hello = () =>
+  Hello = () => /*@pug:L8*/
   <div id={\\"bar\\"} className={\\"foo\\"}>
     = obj.a
   </div>

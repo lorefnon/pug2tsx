@@ -15,6 +15,7 @@ export class ConditionalNodeTransformer extends Transformer<Pug.ConditionalNode,
                 (this.input.alternate && this.delegateTo(NodeChildTransformer, this.input.alternate)) ||
                     t.identifier("undefined"),
             );
+            this.commentLineNumber(this.output, this.input);
         } catch (e) {
             this.pushError({
                 code: ErrorCode.UnsupportedSyntaxError,

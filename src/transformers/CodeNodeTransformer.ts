@@ -47,6 +47,9 @@ export class CodeNodeTransformer extends Transformer<Pug.CodeNode, t.Node[]> {
                 parsed = castArray(template(content)(replacements));
             }
             this.output = parsed;
+            if (parsed.length > 0) {
+                this.commentLineNumber(parsed[0], this.input)
+            }
         } catch (e) {
             this.pushError({
                 code: ErrorCode.IncorrectSyntaxError,

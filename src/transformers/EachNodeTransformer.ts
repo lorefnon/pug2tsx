@@ -30,6 +30,7 @@ export class EachNodeTransformer extends Transformer<Pug.EachNode, t.Node> {
                     body,
                 ),
             ]);
+            this.commentLineNumber(this.output, this.input)
         } catch (e) {
             this.pushError({
                 code: ErrorCode.UnsupportedSyntaxError,

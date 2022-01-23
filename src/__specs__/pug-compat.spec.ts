@@ -1,7 +1,7 @@
-import { transpile } from "../compiler";
+import {transpile} from "../compiler";
 import dedent from "dedent";
-import { isEmpty } from "lodash";
-import { parsePug } from "../transformers/FileTransformer";
+import {isEmpty} from "lodash";
+import {parsePug} from "../transformers/FileTransformer";
 
 describe("Attributes", () => {
     test("Attribute expressions", () => {
@@ -15,9 +15,7 @@ describe("Attributes", () => {
             div(class=(authenticated ? 'authed' : 'anon'))
         `;
         expect(parsePug(template)).toMatchSnapshot();
-        const transpiledR = transpile(template, {
-            defaultExportName: "SampleComponent",
-        });
+        const transpiledR = transpile(template, {});
         expect(transpiledR).toMatchSnapshot();
         expect(isEmpty(transpiledR.errors)).toBe(true);
     });
@@ -32,9 +30,7 @@ describe("Attributes", () => {
             )
         `;
         expect(parsePug(template)).toMatchSnapshot();
-        const transpiledR = transpile(template, {
-            defaultExportName: "SampleComponent",
-        });
+        const transpiledR = transpile(template, {});
         expect(transpiledR).toMatchSnapshot();
         expect(isEmpty(transpiledR.errors)).toBe(true);
     });
@@ -45,9 +41,7 @@ describe("Attributes", () => {
             div(class='div-class', (click)='play()')
             div(class='div-class' '(click)'='play()')`;
         expect(parsePug(template)).toMatchSnapshot();
-        const transpiledR = transpile(template, {
-            defaultExportName: "SampleComponent",
-        });
+        const transpiledR = transpile(template, {});
         expect(transpiledR).toMatchSnapshot();
         expect(isEmpty(transpiledR.errors)).toBe(true);
     });
@@ -60,9 +54,7 @@ describe("Attributes", () => {
         - const Foo = () =>
             a(style={color: 'red', background: 'green'})`;
         expect(parsePug(template)).toMatchSnapshot();
-        const transpiledR = transpile(template, {
-            defaultExportName: "SampleComponent",
-        });
+        const transpiledR = transpile(template, {});
         expect(transpiledR).toMatchSnapshot();
         expect(isEmpty(transpiledR.errors)).toBe(true);
     });
@@ -86,9 +78,7 @@ describe("Case", () => {
                 default
                     p you have #{friends} friends`;
         expect(parsePug(template)).toMatchSnapshot();
-        const transpiledR = transpile(template, {
-            defaultExportName: "SampleComponent",
-        });
+        const transpiledR = transpile(template, {});
         expect(transpiledR).toMatchSnapshot();
         expect(isEmpty(transpiledR.errors)).toBe(true);
     });
@@ -107,15 +97,13 @@ describe("Conditional", () => {
                 else if authorised
                     h2.blue Description
                     p.description.
-                        User has no description,
+                        User has no descriptio
                         why not add one...
                 else
                     h2.red Description
                     p.description User has no description`;
         expect(parsePug(template)).toMatchSnapshot();
-        const transpiledR = transpile(template, {
-            defaultExportName: "SampleComponent",
-        });
+        const transpiledR = transpile(template, {});
         expect(transpiledR).toMatchSnapshot();
         expect(isEmpty(transpiledR.errors)).toBe(true);
     });
@@ -129,9 +117,7 @@ describe("Each", () => {
                 each val in [1, 2, 3, 4, 5]
                     li= val`;
         expect(parsePug(template)).toMatchSnapshot();
-        const transpiledR = transpile(template, {
-            defaultExportName: "SampleComponent",
-        });
+        const transpiledR = transpile(template, {});
         expect(transpiledR).toMatchSnapshot();
         expect(isEmpty(transpiledR.errors)).toBe(true);
     });
@@ -142,9 +128,7 @@ describe("Each", () => {
                 each val, index in ['zero', 'one', 'two']
                     li= index + ': ' + val`;
         expect(parsePug(template)).toMatchSnapshot();
-        const transpiledR = transpile(template, {
-            defaultExportName: "SampleComponent",
-        });
+        const transpiledR = transpile(template, {});
         expect(transpiledR).toMatchSnapshot();
         expect(isEmpty(transpiledR.errors)).toBe(true);
     });
@@ -155,9 +139,7 @@ describe("Each", () => {
                 each val, index in {1:'one',2:'two',3:'three'}
                     li= index + ': ' + val`;
         expect(parsePug(template)).toMatchSnapshot();
-        const transpiledR = transpile(template, {
-            defaultExportName: "SampleComponent",
-        });
+        const transpiledR = transpile(template, {});
         expect(transpiledR).toMatchSnapshot();
         expect(isEmpty(transpiledR.errors)).toBe(true);
     });

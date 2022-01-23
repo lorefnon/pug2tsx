@@ -1,6 +1,8 @@
 import { Maybe } from "../util-types";
 import { FileTransformationContext } from "./FileTransformationContext";
 import { CompilationError } from "../CompilationError";
+import * as t from "@babel/types"
+import * as Pug from "../pug"
 
 export abstract class Transformer<InputT, OutputT, ErrT = CompilationError> {
     public output: Maybe<OutputT>;
@@ -12,6 +14,11 @@ export abstract class Transformer<InputT, OutputT, ErrT = CompilationError> {
         const transformer = new Ctor(input, this.context);
         transformer.transform();
         return transformer.output;
+    }
+
+    commentLineNumber(targetNode: t.Node, sourceNode: Pug.Node) {
+        if (this.context.skipLineAnnotations) return;
+        t.addComment(targetNode, "leading", `@pug:L${sourceNode.line}`);
     }
 
     delegateOutputTo<LocalInputT>(Ctor: TransformerCtor<LocalInputT, OutputT, ErrT>, input: LocalInputT) {

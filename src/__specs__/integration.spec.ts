@@ -1,7 +1,7 @@
-import { transpile } from "../compiler";
+import {transpile} from "../compiler";
 import dedent from "dedent";
-import { isEmpty } from "lodash";
-import { parsePug } from "../transformers/FileTransformer";
+import {isEmpty} from "lodash";
+import {parsePug} from "../transformers/FileTransformer";
 
 test("Pug inside arrow functions", () => {
     const template = dedent`
@@ -10,9 +10,7 @@ test("Pug inside arrow functions", () => {
             .foo__node.foo__node--aspect(data-bar="baz")
                 | Hello world`;
     expect(parsePug(template)).toMatchSnapshot();
-    const transpiledR = transpile(template, {
-        defaultExportName: "SampleComponent",
-    });
+    const transpiledR = transpile(template, {});
     expect(transpiledR).toMatchSnapshot();
     expect(isEmpty(transpiledR.errors)).toBe(true);
 });
@@ -24,9 +22,7 @@ test("Pug inside old-school functions", () => {
             .foo__node.foo__node--aspect(data-bar="baz")
                 | Hello world`;
     expect(parsePug(template)).toMatchSnapshot();
-    const transpiledR = transpile(template, {
-        defaultExportName: "SampleComponent",
-    });
+    const transpiledR = transpile(template, {});
     expect(transpiledR).toMatchSnapshot();
     expect(isEmpty(transpiledR.errors)).toBe(true);
 });
@@ -40,9 +36,7 @@ test("Interpolated Code", () => {
         div.hello
             = \`Hello \${foo}\``;
     expect(parsePug(template)).toMatchSnapshot();
-    const transpiledR = transpile(template, {
-        defaultExportName: "SampleComponent",
-    });
+    const transpiledR = transpile(template, {});
     expect(isEmpty(transpiledR.errors)).toBe(true);
     expect(transpiledR).toMatchSnapshot();
 });
@@ -57,9 +51,7 @@ test("Interleaved unbuffered code", () => {
         div.hello
             = \`Hello \${foo} \${bar}\``;
     expect(parsePug(template)).toMatchSnapshot();
-    const transpiledR = transpile(template, {
-        defaultExportName: "SampleComponent",
-    });
+    const transpiledR = transpile(template, {});
     expect(isEmpty(transpiledR.errors)).toBe(true);
     expect(transpiledR).toMatchSnapshot();
 });
@@ -75,9 +67,7 @@ test("Unbuffered multiline code", () => {
     const Hello = () =>
         #bar.foo = obj.a`;
     expect(parsePug(template)).toMatchSnapshot();
-    const transpiledR = transpile(template, {
-        defaultExportName: "SampleComponent",
-    });
+    const transpiledR = transpile(template, {});
     expect(isEmpty(transpiledR.errors)).toBe(true);
     expect(transpiledR).toMatchSnapshot();
 });
@@ -88,9 +78,7 @@ test("Sanitization of buffered code", () => {
         #bar.foo
             = '<div>Hello</div>'`;
     expect(parsePug(template)).toMatchSnapshot();
-    const transpiledR = transpile(template, {
-        defaultExportName: "SampleComponent",
-    });
+    const transpiledR = transpile(template, {});
     expect(isEmpty(transpiledR.errors)).toBe(true);
     expect(transpiledR).toMatchSnapshot();
 });
@@ -105,9 +93,7 @@ test("Assigning elements", () => {
         div.hello
             SomeTag(name=foo)`;
     expect(parsePug(template)).toMatchSnapshot();
-    const transpiledR: any = transpile(template, {
-        defaultExportName: "TestComponent",
-    });
+    const transpiledR: any = transpile(template, {});
     expect(isEmpty(transpiledR.errors)).toBe(true);
     expect(transpiledR).toMatchSnapshot();
 });
