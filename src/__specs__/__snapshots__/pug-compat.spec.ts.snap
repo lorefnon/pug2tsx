@@ -1,24 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Attributes Attribute expressions 1`] = `
-Object {
+{
   "line": 0,
-  "nodes": Array [
-    Object {
-      "block": Object {
+  "nodes": [
+    {
+      "block": {
         "line": 2,
-        "nodes": Array [
-          Object {
-            "attributeBlocks": Array [],
-            "attrs": Array [
-              Object {
+        "nodes": [
+          {
+            "attributeBlocks": [],
+            "attrs": [
+              {
                 "column": 7,
                 "line": 2,
                 "mustEscape": true,
                 "name": "class",
                 "val": "'button'",
               },
-              Object {
+              {
                 "column": 22,
                 "line": 2,
                 "mustEscape": true,
@@ -26,10 +26,10 @@ Object {
                 "val": "'google.com'",
               },
             ],
-            "block": Object {
+            "block": {
               "line": 2,
-              "nodes": Array [
-                Object {
+              "nodes": [
+                {
                   "column": 41,
                   "line": 2,
                   "type": "Text",
@@ -45,36 +45,36 @@ Object {
             "selfClosing": false,
             "type": "Tag",
           },
-          Object {
+          {
             "column": 6,
             "line": 3,
             "type": "Text",
             "val": "",
           },
-          Object {
+          {
             "column": 1,
             "line": 4,
             "type": "Text",
             "val": "
 ",
           },
-          Object {
+          {
             "column": 6,
             "line": 4,
             "type": "Text",
             "val": "",
           },
-          Object {
-            "attributeBlocks": Array [],
-            "attrs": Array [
-              Object {
+          {
+            "attributeBlocks": [],
+            "attrs": [
+              {
                 "column": 7,
                 "line": 5,
                 "mustEscape": true,
                 "name": "class",
                 "val": "'button'",
               },
-              Object {
+              {
                 "column": 23,
                 "line": 5,
                 "mustEscape": true,
@@ -82,10 +82,10 @@ Object {
                 "val": "'google.com'",
               },
             ],
-            "block": Object {
+            "block": {
               "line": 5,
-              "nodes": Array [
-                Object {
+              "nodes": [
+                {
                   "column": 42,
                   "line": 5,
                   "type": "Text",
@@ -101,7 +101,7 @@ Object {
             "selfClosing": false,
             "type": "Tag",
           },
-          Object {
+          {
             "buffer": false,
             "column": 5,
             "isInline": false,
@@ -110,10 +110,10 @@ Object {
             "type": "Code",
             "val": "var authenticated = true",
           },
-          Object {
-            "attributeBlocks": Array [],
-            "attrs": Array [
-              Object {
+          {
+            "attributeBlocks": [],
+            "attrs": [
+              {
                 "column": 9,
                 "line": 7,
                 "mustEscape": true,
@@ -121,9 +121,9 @@ Object {
                 "val": "(authenticated ? 'authed' : 'anon')",
               },
             ],
-            "block": Object {
+            "block": {
               "line": 7,
-              "nodes": Array [],
+              "nodes": [],
               "type": "Block",
             },
             "column": 5,
@@ -150,26 +150,26 @@ Object {
 `;
 
 exports[`Attributes Attribute expressions 2`] = `
-Object {
-  "errors": Array [],
+{
+  "errors": [],
   "result": "/*@pug:L1*/
 const Foo = () => {
   return (
     <>
+      {" "}
       /*@pug:L2*/
-      <a href={\\"google.com\\"} className={\\"button\\"}>
+      <a href={"google.com"} className={"button"}>
         Google
       </a>
       /*@pug:L5*/
-      <a href={\\"google.com\\"} className={\\"button\\"}>
+      <a href={"google.com"} className={"button"}>
         Google
       </a>
       {(() => {
         /*@pug:L6*/
         var authenticated = true;
         return (
-          /*@pug:L7*/
-          <div className={authenticated ? \\"authed\\" : \\"anon\\"}></div>
+          /*@pug:L7*/ <div className={authenticated ? "authed" : "anon"}></div>
         );
       })()}
     </>
@@ -180,31 +180,31 @@ const Foo = () => {
 `;
 
 exports[`Attributes Multiline attributes 1`] = `
-Object {
+{
   "line": 0,
-  "nodes": Array [
-    Object {
-      "block": Object {
+  "nodes": [
+    {
+      "block": {
         "line": 2,
-        "nodes": Array [
-          Object {
-            "attributeBlocks": Array [],
-            "attrs": Array [
-              Object {
+        "nodes": [
+          {
+            "attributeBlocks": [],
+            "attrs": [
+              {
                 "column": 9,
                 "line": 3,
                 "mustEscape": true,
                 "name": "type",
                 "val": "'checkbox'",
               },
-              Object {
+              {
                 "column": 9,
                 "line": 4,
                 "mustEscape": true,
                 "name": "name",
                 "val": "'agreement'",
               },
-              Object {
+              {
                 "column": 9,
                 "line": 5,
                 "mustEscape": true,
@@ -212,9 +212,9 @@ Object {
                 "val": true,
               },
             ],
-            "block": Object {
+            "block": {
               "line": 2,
-              "nodes": Array [],
+              "nodes": [],
               "type": "Block",
             },
             "column": 5,
@@ -241,36 +241,39 @@ Object {
 `;
 
 exports[`Attributes Multiline attributes 2`] = `
-Object {
-  "errors": Array [],
+{
+  "errors": [],
   "result": "/*@pug:L1*/
 const Foo = () => (
-  /*@pug:L2*/
-  <input type={\\"checkbox\\"} name={\\"agreement\\"} checked={true}></input>
+  /*@pug:L2*/ <input
+    type={"checkbox"}
+    name={"agreement"}
+    checked={true}
+  ></input>
 );
 ",
 }
 `;
 
 exports[`Attributes Quoted attributes 1`] = `
-Object {
+{
   "line": 0,
-  "nodes": Array [
-    Object {
-      "block": Object {
+  "nodes": [
+    {
+      "block": {
         "line": 2,
-        "nodes": Array [
-          Object {
-            "attributeBlocks": Array [],
-            "attrs": Array [
-              Object {
+        "nodes": [
+          {
+            "attributeBlocks": [],
+            "attrs": [
+              {
                 "column": 9,
                 "line": 2,
                 "mustEscape": true,
                 "name": "class",
                 "val": "'div-class'",
               },
-              Object {
+              {
                 "column": 28,
                 "line": 2,
                 "mustEscape": true,
@@ -278,9 +281,9 @@ Object {
                 "val": "'play()'",
               },
             ],
-            "block": Object {
+            "block": {
               "line": 2,
-              "nodes": Array [],
+              "nodes": [],
               "type": "Block",
             },
             "column": 5,
@@ -290,17 +293,17 @@ Object {
             "selfClosing": false,
             "type": "Tag",
           },
-          Object {
-            "attributeBlocks": Array [],
-            "attrs": Array [
-              Object {
+          {
+            "attributeBlocks": [],
+            "attrs": [
+              {
                 "column": 9,
                 "line": 3,
                 "mustEscape": true,
                 "name": "class",
                 "val": "'div-class'",
               },
-              Object {
+              {
                 "column": 27,
                 "line": 3,
                 "mustEscape": true,
@@ -308,9 +311,9 @@ Object {
                 "val": "'play()'",
               },
             ],
-            "block": Object {
+            "block": {
               "line": 3,
-              "nodes": Array [],
+              "nodes": [],
               "type": "Block",
             },
             "column": 5,
@@ -337,25 +340,26 @@ Object {
 `;
 
 exports[`Attributes Quoted attributes 2`] = `
-Object {
-  "errors": Array [],
+{
+  "errors": [],
   "result": "/*@pug:L1*/
 const Foo = () => {
   return (
     <>
+      {" "}
       /*@pug:L2*/
       <div
         {...{
-          \\"(click)\\": \\"play()\\",
+          "(click)": "play()",
         }}
-        className={\\"div-class\\"}
-      ></div>
+        className={"div-class"}
+      ></div>{" "}
       /*@pug:L3*/
       <div
         {...{
-          \\"(click)\\": \\"play()\\",
+          "(click)": "play()",
         }}
-        className={\\"div-class\\"}
+        className={"div-class"}
       ></div>
     </>
   );
@@ -365,17 +369,17 @@ const Foo = () => {
 `;
 
 exports[`Attributes Style attributes 1`] = `
-Object {
+{
   "line": 0,
-  "nodes": Array [
-    Object {
-      "block": Object {
+  "nodes": [
+    {
+      "block": {
         "line": 2,
-        "nodes": Array [
-          Object {
-            "attributeBlocks": Array [],
-            "attrs": Array [
-              Object {
+        "nodes": [
+          {
+            "attributeBlocks": [],
+            "attrs": [
+              {
                 "column": 7,
                 "line": 2,
                 "mustEscape": true,
@@ -383,9 +387,9 @@ Object {
                 "val": "{color: 'red', background: 'green'}",
               },
             ],
-            "block": Object {
+            "block": {
               "line": 2,
-              "nodes": Array [],
+              "nodes": [],
               "type": "Block",
             },
             "column": 5,
@@ -412,15 +416,14 @@ Object {
 `;
 
 exports[`Attributes Style attributes 2`] = `
-Object {
-  "errors": Array [],
+{
+  "errors": [],
   "result": "/*@pug:L1*/
 const Foo = () => (
-  /*@pug:L2*/
-  <a
+  /*@pug:L2*/ <a
     style={{
-      color: \\"red\\",
-      background: \\"green\\",
+      color: "red",
+      background: "green",
     }}
   ></a>
 );
@@ -429,14 +432,14 @@ const Foo = () => (
 `;
 
 exports[`Case Default usage 1`] = `
-Object {
+{
   "line": 0,
-  "nodes": Array [
-    Object {
-      "block": Object {
+  "nodes": [
+    {
+      "block": {
         "line": 2,
-        "nodes": Array [
-          Object {
+        "nodes": [
+          {
             "buffer": false,
             "column": 5,
             "isInline": false,
@@ -445,21 +448,21 @@ Object {
             "type": "Code",
             "val": "var friends = 10",
           },
-          Object {
-            "block": Object {
+          {
+            "block": {
               "line": 4,
-              "nodes": Array [
-                Object {
-                  "block": Object {
+              "nodes": [
+                {
+                  "block": {
                     "line": 5,
-                    "nodes": Array [
-                      Object {
-                        "attributeBlocks": Array [],
-                        "attrs": Array [],
-                        "block": Object {
+                    "nodes": [
+                      {
+                        "attributeBlocks": [],
+                        "attrs": [],
+                        "block": {
                           "line": 5,
-                          "nodes": Array [
-                            Object {
+                          "nodes": [
+                            {
                               "column": 15,
                               "line": 5,
                               "type": "Text",
@@ -484,17 +487,17 @@ Object {
                   "line": 4,
                   "type": "When",
                 },
-                Object {
-                  "block": Object {
+                {
+                  "block": {
                     "line": 7,
-                    "nodes": Array [
-                      Object {
-                        "attributeBlocks": Array [],
-                        "attrs": Array [],
-                        "block": Object {
+                    "nodes": [
+                      {
+                        "attributeBlocks": [],
+                        "attrs": [],
+                        "block": {
                           "line": 7,
-                          "nodes": Array [
-                            Object {
+                          "nodes": [
+                            {
                               "column": 15,
                               "line": 7,
                               "type": "Text",
@@ -519,23 +522,23 @@ Object {
                   "line": 6,
                   "type": "When",
                 },
-                Object {
-                  "block": Object {
+                {
+                  "block": {
                     "line": 9,
-                    "nodes": Array [
-                      Object {
-                        "attributeBlocks": Array [],
-                        "attrs": Array [],
-                        "block": Object {
+                    "nodes": [
+                      {
+                        "attributeBlocks": [],
+                        "attrs": [],
+                        "block": {
                           "line": 9,
-                          "nodes": Array [
-                            Object {
+                          "nodes": [
+                            {
                               "column": 15,
                               "line": 9,
                               "type": "Text",
                               "val": "you have ",
                             },
-                            Object {
+                            {
                               "buffer": true,
                               "column": 24,
                               "isInline": true,
@@ -544,7 +547,7 @@ Object {
                               "type": "Code",
                               "val": "friends",
                             },
-                            Object {
+                            {
                               "column": 34,
                               "line": 9,
                               "type": "Text",
@@ -594,8 +597,8 @@ Object {
 `;
 
 exports[`Case Default usage 2`] = `
-Object {
-  "errors": Array [],
+{
+  "errors": [],
   "result": "/*@pug:L1*/
 const Foo = () => {
   /*@pug:L2*/
@@ -603,33 +606,14 @@ const Foo = () => {
   return (
     <>
       {
-        /*@pug:L3*/
-        (() => {
+        /*@pug:L3*/ (() => {
           switch (friends) {
             case 0:
-              return (
-                /*@pug:L5*/
-                <p>you have no friends</p>
-              );
-
+              return /*@pug:L5*/ <p>you have no friends</p>;
             case 1:
-              return (
-                /*@pug:L7*/
-                <p>you have a friend</p>
-              );
-
+              return /*@pug:L7*/ <p>you have a friend</p>;
             default:
-              return (
-                /*@pug:L9*/
-                <p>
-                  you have{\\" \\"}
-                  {
-                    /*@pug:L9*/
-                    friends
-                  }{\\" \\"}
-                  friends
-                </p>
-              );
+              return /*@pug:L9*/ <p>you have {/*@pug:L9*/ friends} friends</p>;
           }
         })()
       }
@@ -641,14 +625,14 @@ const Foo = () => {
 `;
 
 exports[`Conditional Default usage 1`] = `
-Object {
+{
   "line": 0,
-  "nodes": Array [
-    Object {
-      "block": Object {
+  "nodes": [
+    {
+      "block": {
         "line": 2,
-        "nodes": Array [
-          Object {
+        "nodes": [
+          {
             "buffer": false,
             "column": 5,
             "isInline": false,
@@ -657,7 +641,7 @@ Object {
             "type": "Code",
             "val": "var user = { description: 'foo bar baz' }",
           },
-          Object {
+          {
             "buffer": false,
             "column": 5,
             "isInline": false,
@@ -666,10 +650,10 @@ Object {
             "type": "Code",
             "val": "var authorised = false",
           },
-          Object {
-            "attributeBlocks": Array [],
-            "attrs": Array [
-              Object {
+          {
+            "attributeBlocks": [],
+            "attrs": [
+              {
                 "column": 5,
                 "line": 4,
                 "mustEscape": false,
@@ -677,18 +661,18 @@ Object {
                 "val": "'user'",
               },
             ],
-            "block": Object {
+            "block": {
               "line": 4,
-              "nodes": Array [
-                Object {
-                  "alternate": Object {
-                    "alternate": Object {
+              "nodes": [
+                {
+                  "alternate": {
+                    "alternate": {
                       "line": 14,
-                      "nodes": Array [
-                        Object {
-                          "attributeBlocks": Array [],
-                          "attrs": Array [
-                            Object {
+                      "nodes": [
+                        {
+                          "attributeBlocks": [],
+                          "attrs": [
+                            {
                               "column": 15,
                               "line": 14,
                               "mustEscape": false,
@@ -696,10 +680,10 @@ Object {
                               "val": "'red'",
                             },
                           ],
-                          "block": Object {
+                          "block": {
                             "line": 14,
-                            "nodes": Array [
-                              Object {
+                            "nodes": [
+                              {
                                 "column": 20,
                                 "line": 14,
                                 "type": "Text",
@@ -715,10 +699,10 @@ Object {
                           "selfClosing": false,
                           "type": "Tag",
                         },
-                        Object {
-                          "attributeBlocks": Array [],
-                          "attrs": Array [
-                            Object {
+                        {
+                          "attributeBlocks": [],
+                          "attrs": [
+                            {
                               "column": 14,
                               "line": 15,
                               "mustEscape": false,
@@ -726,10 +710,10 @@ Object {
                               "val": "'description'",
                             },
                           ],
-                          "block": Object {
+                          "block": {
                             "line": 15,
-                            "nodes": Array [
-                              Object {
+                            "nodes": [
+                              {
                                 "column": 27,
                                 "line": 15,
                                 "type": "Text",
@@ -749,13 +733,13 @@ Object {
                       "type": "Block",
                     },
                     "column": 9,
-                    "consequent": Object {
+                    "consequent": {
                       "line": 9,
-                      "nodes": Array [
-                        Object {
-                          "attributeBlocks": Array [],
-                          "attrs": Array [
-                            Object {
+                      "nodes": [
+                        {
+                          "attributeBlocks": [],
+                          "attrs": [
+                            {
                               "column": 15,
                               "line": 9,
                               "mustEscape": false,
@@ -763,10 +747,10 @@ Object {
                               "val": "'blue'",
                             },
                           ],
-                          "block": Object {
+                          "block": {
                             "line": 9,
-                            "nodes": Array [
-                              Object {
+                            "nodes": [
+                              {
                                 "column": 21,
                                 "line": 9,
                                 "type": "Text",
@@ -782,10 +766,10 @@ Object {
                           "selfClosing": false,
                           "type": "Tag",
                         },
-                        Object {
-                          "attributeBlocks": Array [],
-                          "attrs": Array [
-                            Object {
+                        {
+                          "attributeBlocks": [],
+                          "attrs": [
+                            {
                               "column": 14,
                               "line": 10,
                               "mustEscape": false,
@@ -793,23 +777,23 @@ Object {
                               "val": "'description'",
                             },
                           ],
-                          "block": Object {
+                          "block": {
                             "line": 10,
-                            "nodes": Array [
-                              Object {
+                            "nodes": [
+                              {
                                 "column": 17,
                                 "line": 11,
                                 "type": "Text",
                                 "val": "User has no descriptio",
                               },
-                              Object {
+                              {
                                 "column": 1,
                                 "line": 12,
                                 "type": "Text",
                                 "val": "
 ",
                               },
-                              Object {
+                              {
                                 "column": 17,
                                 "line": 12,
                                 "type": "Text",
@@ -834,13 +818,13 @@ Object {
                     "type": "Conditional",
                   },
                   "column": 9,
-                  "consequent": Object {
+                  "consequent": {
                     "line": 6,
-                    "nodes": Array [
-                      Object {
-                        "attributeBlocks": Array [],
-                        "attrs": Array [
-                          Object {
+                    "nodes": [
+                      {
+                        "attributeBlocks": [],
+                        "attrs": [
+                          {
                             "column": 15,
                             "line": 6,
                             "mustEscape": false,
@@ -848,10 +832,10 @@ Object {
                             "val": "'green'",
                           },
                         ],
-                        "block": Object {
+                        "block": {
                           "line": 6,
-                          "nodes": Array [
-                            Object {
+                          "nodes": [
+                            {
                               "column": 22,
                               "line": 6,
                               "type": "Text",
@@ -867,10 +851,10 @@ Object {
                         "selfClosing": false,
                         "type": "Tag",
                       },
-                      Object {
-                        "attributeBlocks": Array [],
-                        "attrs": Array [
-                          Object {
+                      {
+                        "attributeBlocks": [],
+                        "attrs": [
+                          {
                             "column": 14,
                             "line": 7,
                             "mustEscape": false,
@@ -878,10 +862,10 @@ Object {
                             "val": "'description'",
                           },
                         ],
-                        "block": Object {
+                        "block": {
                           "line": 7,
-                          "nodes": Array [
-                            Object {
+                          "nodes": [
+                            {
                               "buffer": true,
                               "column": 26,
                               "isInline": true,
@@ -934,53 +918,43 @@ Object {
 `;
 
 exports[`Conditional Default usage 2`] = `
-Object {
-  "errors": Array [],
+{
+  "errors": [],
   "result": "/*@pug:L1*/
 const Foo = () => {
   /*@pug:L2*/
   var user = {
-    description: \\"foo bar baz\\",
+    description: "foo bar baz",
   };
-
   /*@pug:L3*/
   var authorised = false;
   return (
-    /*@pug:L4*/
-    <div id={\\"user\\"}>
+    /*@pug:L4*/ <div id={"user"}>
       {
-        /*@pug:L5*/
-        user.description ? (
+        /*@pug:L5*/ user.description ? (
           <>
-            /*@pug:L6*/
-            <h2 className={\\"green\\"}>Description</h2>
-            /*@pug:L7*/
-            <p className={\\"description\\"}>
-              {
-                /*@pug:L7*/
-                user.description
-              }
-            </p>
+            {" "}
+            /*@pug:L6*/<h2 className={"green"}>Description</h2> /*@pug:L7*/
+            <p className={"description"}>{/*@pug:L7*/ user.description}</p>
           </>
         ) : (
           <>
             {
-              /*@pug:L8*/
-              authorised ? (
+              /*@pug:L8*/ authorised ? (
                 <>
-                  /*@pug:L9*/
-                  <h2 className={\\"blue\\"}>Description</h2>
+                  {" "}
+                  /*@pug:L9*/<h2 className={"blue"}>Description</h2>{" "}
                   /*@pug:L10*/
-                  <p className={\\"description\\"}>
+                  <p className={"description"}>
                     User has no descriptio why not add one...
                   </p>
                 </>
               ) : (
                 <>
-                  /*@pug:L14*/
-                  <h2 className={\\"red\\"}>Description</h2>
+                  {" "}
+                  /*@pug:L14*/<h2 className={"red"}>Description</h2>{" "}
                   /*@pug:L15*/
-                  <p className={\\"description\\"}>User has no description</p>
+                  <p className={"description"}>User has no description</p>
                 </>
               )
             }
@@ -995,30 +969,30 @@ const Foo = () => {
 `;
 
 exports[`Each Iteration over object 1`] = `
-Object {
+{
   "line": 0,
-  "nodes": Array [
-    Object {
-      "block": Object {
+  "nodes": [
+    {
+      "block": {
         "line": 2,
-        "nodes": Array [
-          Object {
-            "attributeBlocks": Array [],
-            "attrs": Array [],
-            "block": Object {
+        "nodes": [
+          {
+            "attributeBlocks": [],
+            "attrs": [],
+            "block": {
               "line": 2,
-              "nodes": Array [
-                Object {
-                  "block": Object {
+              "nodes": [
+                {
+                  "block": {
                     "line": 4,
-                    "nodes": Array [
-                      Object {
-                        "attributeBlocks": Array [],
-                        "attrs": Array [],
-                        "block": Object {
+                    "nodes": [
+                      {
+                        "attributeBlocks": [],
+                        "attrs": [],
+                        "block": {
                           "line": 4,
-                          "nodes": Array [
-                            Object {
+                          "nodes": [
+                            {
                               "buffer": true,
                               "column": 15,
                               "isInline": true,
@@ -1074,28 +1048,20 @@ Object {
 `;
 
 exports[`Each Iteration over object 2`] = `
-Object {
-  "errors": Array [],
+{
+  "errors": [],
   "result": "/*@pug:L1*/
 const Foo = () => (
-  /*@pug:L2*/
-  <ul>
+  /*@pug:L2*/ <ul>
     {
-      /*@pug:L3*/
-      map(
+      /*@pug:L3*/ map(
         {
-          1: \\"one\\",
-          2: \\"two\\",
-          3: \\"three\\",
+          1: "one",
+          2: "two",
+          3: "three",
         },
         (val, index) => (
-          /*@pug:L4*/
-          <li>
-            {
-              /*@pug:L4*/
-              index + \\": \\" + val
-            }
-          </li>
+          /*@pug:L4*/ <li>{/*@pug:L4*/ index + ": " + val}</li>
         )
       )
     }
@@ -1106,30 +1072,30 @@ const Foo = () => (
 `;
 
 exports[`Each Iteration with member 1`] = `
-Object {
+{
   "line": 0,
-  "nodes": Array [
-    Object {
-      "block": Object {
+  "nodes": [
+    {
+      "block": {
         "line": 2,
-        "nodes": Array [
-          Object {
-            "attributeBlocks": Array [],
-            "attrs": Array [],
-            "block": Object {
+        "nodes": [
+          {
+            "attributeBlocks": [],
+            "attrs": [],
+            "block": {
               "line": 2,
-              "nodes": Array [
-                Object {
-                  "block": Object {
+              "nodes": [
+                {
+                  "block": {
                     "line": 4,
-                    "nodes": Array [
-                      Object {
-                        "attributeBlocks": Array [],
-                        "attrs": Array [],
-                        "block": Object {
+                    "nodes": [
+                      {
+                        "attributeBlocks": [],
+                        "attrs": [],
+                        "block": {
                           "line": 4,
-                          "nodes": Array [
-                            Object {
+                          "nodes": [
+                            {
                               "buffer": true,
                               "column": 15,
                               "isInline": true,
@@ -1185,22 +1151,14 @@ Object {
 `;
 
 exports[`Each Iteration with member 2`] = `
-Object {
-  "errors": Array [],
+{
+  "errors": [],
   "result": "/*@pug:L1*/
 const Foo = () => (
-  /*@pug:L2*/
-  <ul>
+  /*@pug:L2*/ <ul>
     {
-      /*@pug:L3*/
-      map([1, 2, 3, 4, 5], (val) => (
-        /*@pug:L4*/
-        <li>
-          {
-            /*@pug:L4*/
-            val
-          }
-        </li>
+      /*@pug:L3*/ map([1, 2, 3, 4, 5], (val) => (
+        /*@pug:L4*/ <li>{/*@pug:L4*/ val}</li>
       ))
     }
   </ul>
@@ -1210,30 +1168,30 @@ const Foo = () => (
 `;
 
 exports[`Each Iteration with member and index 1`] = `
-Object {
+{
   "line": 0,
-  "nodes": Array [
-    Object {
-      "block": Object {
+  "nodes": [
+    {
+      "block": {
         "line": 2,
-        "nodes": Array [
-          Object {
-            "attributeBlocks": Array [],
-            "attrs": Array [],
-            "block": Object {
+        "nodes": [
+          {
+            "attributeBlocks": [],
+            "attrs": [],
+            "block": {
               "line": 2,
-              "nodes": Array [
-                Object {
-                  "block": Object {
+              "nodes": [
+                {
+                  "block": {
                     "line": 4,
-                    "nodes": Array [
-                      Object {
-                        "attributeBlocks": Array [],
-                        "attrs": Array [],
-                        "block": Object {
+                    "nodes": [
+                      {
+                        "attributeBlocks": [],
+                        "attrs": [],
+                        "block": {
                           "line": 4,
-                          "nodes": Array [
-                            Object {
+                          "nodes": [
+                            {
                               "buffer": true,
                               "column": 15,
                               "isInline": true,
@@ -1289,22 +1247,14 @@ Object {
 `;
 
 exports[`Each Iteration with member and index 2`] = `
-Object {
-  "errors": Array [],
+{
+  "errors": [],
   "result": "/*@pug:L1*/
 const Foo = () => (
-  /*@pug:L2*/
-  <ul>
+  /*@pug:L2*/ <ul>
     {
-      /*@pug:L3*/
-      map([\\"zero\\", \\"one\\", \\"two\\"], (val, index) => (
-        /*@pug:L4*/
-        <li>
-          {
-            /*@pug:L4*/
-            index + \\": \\" + val
-          }
-        </li>
+      /*@pug:L3*/ map(["zero", "one", "two"], (val, index) => (
+        /*@pug:L4*/ <li>{/*@pug:L4*/ index + ": " + val}</li>
       ))
     }
   </ul>

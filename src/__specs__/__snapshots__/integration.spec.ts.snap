@@ -1,29 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Assigning elements 1`] = `
-Object {
+{
   "line": 0,
-  "nodes": Array [
-    Object {
-      "attributeBlocks": Array [],
-      "attrs": Array [],
-      "block": Object {
+  "nodes": [
+    {
+      "attributeBlocks": [],
+      "attrs": [],
+      "block": {
         "line": 1,
-        "nodes": Array [
-          Object {
+        "nodes": [
+          {
             "column": 7,
             "line": 1,
             "type": "Text",
             "val": "Hello = () =>",
           },
-          Object {
-            "block": Object {
+          {
+            "block": {
               "line": 3,
-              "nodes": Array [
-                Object {
-                  "attributeBlocks": Array [],
-                  "attrs": Array [
-                    Object {
+              "nodes": [
+                {
+                  "attributeBlocks": [],
+                  "attrs": [
+                    {
                       "column": 10,
                       "line": 3,
                       "mustEscape": false,
@@ -31,10 +31,10 @@ Object {
                       "val": "'hello'",
                     },
                   ],
-                  "block": Object {
+                  "block": {
                     "line": 3,
-                    "nodes": Array [
-                      Object {
+                    "nodes": [
+                      {
                         "column": 11,
                         "line": 4,
                         "type": "Text",
@@ -61,10 +61,10 @@ Object {
             "type": "Code",
             "val": "const foo =",
           },
-          Object {
-            "attributeBlocks": Array [],
-            "attrs": Array [
-              Object {
+          {
+            "attributeBlocks": [],
+            "attrs": [
+              {
                 "column": 8,
                 "line": 6,
                 "mustEscape": false,
@@ -72,13 +72,13 @@ Object {
                 "val": "'hello'",
               },
             ],
-            "block": Object {
+            "block": {
               "line": 6,
-              "nodes": Array [
-                Object {
-                  "attributeBlocks": Array [],
-                  "attrs": Array [
-                    Object {
+              "nodes": [
+                {
+                  "attributeBlocks": [],
+                  "attrs": [
+                    {
                       "column": 17,
                       "line": 7,
                       "mustEscape": true,
@@ -86,9 +86,9 @@ Object {
                       "val": "foo",
                     },
                   ],
-                  "block": Object {
+                  "block": {
                     "line": 7,
-                    "nodes": Array [],
+                    "nodes": [],
                     "type": "Block",
                   },
                   "column": 9,
@@ -124,22 +124,17 @@ Object {
 `;
 
 exports[`Assigning elements 2`] = `
-Object {
-  "errors": Array [],
-  "result": "/*@pug:L1*/
-<const>
+{
+  "errors": [],
+  "result": "/*@pug:L1*/ <const>
   Hello = () =>
   {(() => {
     /*@pug:L2*/
-    const foo = (
-      /*@pug:L3*/
-      <div className={\\"hello\\"}>World</div>
-    );
+    const foo = /*@pug:L3*/ <div className={"hello"}>World</div>;
     return (
-      /*@pug:L6*/
-      <div className={\\"hello\\"}>
-        /*@pug:L7*/
-        <SomeTag name={foo}></SomeTag>
+      /*@pug:L6*/ <div className={"hello"}>
+        {" "}
+        /*@pug:L7*/<SomeTag name={foo}></SomeTag>
       </div>
     );
   })()}
@@ -149,41 +144,41 @@ Object {
 `;
 
 exports[`Interleaved unbuffered code 1`] = `
-Object {
+{
   "line": 0,
-  "nodes": Array [
-    Object {
-      "attributeBlocks": Array [],
-      "attrs": Array [],
-      "block": Object {
+  "nodes": [
+    {
+      "attributeBlocks": [],
+      "attrs": [],
+      "block": {
         "line": 1,
-        "nodes": Array [
-          Object {
+        "nodes": [
+          {
             "column": 7,
             "line": 1,
             "type": "Text",
             "val": "Hello = () =>",
           },
-          Object {
+          {
             "buffer": false,
             "column": 5,
             "isInline": false,
             "line": 2,
             "mustEscape": false,
             "type": "Code",
-            "val": "const foo = \\"bar\\";",
+            "val": "const foo = "bar";",
           },
-          Object {
-            "attributeBlocks": Array [],
-            "attrs": Array [
-              Object {
+          {
+            "attributeBlocks": [],
+            "attrs": [
+              {
                 "column": 5,
                 "line": 3,
                 "mustEscape": false,
                 "name": "id",
                 "val": "'bar'",
               },
-              Object {
+              {
                 "column": 9,
                 "line": 3,
                 "mustEscape": false,
@@ -191,20 +186,20 @@ Object {
                 "val": "'foo'",
               },
             ],
-            "block": Object {
+            "block": {
               "line": 3,
-              "nodes": Array [
-                Object {
-                  "attributeBlocks": Array [],
-                  "attrs": Array [
-                    Object {
+              "nodes": [
+                {
+                  "attributeBlocks": [],
+                  "attrs": [
+                    {
                       "column": 9,
                       "line": 4,
                       "mustEscape": false,
                       "name": "class",
                       "val": "'foo__node'",
                     },
-                    Object {
+                    {
                       "column": 19,
                       "line": 4,
                       "mustEscape": false,
@@ -212,10 +207,10 @@ Object {
                       "val": "'foo__node--aspect'",
                     },
                   ],
-                  "block": Object {
+                  "block": {
                     "line": 4,
-                    "nodes": Array [
-                      Object {
+                    "nodes": [
+                      {
                         "column": 38,
                         "line": 4,
                         "type": "Text",
@@ -241,19 +236,19 @@ Object {
             "selfClosing": false,
             "type": "Tag",
           },
-          Object {
+          {
             "buffer": false,
             "column": 5,
             "isInline": false,
             "line": 5,
             "mustEscape": false,
             "type": "Code",
-            "val": "const bar = \\"baz\\";",
+            "val": "const bar = "baz";",
           },
-          Object {
-            "attributeBlocks": Array [],
-            "attrs": Array [
-              Object {
+          {
+            "attributeBlocks": [],
+            "attrs": [
+              {
                 "column": 8,
                 "line": 6,
                 "mustEscape": false,
@@ -261,17 +256,17 @@ Object {
                 "val": "'hello'",
               },
             ],
-            "block": Object {
+            "block": {
               "line": 6,
-              "nodes": Array [
-                Object {
+              "nodes": [
+                {
                   "buffer": true,
                   "column": 9,
                   "isInline": false,
                   "line": 7,
                   "mustEscape": true,
                   "type": "Code",
-                  "val": "\`Hello \\\\\${foo} \\\\\${bar}\`",
+                  "val": "\`Hello \\\${foo} \\\${bar}\`",
                 },
               ],
               "type": "Block",
@@ -299,31 +294,30 @@ Object {
 `;
 
 exports[`Interleaved unbuffered code 2`] = `
-Object {
-  "errors": Array [],
-  "result": "/*@pug:L1*/
-<const>
+{
+  "errors": [],
+  "result": "/*@pug:L1*/ <const>
   Hello = () =>
   {(() => {
     /*@pug:L2*/
-    const foo = \\"bar\\";
+    const foo = "bar";
     return (
       <>
+        {" "}
         /*@pug:L3*/
-        <div id={\\"bar\\"} className={\\"foo\\"}>
+        <div id={"bar"} className={"foo"}>
+          {" "}
           /*@pug:L4*/
-          <div className={[\\"foo__node\\", \\"foo__node--aspect\\"].join(\\" \\")}>
+          <div className={["foo__node", "foo__node--aspect"].join(" ")}>
             Test
           </div>
         </div>
         {(() => {
           /*@pug:L5*/
-          const bar = \\"baz\\";
+          const bar = "baz";
           return (
-            /*@pug:L6*/
-            <div className={\\"hello\\"}>{
-              /*@pug:L7*/
-              \`Hello \\\\\${foo} \\\\\${bar}\`
+            /*@pug:L6*/ <div className={"hello"}>{
+              /*@pug:L7*/ \`Hello \\\${foo} \\\${bar}\`
             }</div>
           );
         })()}
@@ -336,41 +330,41 @@ Object {
 `;
 
 exports[`Interpolated Code 1`] = `
-Object {
+{
   "line": 0,
-  "nodes": Array [
-    Object {
-      "attributeBlocks": Array [],
-      "attrs": Array [],
-      "block": Object {
+  "nodes": [
+    {
+      "attributeBlocks": [],
+      "attrs": [],
+      "block": {
         "line": 1,
-        "nodes": Array [
-          Object {
+        "nodes": [
+          {
             "column": 7,
             "line": 1,
             "type": "Text",
             "val": "Hello = () =>",
           },
-          Object {
+          {
             "buffer": false,
             "column": 5,
             "isInline": false,
             "line": 2,
             "mustEscape": false,
             "type": "Code",
-            "val": "const foo = \\"bar\\";",
+            "val": "const foo = "bar";",
           },
-          Object {
-            "attributeBlocks": Array [],
-            "attrs": Array [
-              Object {
+          {
+            "attributeBlocks": [],
+            "attrs": [
+              {
                 "column": 5,
                 "line": 3,
                 "mustEscape": false,
                 "name": "id",
                 "val": "'bar'",
               },
-              Object {
+              {
                 "column": 9,
                 "line": 3,
                 "mustEscape": false,
@@ -378,38 +372,38 @@ Object {
                 "val": "'foo'",
               },
             ],
-            "block": Object {
+            "block": {
               "line": 3,
-              "nodes": Array [
-                Object {
-                  "attributeBlocks": Array [],
-                  "attrs": Array [
-                    Object {
+              "nodes": [
+                {
+                  "attributeBlocks": [],
+                  "attrs": [
+                    {
                       "column": 9,
                       "line": 4,
                       "mustEscape": false,
                       "name": "class",
                       "val": "'foo__node'",
                     },
-                    Object {
+                    {
                       "column": 19,
                       "line": 4,
                       "mustEscape": false,
                       "name": "class",
                       "val": "'foo__node--aspect'",
                     },
-                    Object {
+                    {
                       "column": 38,
                       "line": 4,
                       "mustEscape": true,
                       "name": "data-bar",
-                      "val": "\\"baz\\"",
+                      "val": ""baz"",
                     },
                   ],
-                  "block": Object {
+                  "block": {
                     "line": 4,
-                    "nodes": Array [
-                      Object {
+                    "nodes": [
+                      {
                         "buffer": true,
                         "column": 53,
                         "isInline": true,
@@ -438,10 +432,10 @@ Object {
             "selfClosing": false,
             "type": "Tag",
           },
-          Object {
-            "attributeBlocks": Array [],
-            "attrs": Array [
-              Object {
+          {
+            "attributeBlocks": [],
+            "attrs": [
+              {
                 "column": 8,
                 "line": 5,
                 "mustEscape": false,
@@ -449,17 +443,17 @@ Object {
                 "val": "'hello'",
               },
             ],
-            "block": Object {
+            "block": {
               "line": 5,
-              "nodes": Array [
-                Object {
+              "nodes": [
+                {
                   "buffer": true,
                   "column": 9,
                   "isInline": false,
                   "line": 6,
                   "mustEscape": true,
                   "type": "Code",
-                  "val": "\`Hello \\\\\${foo}\`",
+                  "val": "\`Hello \\\${foo}\`",
                 },
               ],
               "type": "Block",
@@ -487,34 +481,28 @@ Object {
 `;
 
 exports[`Interpolated Code 2`] = `
-Object {
-  "errors": Array [],
-  "result": "/*@pug:L1*/
-<const>
+{
+  "errors": [],
+  "result": "/*@pug:L1*/ <const>
   Hello = () =>
   {(() => {
     /*@pug:L2*/
-    const foo = \\"bar\\";
+    const foo = "bar";
     return (
       <>
+        {" "}
         /*@pug:L3*/
-        <div id={\\"bar\\"} className={\\"foo\\"}>
+        <div id={"bar"} className={"foo"}>
+          {" "}
           /*@pug:L4*/
           <div
-            data-bar={\\"baz\\"}
-            className={[\\"foo__node\\", \\"foo__node--aspect\\"].join(\\" \\")}
+            data-bar={"baz"}
+            className={["foo__node", "foo__node--aspect"].join(" ")}
           >
-            {
-              /*@pug:L4*/
-              foo
-            }
+            {/*@pug:L4*/ foo}
           </div>
-        </div>
-        /*@pug:L5*/
-        <div className={\\"hello\\"}>{
-          /*@pug:L6*/
-          \`Hello \\\\\${foo}\`
-        }</div>
+        </div>{" "}
+        /*@pug:L5*/<div className={"hello"}>{/*@pug:L6*/ \`Hello \\\${foo}\`}</div>
       </>
     );
   })()}
@@ -524,24 +512,24 @@ Object {
 `;
 
 exports[`Multiple children in nested block 1`] = `
-Object {
+{
   "line": 0,
-  "nodes": Array [
-    Object {
-      "block": Object {
+  "nodes": [
+    {
+      "block": {
         "line": 2,
-        "nodes": Array [
-          Object {
-            "attributeBlocks": Array [],
-            "attrs": Array [
-              Object {
+        "nodes": [
+          {
+            "attributeBlocks": [],
+            "attrs": [
+              {
                 "column": 5,
                 "line": 2,
                 "mustEscape": false,
                 "name": "id",
                 "val": "'foo'",
               },
-              Object {
+              {
                 "column": 9,
                 "line": 2,
                 "mustEscape": false,
@@ -549,10 +537,10 @@ Object {
                 "val": "'bar'",
               },
             ],
-            "block": Object {
+            "block": {
               "line": 2,
-              "nodes": Array [
-                Object {
+              "nodes": [
+                {
                   "column": 11,
                   "line": 3,
                   "type": "Text",
@@ -568,17 +556,17 @@ Object {
             "selfClosing": false,
             "type": "Tag",
           },
-          Object {
-            "attributeBlocks": Array [],
-            "attrs": Array [
-              Object {
+          {
+            "attributeBlocks": [],
+            "attrs": [
+              {
                 "column": 5,
                 "line": 4,
                 "mustEscape": false,
                 "name": "id",
                 "val": "'bar'",
               },
-              Object {
+              {
                 "column": 9,
                 "line": 4,
                 "mustEscape": false,
@@ -586,10 +574,10 @@ Object {
                 "val": "'baz'",
               },
             ],
-            "block": Object {
+            "block": {
               "line": 4,
-              "nodes": Array [
-                Object {
+              "nodes": [
+                {
                   "column": 11,
                   "line": 5,
                   "type": "Text",
@@ -616,28 +604,28 @@ Object {
       "type": "Code",
       "val": "const Foo = () =>",
     },
-    Object {
-      "block": Object {
+    {
+      "block": {
         "line": 7,
-        "nodes": Array [
-          Object {
-            "attributeBlocks": Array [],
-            "attrs": Array [
-              Object {
+        "nodes": [
+          {
+            "attributeBlocks": [],
+            "attrs": [
+              {
                 "column": 5,
                 "line": 7,
                 "mustEscape": false,
                 "name": "id",
                 "val": "'foo'",
               },
-              Object {
+              {
                 "column": 9,
                 "line": 7,
                 "mustEscape": false,
                 "name": "class",
                 "val": "'bar'",
               },
-              Object {
+              {
                 "column": 13,
                 "line": 7,
                 "mustEscape": false,
@@ -645,10 +633,10 @@ Object {
                 "val": "'baz'",
               },
             ],
-            "block": Object {
+            "block": {
               "line": 7,
-              "nodes": Array [
-                Object {
+              "nodes": [
+                {
                   "column": 11,
                   "line": 8,
                   "type": "Text",
@@ -664,17 +652,17 @@ Object {
             "selfClosing": false,
             "type": "Tag",
           },
-          Object {
-            "attributeBlocks": Array [],
-            "attrs": Array [
-              Object {
+          {
+            "attributeBlocks": [],
+            "attrs": [
+              {
                 "column": 5,
                 "line": 9,
                 "mustEscape": false,
                 "name": "id",
                 "val": "'bar'",
               },
-              Object {
+              {
                 "column": 9,
                 "line": 9,
                 "mustEscape": false,
@@ -682,10 +670,10 @@ Object {
                 "val": "'baz'",
               },
             ],
-            "block": Object {
+            "block": {
               "line": 9,
-              "nodes": Array [
-                Object {
+              "nodes": [
+                {
                   "column": 11,
                   "line": 10,
                   "type": "Text",
@@ -712,7 +700,7 @@ Object {
       "type": "Code",
       "val": "const Bar = () =>",
     },
-    Object {
+    {
       "buffer": false,
       "column": 1,
       "isInline": false,
@@ -727,18 +715,19 @@ Object {
 `;
 
 exports[`Multiple children in nested block 2`] = `
-Object {
-  "errors": Array [],
+{
+  "errors": [],
   "result": "/*@pug:L1*/
 const Foo = () => {
   return (
     <>
+      {" "}
       /*@pug:L2*/
-      <div id={\\"foo\\"} className={\\"bar\\"}>
+      <div id={"foo"} className={"bar"}>
         Foo Bar
-      </div>
+      </div>{" "}
       /*@pug:L4*/
-      <div id={\\"bar\\"} className={\\"baz\\"}>
+      <div id={"bar"} className={"baz"}>
         Bar baz
       </div>
     </>
@@ -749,12 +738,13 @@ const Foo = () => {
 const Bar = () => {
   return (
     <>
+      {" "}
       /*@pug:L7*/
-      <div id={\\"foo\\"} className={[\\"bar\\", \\"baz\\"].join(\\" \\")}>
+      <div id={"foo"} className={["bar", "baz"].join(" ")}>
         Foo Bar
-      </div>
+      </div>{" "}
       /*@pug:L9*/
-      <div id={\\"bar\\"} className={\\"baz\\"}>
+      <div id={"bar"} className={"baz"}>
         Bar baz
       </div>
     </>
@@ -768,32 +758,32 @@ export default Foo;
 `;
 
 exports[`Pug inside arrow functions 1`] = `
-Object {
+{
   "line": 0,
-  "nodes": Array [
-    Object {
-      "attributeBlocks": Array [],
-      "attrs": Array [],
-      "block": Object {
+  "nodes": [
+    {
+      "attributeBlocks": [],
+      "attrs": [],
+      "block": {
         "line": 1,
-        "nodes": Array [
-          Object {
+        "nodes": [
+          {
             "column": 7,
             "line": 1,
             "type": "Text",
             "val": "HelloWorld = () =>",
           },
-          Object {
-            "attributeBlocks": Array [],
-            "attrs": Array [
-              Object {
+          {
+            "attributeBlocks": [],
+            "attrs": [
+              {
                 "column": 5,
                 "line": 2,
                 "mustEscape": false,
                 "name": "id",
                 "val": "'bar'",
               },
-              Object {
+              {
                 "column": 9,
                 "line": 2,
                 "mustEscape": false,
@@ -801,38 +791,38 @@ Object {
                 "val": "'foo'",
               },
             ],
-            "block": Object {
+            "block": {
               "line": 2,
-              "nodes": Array [
-                Object {
-                  "attributeBlocks": Array [],
-                  "attrs": Array [
-                    Object {
+              "nodes": [
+                {
+                  "attributeBlocks": [],
+                  "attrs": [
+                    {
                       "column": 9,
                       "line": 3,
                       "mustEscape": false,
                       "name": "class",
                       "val": "'foo__node'",
                     },
-                    Object {
+                    {
                       "column": 19,
                       "line": 3,
                       "mustEscape": false,
                       "name": "class",
                       "val": "'foo__node--aspect'",
                     },
-                    Object {
+                    {
                       "column": 38,
                       "line": 3,
                       "mustEscape": true,
                       "name": "data-bar",
-                      "val": "\\"baz\\"",
+                      "val": ""baz"",
                     },
                   ],
-                  "block": Object {
+                  "block": {
                     "line": 3,
-                    "nodes": Array [
-                      Object {
+                    "nodes": [
+                      {
                         "column": 15,
                         "line": 4,
                         "type": "Text",
@@ -874,16 +864,16 @@ Object {
 `;
 
 exports[`Pug inside arrow functions 2`] = `
-Object {
-  "errors": Array [],
-  "result": "/*@pug:L1*/
-<const>
+{
+  "errors": [],
+  "result": "/*@pug:L1*/ <const>
   HelloWorld = () => /*@pug:L2*/
-  <div id={\\"bar\\"} className={\\"foo\\"}>
+  <div id={"bar"} className={"foo"}>
+    {" "}
     /*@pug:L3*/
     <div
-      data-bar={\\"baz\\"}
-      className={[\\"foo__node\\", \\"foo__node--aspect\\"].join(\\" \\")}
+      data-bar={"baz"}
+      className={["foo__node", "foo__node--aspect"].join(" ")}
     >
       Hello world
     </div>
@@ -894,32 +884,32 @@ Object {
 `;
 
 exports[`Pug inside old-school functions 1`] = `
-Object {
+{
   "line": 0,
-  "nodes": Array [
-    Object {
-      "attributeBlocks": Array [],
-      "attrs": Array [],
-      "block": Object {
+  "nodes": [
+    {
+      "attributeBlocks": [],
+      "attrs": [],
+      "block": {
         "line": 1,
-        "nodes": Array [
-          Object {
+        "nodes": [
+          {
             "column": 10,
             "line": 1,
             "type": "Text",
             "val": "HelloWorld(props: SomeProps)",
           },
-          Object {
-            "attributeBlocks": Array [],
-            "attrs": Array [
-              Object {
+          {
+            "attributeBlocks": [],
+            "attrs": [
+              {
                 "column": 5,
                 "line": 2,
                 "mustEscape": false,
                 "name": "id",
                 "val": "'bar'",
               },
-              Object {
+              {
                 "column": 9,
                 "line": 2,
                 "mustEscape": false,
@@ -927,38 +917,38 @@ Object {
                 "val": "'foo'",
               },
             ],
-            "block": Object {
+            "block": {
               "line": 2,
-              "nodes": Array [
-                Object {
-                  "attributeBlocks": Array [],
-                  "attrs": Array [
-                    Object {
+              "nodes": [
+                {
+                  "attributeBlocks": [],
+                  "attrs": [
+                    {
                       "column": 9,
                       "line": 3,
                       "mustEscape": false,
                       "name": "class",
                       "val": "'foo__node'",
                     },
-                    Object {
+                    {
                       "column": 19,
                       "line": 3,
                       "mustEscape": false,
                       "name": "class",
                       "val": "'foo__node--aspect'",
                     },
-                    Object {
+                    {
                       "column": 38,
                       "line": 3,
                       "mustEscape": true,
                       "name": "data-bar",
-                      "val": "\\"baz\\"",
+                      "val": ""baz"",
                     },
                   ],
-                  "block": Object {
+                  "block": {
                     "line": 3,
-                    "nodes": Array [
-                      Object {
+                    "nodes": [
+                      {
                         "column": 15,
                         "line": 4,
                         "type": "Text",
@@ -1000,16 +990,16 @@ Object {
 `;
 
 exports[`Pug inside old-school functions 2`] = `
-Object {
-  "errors": Array [],
-  "result": "/*@pug:L1*/
-<function>
+{
+  "errors": [],
+  "result": "/*@pug:L1*/ <function>
   HelloWorld(props: SomeProps) /*@pug:L2*/
-  <div id={\\"bar\\"} className={\\"foo\\"}>
+  <div id={"bar"} className={"foo"}>
+    {" "}
     /*@pug:L3*/
     <div
-      data-bar={\\"baz\\"}
-      className={[\\"foo__node\\", \\"foo__node--aspect\\"].join(\\" \\")}
+      data-bar={"baz"}
+      className={["foo__node", "foo__node--aspect"].join(" ")}
     >
       Hello world
     </div>
@@ -1020,25 +1010,25 @@ Object {
 `;
 
 exports[`Render props 1`] = `
-Object {
+{
   "line": 0,
-  "nodes": Array [
-    Object {
-      "attributeBlocks": Array [],
-      "attrs": Array [],
-      "block": Object {
+  "nodes": [
+    {
+      "attributeBlocks": [],
+      "attrs": [],
+      "block": {
         "line": 1,
-        "nodes": Array [
-          Object {
+        "nodes": [
+          {
             "column": 7,
             "line": 1,
             "type": "Text",
             "val": "Hello = () =>",
           },
-          Object {
-            "attributeBlocks": Array [],
-            "attrs": Array [
-              Object {
+          {
+            "attributeBlocks": [],
+            "attrs": [
+              {
                 "column": 15,
                 "line": 2,
                 "mustEscape": false,
@@ -1046,21 +1036,21 @@ Object {
                 "val": "'Consumer'",
               },
             ],
-            "block": Object {
+            "block": {
               "line": 2,
-              "nodes": Array [
-                Object {
-                  "block": Object {
+              "nodes": [
+                {
+                  "block": {
                     "line": 4,
-                    "nodes": Array [
-                      Object {
-                        "alternate": Object {
+                    "nodes": [
+                      {
+                        "alternate": {
                           "line": 7,
-                          "nodes": Array [
-                            Object {
-                              "attributeBlocks": Array [],
-                              "attrs": Array [
-                                Object {
+                          "nodes": [
+                            {
+                              "attributeBlocks": [],
+                              "attrs": [
+                                {
                                   "column": 17,
                                   "line": 7,
                                   "mustEscape": false,
@@ -1068,10 +1058,10 @@ Object {
                                   "val": "'workspace'",
                                 },
                               ],
-                              "block": Object {
+                              "block": {
                                 "line": 7,
-                                "nodes": Array [
-                                  Object {
+                                "nodes": [
+                                  {
                                     "column": 28,
                                     "line": 7,
                                     "type": "Text",
@@ -1091,13 +1081,13 @@ Object {
                           "type": "Block",
                         },
                         "column": 13,
-                        "consequent": Object {
+                        "consequent": {
                           "line": 5,
-                          "nodes": Array [
-                            Object {
-                              "attributeBlocks": Array [],
-                              "attrs": Array [
-                                Object {
+                          "nodes": [
+                            {
+                              "attributeBlocks": [],
+                              "attrs": [
+                                {
                                   "column": 17,
                                   "line": 5,
                                   "mustEscape": false,
@@ -1105,10 +1095,10 @@ Object {
                                   "val": "'workspace'",
                                 },
                               ],
-                              "block": Object {
+                              "block": {
                                 "line": 5,
-                                "nodes": Array [
-                                  Object {
+                                "nodes": [
+                                  {
                                     "column": 28,
                                     "line": 5,
                                     "type": "Text",
@@ -1168,22 +1158,17 @@ Object {
 `;
 
 exports[`Render props 2`] = `
-Object {
-  "errors": Array [],
-  "result": "/*@pug:L1*/
-<const>
+{
+  "errors": [],
+  "result": "/*@pug:L1*/ <const>
   Hello = () => /*@pug:L2*/
-  <AppContext className={\\"Consumer\\"}>
+  <AppContext className={"Consumer"}>
     {
-      /*@pug:L3*/
-      (app) =>
-        /*@pug:L4*/
-        app.repositoryRoot ? (
-          /*@pug:L5*/
-          <div id={\\"workspace\\"}>Success</div>
+      /*@pug:L3*/ (app) =>
+        /*@pug:L4*/ app.repositoryRoot ? (
+          /*@pug:L5*/ <div id={"workspace"}>Success</div>
         ) : (
-          /*@pug:L7*/
-          <div id={\\"workspace\\"}>Failure</div>
+          /*@pug:L7*/ <div id={"workspace"}>Failure</div>
         )
     }
   </AppContext>
@@ -1193,32 +1178,32 @@ Object {
 `;
 
 exports[`Sanitization of buffered code 1`] = `
-Object {
+{
   "line": 0,
-  "nodes": Array [
-    Object {
-      "attributeBlocks": Array [],
-      "attrs": Array [],
-      "block": Object {
+  "nodes": [
+    {
+      "attributeBlocks": [],
+      "attrs": [],
+      "block": {
         "line": 1,
-        "nodes": Array [
-          Object {
+        "nodes": [
+          {
             "column": 7,
             "line": 1,
             "type": "Text",
             "val": "Hello = () =>",
           },
-          Object {
-            "attributeBlocks": Array [],
-            "attrs": Array [
-              Object {
+          {
+            "attributeBlocks": [],
+            "attrs": [
+              {
                 "column": 5,
                 "line": 2,
                 "mustEscape": false,
                 "name": "id",
                 "val": "'bar'",
               },
-              Object {
+              {
                 "column": 9,
                 "line": 2,
                 "mustEscape": false,
@@ -1226,10 +1211,10 @@ Object {
                 "val": "'foo'",
               },
             ],
-            "block": Object {
+            "block": {
               "line": 2,
-              "nodes": Array [
-                Object {
+              "nodes": [
+                {
                   "buffer": true,
                   "column": 9,
                   "isInline": false,
@@ -1264,16 +1249,12 @@ Object {
 `;
 
 exports[`Sanitization of buffered code 2`] = `
-Object {
-  "errors": Array [],
-  "result": "/*@pug:L1*/
-<const>
+{
+  "errors": [],
+  "result": "/*@pug:L1*/ <const>
   Hello = () => /*@pug:L2*/
-  <div id={\\"bar\\"} className={\\"foo\\"}>
-    {
-      /*@pug:L3*/
-      \\"<div>Hello</div>\\"
-    }
+  <div id={"bar"} className={"foo"}>
+    {/*@pug:L3*/ "<div>Hello</div>"}
   </div>
 </const>;
 ",
@@ -1281,10 +1262,10 @@ Object {
 `;
 
 exports[`Unbuffered multiline code 1`] = `
-Object {
+{
   "line": 0,
-  "nodes": Array [
-    Object {
+  "nodes": [
+    {
       "buffer": false,
       "column": 1,
       "isInline": false,
@@ -1297,29 +1278,29 @@ Object {
 }
 ",
     },
-    Object {
-      "attributeBlocks": Array [],
-      "attrs": Array [],
-      "block": Object {
+    {
+      "attributeBlocks": [],
+      "attrs": [],
+      "block": {
         "line": 7,
-        "nodes": Array [
-          Object {
+        "nodes": [
+          {
             "column": 7,
             "line": 7,
             "type": "Text",
             "val": "Hello = () =>",
           },
-          Object {
-            "attributeBlocks": Array [],
-            "attrs": Array [
-              Object {
+          {
+            "attributeBlocks": [],
+            "attrs": [
+              {
                 "column": 5,
                 "line": 8,
                 "mustEscape": false,
                 "name": "id",
                 "val": "'bar'",
               },
-              Object {
+              {
                 "column": 9,
                 "line": 8,
                 "mustEscape": false,
@@ -1327,10 +1308,10 @@ Object {
                 "val": "'foo'",
               },
             ],
-            "block": Object {
+            "block": {
               "line": 8,
-              "nodes": Array [
-                Object {
+              "nodes": [
+                {
                   "column": 14,
                   "line": 8,
                   "type": "Text",
@@ -1362,18 +1343,17 @@ Object {
 `;
 
 exports[`Unbuffered multiline code 2`] = `
-Object {
-  "errors": Array [],
+{
+  "errors": [],
   "result": "/*@pug:L1*/
 const obj = {
   a: 10,
   b: 20,
 };
 
-/*@pug:L7*/
-<const>
+/*@pug:L7*/ <const>
   Hello = () => /*@pug:L8*/
-  <div id={\\"bar\\"} className={\\"foo\\"}>
+  <div id={"bar"} className={"foo"}>
     = obj.a
   </div>
 </const>;
